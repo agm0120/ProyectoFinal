@@ -1,0 +1,142 @@
+# ========= ANDROID STUDIO =========
+# Archivos de construcción
+*.apk
+*.aab
+*.ap_
+*.jar
+*.class
+
+# Archivos de Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+*.keystore
+
+# Gradle específico
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/
+!**/src/test/
+
+# ========= ANDROID BUILD =========
+# Directorios de build
+**/build/
+**/intermediates/
+**/generated/
+**/outputs/
+
+# Archivos temporales de Android
+**/merged/
+**/packaged/
+**/dex/
+**/androidTest/
+**/testResults/
+
+# ========= JAVA =========
+# Archivos compilados
+*.class
+*.war
+*.ear
+
+# Logs
+*.log
+
+# Paquetes
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# ========= SISTEMA =========
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+
+# ========= MULTIMEDIA =========
+# Archivos grandes de multimedia (opcional - si no quieres subirlos)
+# *.mp4
+# *.avi
+# *.mov
+# *.wmv
+# *.mp3
+# *.wav
+# *.psd
+# *.ai
+
+# ========= BASE DE DATOS =========
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# ========= ENTORNO VIRTUAL =========
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ========= NODE =========
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========= PHP =========
+vendor/
+composer.lock
+*.log
+.env
+
+# ========= DOCKER =========
+docker-compose.override.yml
+
+# ========= PROYECTOS UNITY =========
+# [Llaves/]
+# [Temporales/]
+# *.csproj
+# *.unityproj
+# *.sln
+# *.suo
+# *.tmp
+# *.user
+# *.userprefs
+# *.pidb
+# *.booproj
+# *.svd
+# *.pdb
+# *.opendb
+# *.VC.db
+
+# ========= ARCHIVOS TEMPORALES =========
+*.tmp
+*.temp
+*.cache
+.cache/
+temp/
+tmp/
