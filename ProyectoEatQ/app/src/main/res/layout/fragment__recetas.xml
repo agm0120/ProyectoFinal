@@ -3,91 +3,96 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F4F4">
+    android:background="#F2F2F2">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F4F4F4"
         android:orientation="vertical"
         android:padding="20dp">
-
-        <TextView
-            android:id="@+id/tvTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:gravity="center"
-            android:text="RECETAS"
-            android:textColor="#5D4037"
-            android:textSize="34sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:background="#F4F4F4"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="RECETAS"
+                android:textColor="#5D4037"
+                android:textSize="34sp"
+                android:gravity="center"
+                android:fontFamily="sans-serif-light"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginBottom="30dp">
 
             <Button
                 android:id="@+id/btnHidratos"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:backgroundTint="#D8B066"
                 android:text="HIDRATOS"
-                android:textColor="#FFFFFF"
                 android:textSize="11sp"
-                app:cornerRadius="50dp" />
+                android:backgroundTint="#D8B066"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="50dp"
+                android:layout_marginEnd="8dp"/>
 
             <Button
                 android:id="@+id/btnProteinas"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:backgroundTint="#6FAED9"
                 android:text="PROTEÍNAS"
-                android:textColor="#FFFFFF"
                 android:textSize="11sp"
-                app:cornerRadius="50dp" />
+                android:backgroundTint="#6FAED9"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp"/>
 
             <Button
                 android:id="@+id/btnVegetales"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#6CB063"
                 android:text="VEGETALES"
-                android:textColor="#FFFFFF"
                 android:textSize="11sp"
-                app:cornerRadius="50dp" />
+                android:backgroundTint="#6CB063"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="50dp"/>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layoutCardPasta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
             android:background="@drawable/fondo_redondeado"
             android:backgroundTint="#F9F5C6"
+            android:gravity="center_vertical"
+            android:padding="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
+            android:layout_marginBottom="20dp">
             <ImageView
                 android:id="@+id/imgPasta"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginEnd="16dp"
+                android:src="@android:drawable/ic_menu_gallery"
                 android:background="#E0E0E0"
                 android:scaleType="centerCrop"
-                android:src="@android:drawable/ic_menu_gallery" />
-
+                android:layout_marginEnd="16dp"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -95,33 +100,29 @@
                 android:text="Plato combinado de Pasta y Pollo a la Parrilla."
                 android:textColor="#5D4037"
                 android:textSize="16sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"/>
         </LinearLayout>
-
 
         <LinearLayout
             android:id="@+id/layoutCardVerduras"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
             android:background="@drawable/fondo_redondeado"
             android:backgroundTint="#D5F5CD"
+            android:gravity="center_vertical"
+            android:padding="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
+            android:layout_marginBottom="20dp">
             <ImageView
                 android:id="@+id/imgVerduras"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginEnd="16dp"
+                android:src="@android:drawable/ic_menu_gallery"
                 android:background="#E0E0E0"
                 android:scaleType="centerCrop"
-                android:src="@android:drawable/ic_menu_gallery" />
-
+                android:layout_marginEnd="16dp"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -129,33 +130,29 @@
                 android:text="Bowl de Verduras Asadas."
                 android:textColor="#2E4D28"
                 android:textSize="16sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"/>
         </LinearLayout>
-
 
         <LinearLayout
             android:id="@+id/layoutCardProteinas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
             android:background="@drawable/fondo_redondeado"
             android:backgroundTint="#C8EBF7"
+            android:gravity="center_vertical"
+            android:padding="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
+            android:layout_marginBottom="20dp">
             <ImageView
                 android:id="@+id/imgProteinas"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginEnd="16dp"
+                android:src="@android:drawable/ic_menu_gallery"
                 android:background="#E0E0E0"
                 android:scaleType="centerCrop"
-                android:src="@android:drawable/ic_menu_gallery" />
-
+                android:layout_marginEnd="16dp"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -163,13 +160,9 @@
                 android:text="Dúo de Proteínas a la Plancha con Quinoa y Espárragos."
                 android:textColor="#2B4654"
                 android:textSize="16sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"/>
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="50dp" />
-
+        <View android:layout_width="match_parent" android:layout_height="50dp"/>
     </LinearLayout>
 </ScrollView>
