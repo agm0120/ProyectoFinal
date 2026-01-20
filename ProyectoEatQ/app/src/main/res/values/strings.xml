@@ -1,9 +1,24 @@
 <resources>
     <string name="app_name">ProyectoEatQ</string>
     <string name="lista_compra">LISTA DE LA COMPRA</string>
-    <string name="add">Añadir</string>
+    <string name="agregar">Añadir</string>
     <string name="borrar_lista">Borrar lista</string>
-    <string name="borrar">X</string>
+    <string name="xborrar">X</string>
+    <string name="andar">Andar</string>
+    <string name="pregAndar">¿Cuánto tiempo has estado andando?</string>
+    <string name="escaleras">Subir escaleras</string>
+    <string name="pregEscaleras">¿Cuántos pisos has subido?</string>
+    <string name="sentadillas">Sentadillas</string>
+    <string name="pregSentadillas">¿Cuántas sentadillas has hecho?</string>
+    <string name="estirar">Estirar</string>
+    <string name="pregEstirar">¿Qué parte del cuerpo has estirado?</string>
+    <string name="brazos">Brazos</string>
+    <string name="piernas">Piernas</string>
+    <string name="torso">Tornos y espalda</string>
+    <string name="correr">Correr</string>
+    <string name="pregCorrer">¿Cuánto tiempo has corrido?</string>
+    
+
 
 
     <!-- TODO: Remove or change this placeholder text -->

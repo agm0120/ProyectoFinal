@@ -13,12 +13,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#D3D3D3"
+            android:background="@color/Grisfondo"
             android:orientation="vertical">
             <!--LinearLayout HORIZONTAL 1 (andar)-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="16dp"
@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="1"
-                    android:text="Andar"
+                    android:text="@string/andar"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -45,8 +45,14 @@
                     android:id="@+id/switch1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:height="48dp"
                     android:checked="true"
-                    android:shadowColor="#A64444" />
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:shadowColor="#A64444"
+                    android:thumbTint="@color/colores_switch"
+                    android:trackTint="@color/barraswitch"
+                    android:translationX="-4dp" />
 
                 <!--LinearLayout HORIZONTAL 2 (subir escaleras)-->
             </LinearLayout>
@@ -58,7 +64,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="16dp"
@@ -76,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="1"
-                    android:text="Subir escaleras"
+                    android:text="@string/escaleras"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -85,7 +91,13 @@
                     android:id="@+id/switch2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true" />
+                    android:height="48dp"
+                    android:checked="false"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:thumbTint="@color/colores_switch"
+                    android:trackTint="@color/barraswitch"
+                    android:translationX="-4dp" />
 
                 <!--LinearLayout HORIZONTAL 3 (correr)-->
             </LinearLayout>
@@ -97,7 +109,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="16dp"
@@ -115,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="1"
-                    android:text="Correr"
+                    android:text="@string/correr"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -124,7 +136,13 @@
                     android:id="@+id/switch3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true" />
+                    android:height="48dp"
+                    android:checked="true"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:thumbTint="@color/colores_switch"
+                    android:trackTint="@color/barraswitch"
+                    android:translationX="-4dp" />
 
                 <!--LinearLayout HORIZONTAL 4 (estirar)-->
             </LinearLayout>
@@ -136,7 +154,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="16dp"
@@ -154,7 +172,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="1"
-                    android:text="Estirar"
+                    android:text="@string/estirar"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -163,7 +181,13 @@
                     android:id="@+id/switch4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true" />
+                    android:height="48dp"
+                    android:checked="true"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:thumbTint="@color/colores_switch"
+                    android:trackTint="@color/barraswitch"
+                    android:translationX="-4dp" />
 
                 <!--LinearLayout HORIZONTAL 5 (sentadillas)-->
             </LinearLayout>
@@ -175,7 +199,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="16dp"
@@ -193,7 +217,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="1"
-                    android:text="Sentadillas"
+                    android:text="@string/sentadillas"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -202,7 +226,13 @@
                     android:id="@+id/switch5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true" />
+                    android:height="48dp"
+                    android:checked="true"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:thumbTint="@color/colores_switch"
+                    android:trackTint="@color/barraswitch"
+                    android:translationX="-4dp" />
 
             </LinearLayout>
 
