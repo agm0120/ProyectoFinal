@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_ListaCompra#newInstance} factory method to
+ * Use the {@link ListaCompra#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_ListaCompra extends Fragment {
+public class ListaCompra extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class Fragment_ListaCompra extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Fragment_ListaCompra() {
+    public ListaCompra() {
         // Required empty public constructor
     }
 
@@ -37,8 +37,8 @@ public class Fragment_ListaCompra extends Fragment {
      * @return A new instance of fragment Fragment_ListaCompra.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_ListaCompra newInstance(String param1, String param2) {
-        Fragment_ListaCompra fragment = new Fragment_ListaCompra();
+    public static ListaCompra newInstance(String param1, String param2) {
+        ListaCompra fragment = new ListaCompra();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

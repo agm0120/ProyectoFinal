@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment_ListaCompra">
+    tools:context=".ListaCompra">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -54,7 +54,6 @@
         android:layout_height="45dp"
         android:layout_marginTop="40dp"
         android:background="@android:drawable/editbox_background_normal"
-        android:backgroundTint="#FADBBF"
         android:ellipsize="none"
         android:hint="Nuevo artículo...."
         android:textSize="16sp"
@@ -68,7 +67,7 @@
         android:layout_width="98dp"
         android:layout_height="48dp"
         android:layout_marginTop="40dp"
-        android:backgroundTint="#F8BF89"
+        android:backgroundTint="@color/amarilloBoton"
         android:text="@string/add"
         android:textColor="#1C1C1C"
         app:cornerRadius="15dp"
@@ -129,15 +128,5 @@
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.289" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="129dp"
-        android:layout_height="75dp"
-        app:icon="@drawable/back"
-        app:iconPadding="0dp"
-        app:iconTint="#FFFFFF"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="274dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
