@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/titulo_detalle_comida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HISTORIAL"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/contenedor_grafica_circular"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_detalle_comida">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/presence_online"
+                android:backgroundTint="#E0E0E0" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/etiqueta_resumen_comida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Este día has comido:"
+            android:textColor="#666666"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contenedor_grafica_circular" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tarjeta_detalle_comida"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etiqueta_resumen_comida">
+
+            <TextView
+                android:id="@+id/texto_info_comida_detalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="120dp"
+                android:padding="20dp"
+                android:text=""
+                android:textColor="#333333" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

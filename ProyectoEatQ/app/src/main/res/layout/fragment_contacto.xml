@@ -4,85 +4,154 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Grisfondo"
-    tools:context=".Contacto" >
+    android:background="#F4F4F4"
+    tools:context=".ContactoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="20dp">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/boton_volver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="<"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titulo_contacto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CONTACTO"
-            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textSize="22sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.050000012" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/etiqueta_seleccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿Con quien quieres contactar?"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="30dp"
+            android:text="Selecciona el historial:"
+            android:textColor="#666666"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.27"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.14999999" />
+            app:layout_constraintTop_toBottomOf="@+id/titulo_contacto" />
 
-        <Button
-            android:id="@+id/button4"
+        <LinearLayout
+            android:id="@+id/contenedor_selector"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.671"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.232" />
+            app:layout_constraintTop_toBottomOf="@+id/etiqueta_seleccion">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.34"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.232" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_empresa"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:backgroundTint="#37D366"
+                android:text="Empresa"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="20dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_nutricionista"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#CCCCCC"
+                android:text="Nutricionista"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/etiqueta_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Información del contacto: "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.241"
+            android:layout_marginTop="40dp"
+            android:text="Información de contacto:"
+            android:textColor="#666666"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.346" />
+            app:layout_constraintTop_toBottomOf="@+id/contenedor_selector" />
 
-        <Button
-            android:id="@+id/button5"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tarjeta_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="#F1F1F1"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="2dp"
+            app:layout_constraintTop_toBottomOf="@+id/etiqueta_info">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="255dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correo Electrónico:"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/texto_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="eatQ@info.com"
+                    android:textColor="#333333" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Teléfono:"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/texto_telefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+34 "
+                    android:textColor="#333333" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_enviar_correo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#FCF6BB"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp"
             android:text="Enviar Correo"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:cornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.722"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.9" />
+            app:layout_constraintTop_toBottomOf="@+id/tarjeta_info" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

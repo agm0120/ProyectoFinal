@@ -4,25 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Grisfondo"
-    tools:context=".HistorialComida" >
+    android:background="#F4F4F4"
+    tools:context=".HistorialComida">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/titulo_historial_comida"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="HISTORIAL"
-            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textSize="22sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.050000012" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/etiqueta_seleccionar_historial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Selecciona el historial:"
+            android:textColor="#666666"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_historial_comida" />
+
+        <LinearLayout
+            android:id="@+id/contenedor_selector_comida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etiqueta_seleccionar_historial">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_comida_activo"
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#F05268"
+                app:cornerRadius="20dp"
+                app:icon="@android:drawable/ic_menu_gallery"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_deporte_inactivo"
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#BDBDBD"
+                app:cornerRadius="20dp"
+                app:icon="@android:drawable/ic_menu_directions"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/etiqueta_seleccionar_dia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Selecciona el día:"
+            android:textColor="#666666"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contenedor_selector_comida" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tarjeta_calendario_comida"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="#F1F1F1"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etiqueta_seleccionar_dia">
+
+            <CalendarView
+                android:id="@+id/calendario_comida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.AppCompat.Light" />
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
