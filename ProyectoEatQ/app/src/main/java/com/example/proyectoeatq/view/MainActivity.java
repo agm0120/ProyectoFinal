@@ -1,8 +1,10 @@
-package com.example.proyectoeatq;
+package com.example.proyectoeatq.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.proyectoeatq.R;
 
 public class MainActivity extends AppCompatActivity {
 
