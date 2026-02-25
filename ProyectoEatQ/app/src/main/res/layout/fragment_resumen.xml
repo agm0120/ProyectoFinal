@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gris_fondo"
+    android:background="@color/Grisfondo"
     tools:context=".view.fragment_resumen">
 
     <TextView
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="136dp"
-        android:backgroundTint="@color/amarillo_botón"
+        android:backgroundTint="@color/amarilloBoton"
         android:text="Introducir plato"
         android:textColor="@color/black"
         app:cornerRadius="0dp"
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
-        android:backgroundTint="@color/amarillo_botón"
+        android:backgroundTint="@color/amarilloBoton"
         android:text="Ver recetas"
         android:textColor="@color/black"
         app:cornerRadius="0dp"

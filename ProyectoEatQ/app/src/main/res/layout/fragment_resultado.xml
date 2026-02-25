@@ -5,8 +5,8 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gris_fondo"
-    tools:context=".view.fragment_resultado" >
+    android:background="@color/Grisfondo"
+    tools:context=".view.fragment_resultado">
 
     <TextView
         android:id="@+id/textView5"
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginBottom="92dp"
-        android:backgroundTint="@color/amarillo_botón"
+        android:backgroundTint="@color/amarilloBoton"
         android:text="Guardar plato"
         android:textColor="@color/black"
         app:cornerRadius="0dp"
@@ -86,7 +86,7 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="92dp"
-        android:backgroundTint="@color/amarillo_botón"
+        android:backgroundTint="@color/amarilloBoton"
         android:text="Repetir plato"
         android:textColor="@color/black"
         app:cornerRadius="0dp"
