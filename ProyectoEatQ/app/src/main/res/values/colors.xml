@@ -2,7 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
     <color name="verdeMenu">#68DD8B</color>
     <color name="amarilloBoton">#FCF6BB</color>
     <color name="verdeLogo">#37D366</color>
@@ -10,7 +9,4 @@
     <color name="Rojologo">#F05268</color>
     <color name="Amarillologo">#FFC000</color>
     <color name="Blancotarjetas">#F1F1F1</color>
-
-
-
 </resources>
