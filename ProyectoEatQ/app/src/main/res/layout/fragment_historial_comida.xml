@@ -53,7 +53,7 @@
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="#F05268"
                 app:cornerRadius="20dp"
-                app:icon="@android:drawable/ic_menu_gallery"
+                app:icon="@drawable/corriendo"
                 app:iconGravity="textStart"
                 app:iconSize="30dp" />
 
@@ -63,7 +63,7 @@
                 android:layout_height="65dp"
                 android:backgroundTint="#BDBDBD"
                 app:cornerRadius="20dp"
-                app:icon="@android:drawable/ic_menu_directions"
+                app:icon="@drawable/plato"
                 app:iconGravity="textStart"
                 app:iconSize="30dp" />
         </LinearLayout>
