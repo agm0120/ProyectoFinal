@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/Grisfondo"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/verdeMenu"
+        android:gravity="center"
+        android:text="Estirar"
+        android:textColor="@color/negroTexto"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="¿Qué parte del cuerpo has estirado?"
+            android:textColor="@color/negroTexto"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp"
+            android:paddingStart="40dp">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#000000"
+                android:text="Brazos"
+                android:textColor="@color/negroTexto"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#000000"
+                android:text="Piernas"
+                android:textColor="@color/negroTexto"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#000000"
+                android:text="Torso y espalda"
+                android:textColor="@color/negroTexto"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="25dp"
+            android:background="#FFFFFF"
+            android:gravity="top|start"
+            android:hint="Introducir anotación..."
+            android:inputType="textMultiLine"
+            android:padding="12dp"
+            android:textColorHint="#888888" />
+
+        <Button
+            android:id="@+id/btn_guardar_estirar"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/amarilloBoton"
+            android:text="Guardar"
+            android:textColor="@color/negroTexto"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</LinearLayout>

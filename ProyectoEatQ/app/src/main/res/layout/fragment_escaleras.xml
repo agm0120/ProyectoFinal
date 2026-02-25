@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/Grisfondo"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/verdeMenu"
+        android:gravity="center"
+        android:text="Subir escaleras"
+        android:textColor="@color/negroTexto"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="¿Cuántos pisos has subido?"
+            android:textColor="@color/negroTexto"
+            android:textSize="17sp" />
+
+        <EditText
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="25dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="3"
+            android:text="00"
+            android:textColor="@color/negroTexto"
+            android:textSize="35sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="25dp"
+            android:background="#FFFFFF"
+            android:gravity="top|start"
+            android:hint="Introducir anotación..."
+            android:inputType="textMultiLine"
+            android:padding="12dp"
+            android:textColorHint="#888888" />
+
+        <Button
+            android:id="@+id/btn_guardar_escaleras"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/amarilloBoton"
+            android:text="Guardar"
+            android:textColor="@color/negroTexto"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</LinearLayout>
