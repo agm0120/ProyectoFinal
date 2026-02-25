@@ -12,10 +12,10 @@ import com.example.proyectoeatq.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_resumen#newInstance} factory method to
+ * Use the {@link com.example.proyectoeatq.view.Resumen#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_resumen extends Fragment {
+public class Resumen extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class fragment_resumen extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_resumen() {
+    public Resumen() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class fragment_resumen extends Fragment {
      * @return A new instance of fragment Login.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_resumen newInstance(String param1, String param2) {
-        fragment_resumen fragment = new fragment_resumen();
+    public static com.example.proyectoeatq.view.Resumen newInstance(String param1, String param2) {
+        com.example.proyectoeatq.view.Resumen fragment = new com.example.proyectoeatq.view.Resumen();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

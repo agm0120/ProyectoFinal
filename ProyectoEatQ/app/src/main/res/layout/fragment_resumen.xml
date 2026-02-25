@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Grisfondo"
-    tools:context=".view.fragment_resumen">
+    tools:context=".view.Resumen">
 
     <TextView
         android:id="@+id/textView2"

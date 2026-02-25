@@ -1,4 +1,4 @@
-package com.example.proyectoeatq;
+package com.example.proyectoeatq.view;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.proyectoeatq.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link escaleras#newInstance} factory method to
+ * Use the {@link com.example.proyectoeatq.view.SubirPlato#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class escaleras extends Fragment {
+public class SubirPlato extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class escaleras extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public escaleras() {
+    public SubirPlato() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class escaleras extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment escaleras.
+     * @return A new instance of fragment fragment_plato.
      */
     // TODO: Rename and change types and number of parameters
-    public static escaleras newInstance(String param1, String param2) {
-        escaleras fragment = new escaleras();
+    public static com.example.proyectoeatq.view.SubirPlato newInstance(String param1, String param2) {
+        com.example.proyectoeatq.view.SubirPlato fragment = new com.example.proyectoeatq.view.SubirPlato();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class escaleras extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_escaleras, container, false);
+        return inflater.inflate(R.layout.fragment_plato, container, false);
     }
 }
