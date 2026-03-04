@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "279910010772",
+    "project_id": "eatq-2026",
+    "storage_bucket": "eatq-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279910010772:android:1a6e3459394505fe07c981",
+        "android_client_info": {
+          "package_name": "com.example.proyectoeatq"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYT1icxpYdLaM9MB420dSmTkT9w6BaQKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
