@@ -1,4 +1,4 @@
-package com.example.proyectoeatq.view;
+package com.example.proyectoeatq;
 
 import androidx.appcompat.app.AppCompatActivity;
 
