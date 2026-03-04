@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
-        android:background="@color/blanco_tarjetas"
+        android:background="@color/Blancotarjetas"
         android:text="¿Este es tu plato de hoy?"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

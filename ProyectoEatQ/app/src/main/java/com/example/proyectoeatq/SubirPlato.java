@@ -1,4 +1,4 @@
-package com.example.proyectoeatq.view;
+package com.example.proyectoeatq;
 
 import android.os.Bundle;
 
@@ -12,7 +12,7 @@ import com.example.proyectoeatq.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link com.example.proyectoeatq.view.SubirPlato#newInstance} factory method to
+ * Use the {@link com.example.proyectoeatq.SubirPlato#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class SubirPlato extends Fragment {
@@ -39,8 +39,8 @@ public class SubirPlato extends Fragment {
      * @return A new instance of fragment fragment_plato.
      */
     // TODO: Rename and change types and number of parameters
-    public static com.example.proyectoeatq.view.SubirPlato newInstance(String param1, String param2) {
-        com.example.proyectoeatq.view.SubirPlato fragment = new com.example.proyectoeatq.view.SubirPlato();
+    public static com.example.proyectoeatq.SubirPlato newInstance(String param1, String param2) {
+        com.example.proyectoeatq.SubirPlato fragment = new com.example.proyectoeatq.SubirPlato();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
