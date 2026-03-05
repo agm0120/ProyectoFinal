@@ -71,8 +71,7 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
                     public void onComplete(Task<AuthResult> task) {
                         //Condicional que se ejecuta si el registro es correcto. Si lo es se vuelve a la pantalla de login
                         if (task.isSuccessful()) {
-                            Intent pasarPantalla = new Intent(ActivityRegistroUsuario.this, ActivityMainLogin.class);
-                            startActivity(pasarPantalla);
+                            startActivity(new Intent(ActivityRegistroUsuario.this, ActivityMainLogin.class));
                         //Condicional que se ejecuta si falla el registro. Si falla salta un mensaje con el error
                         } else {
                             Toast.makeText(ActivityRegistroUsuario.this, "Fallo en el registro",

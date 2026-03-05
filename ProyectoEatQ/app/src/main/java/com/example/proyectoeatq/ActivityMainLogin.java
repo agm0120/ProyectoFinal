@@ -54,7 +54,7 @@ public class ActivityMainLogin extends AppCompatActivity {
         btn_registrarse.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ActivityMainLogin.this, ActivityMain.class));
+                startActivity(new Intent(ActivityMainLogin.this, ActivityRegistroUsuario.class));
             }
         });
 
@@ -65,7 +65,7 @@ public class ActivityMainLogin extends AppCompatActivity {
         auth.signInWithEmailAndPassword(textoUsuario, textoPassword)
                 .addOnCompleteListener(this, task -> {
                     if(task.isSuccessful()){
-                        startActivity(new Intent(ActivityMainLogin.this, MainActivity2.class));
+                        startActivity(new Intent(ActivityMainLogin.this, ActivityMain.class));
                     }else{
                         Toast.makeText(ActivityMainLogin.this,
                                 "Error en la autenticacion",
