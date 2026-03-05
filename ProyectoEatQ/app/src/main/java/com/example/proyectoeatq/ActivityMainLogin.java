@@ -9,6 +9,11 @@ import android.widget.Button;
 
 import com.example.proyectoeatq.R;
 
+//El usuario que he creado de ejemplo es:
+//Correo: ejemplo@ejemplo.com
+//Contraseña: 123456
+// Lo pongo aqui para que se pueda usar para comprobar si funciona el login
+
 public class ActivityMainLogin extends AppCompatActivity {
 
     private Button bRegistro;
