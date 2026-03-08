@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvHeaderTitle"
+            android:id="@+id/TituloPantalla"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TÍTULO"
@@ -86,7 +86,7 @@
                 android:layout_weight="1" />
 
             <ImageButton
-                android:id="@+id/btnMenuCocinero"
+                android:id="@+id/btnMenuRecetas"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

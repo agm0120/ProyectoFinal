@@ -8,7 +8,7 @@
     tools:context=".ListaCompra">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/LogoEatQ"
         android:layout_width="418dp"
         android:layout_height="565dp"
         android:alpha="0.6"
@@ -36,7 +36,7 @@
         tools:layout_editor_absoluteY="102dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnPregunta"
         android:layout_width="98dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/amarilloBoton"
@@ -73,7 +73,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/amarilloBoton"
