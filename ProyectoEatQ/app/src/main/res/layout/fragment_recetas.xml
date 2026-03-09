@@ -1,168 +1,328 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2F2F2">
+    android:orientation="vertical"
+    android:background="#F2F2F2"
+    android:padding="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnHidratos"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="30dp">
+            android:layout_weight="1"
+            android:text="HIDRATOS"
+            android:textSize="11sp"
+            android:backgroundTint="#D8B066"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="50dp"
+            android:layout_marginEnd="8dp"/>
 
-            <TextView
-                android:id="@+id/tvTitulo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="RECETAS"
-                android:textColor="#5D4037"
-                android:textSize="34sp"
-                android:gravity="center"
-                android:fontFamily="sans-serif-light"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnProteinas"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="30dp">
+            android:layout_weight="1"
+            android:text="PROTEÍNAS"
+            android:textSize="11sp"
+            android:backgroundTint="#6FAED9"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="50dp"
+            android:layout_marginEnd="8dp"/>
 
-            <Button
-                android:id="@+id/btnHidratos"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="HIDRATOS"
-                android:textSize="11sp"
-                android:backgroundTint="#D8B066"
-                android:textColor="#FFFFFF"
-                app:cornerRadius="50dp"
-                android:layout_marginEnd="8dp"/>
-
-            <Button
-                android:id="@+id/btnProteinas"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="PROTEÍNAS"
-                android:textSize="11sp"
-                android:backgroundTint="#6FAED9"
-                android:textColor="#FFFFFF"
-                android:layout_marginEnd="8dp"/>
-
-            <Button
-                android:id="@+id/btnVegetales"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="VEGETALES"
-                android:textSize="11sp"
-                android:backgroundTint="#6CB063"
-                android:textColor="#FFFFFF"
-                app:cornerRadius="50dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutCardPasta"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnVegetales"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/fondo_redondeado"
-            android:backgroundTint="#F9F5C6"
-            android:gravity="center_vertical"
-            android:padding="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginBottom="20dp">
-            <ImageView
-                android:id="@+id/imgPasta"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@android:drawable/ic_menu_gallery"
-                android:background="#E0E0E0"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="16dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Plato combinado de Pasta y Pollo a la Parrilla."
-                android:textColor="#5D4037"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutCardVerduras"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/fondo_redondeado"
-            android:backgroundTint="#D5F5CD"
-            android:gravity="center_vertical"
-            android:padding="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginBottom="20dp">
-            <ImageView
-                android:id="@+id/imgVerduras"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@android:drawable/ic_menu_gallery"
-                android:background="#E0E0E0"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="16dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Bowl de Verduras Asadas."
-                android:textColor="#2E4D28"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutCardProteinas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/fondo_redondeado"
-            android:backgroundTint="#C8EBF7"
-            android:gravity="center_vertical"
-            android:padding="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginBottom="20dp">
-            <ImageView
-                android:id="@+id/imgProteinas"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@android:drawable/ic_menu_gallery"
-                android:background="#E0E0E0"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="16dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Dúo de Proteínas a la Plancha con Quinoa y Espárragos."
-                android:textColor="#2B4654"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
-        </LinearLayout>
-
-        <View android:layout_width="match_parent" android:layout_height="50dp"/>
+            android:layout_weight="1"
+            android:text="VEGETALES"
+            android:textSize="11sp"
+            android:backgroundTint="#6CB063"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="50dp"/>
     </LinearLayout>
-</ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/fondo_redondeado"
+                android:backgroundTint="#F9F5C6"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:background="#E0E0E0"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Plato combinado de Pasta y Pollo a la Parrilla."
+                    android:textColor="#5D4037"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/fondo_redondeado"
+                android:backgroundTint="#D5F5CD"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:background="#E0E0E0"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Bowl de Verduras Asadas."
+                    android:textColor="#2E4D28"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/fondo_redondeado"
+                android:backgroundTint="#C8EBF7"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:background="#E0E0E0"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dúo de Proteínas a la Plancha con Quinoa."
+                    android:textColor="#2B4654"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/fondo_redondeado"
+                android:backgroundTint="#FFE0B2"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:background="#E0E0E0"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Salmón al Horno con Arroz Integral."
+                    android:textColor="#BF360C"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/fondo_redondeado"
+                android:backgroundTint="#E1BEE7"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:background="#E0E0E0"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ensalada de Lentejas y Pimiento Rojo."
+                    android:textColor="#4A148C"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/fondo_redondeado"
+                android:backgroundTint="#DCEDC8"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:background="#E0E0E0"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tacos de Tofu con Guacamole."
+                    android:textColor="#33691E"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/fondo_redondeado"
+                android:backgroundTint="#F8BBD0"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:background="#E0E0E0"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pechuga de Pavo con Batata Asada."
+                    android:textColor="#880E4F"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/fondo_redondeado"
+                android:backgroundTint="#B2EBF2"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:background="#E0E0E0"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Curry de Garbanzos con Espinacas."
+                    android:textColor="#006064"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/fondo_redondeado"
+                android:backgroundTint="#CFD8DC"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:background="#E0E0E0"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Filete de Merluza al Vapor con Brócoli."
+                    android:textColor="#263238"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/fondo_redondeado"
+                android:backgroundTint="#FFCDD2"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="25dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:background="#E0E0E0"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Wok de Ternera con Pimientos y Cebolla."
+                    android:textColor="#B71C1C"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
