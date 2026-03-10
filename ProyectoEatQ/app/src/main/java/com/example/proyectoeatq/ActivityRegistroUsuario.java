@@ -13,6 +13,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class ActivityRegistroUsuario extends AppCompatActivity {
 
@@ -20,13 +25,31 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
 
     private EditText contraseña;
 
+    private EditText nombre;
+
+    private EditText fecha;
+
+    private EditText edad;
+
+    private EditText nacion;
+
     private Button registroUsuario;
 
     private String textoCorreo;
 
     private String textoContra;
 
+    private String textoNombre;
+
+    private String textoFecha;
+
+    private String textoEdad;
+
+    private String textoNacion;
+
     private FirebaseAuth auth;
+
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +58,14 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
 
         correo = findViewById(R.id.etEmail);
         contraseña =findViewById(R.id.etPassword);
+        nombre = findViewById(R.id.etUsername);
+        fecha = findViewById(R.id.etBirthdate);
+        edad = findViewById(R.id.etAge);
+        nacion = findViewById(R.id.etNationality);
         registroUsuario = findViewById(R.id.btnCreateUser);
 
         auth = FirebaseAuth.getInstance();
+        db=FirebaseFirestore.getInstance();
 
         registroUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,11 +73,18 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
 
                 textoCorreo = correo.getText().toString();
                 textoContra = contraseña.getText().toString();
+                textoNombre = nombre.getText().toString();
+                textoFecha = fecha.getText().toString();
+                textoEdad = edad.getText().toString();
+                textoNacion = nacion.getText().toString();
+
+
 
                 //Se comprueba que los dos campos son validos. Mas adelante se incluiran el resto de datos de un usuario
                 if(checkEmpty(textoCorreo, textoContra)){
 
                     register(textoCorreo, textoContra);
+                    registerdb(textoCorreo, textoContra, textoNombre, textoFecha, textoEdad,textoNacion);
 
                 }else {
                     Toast.makeText(ActivityRegistroUsuario.this, "Por favor, rellena todos los campos",
@@ -74,11 +109,35 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
                             startActivity(new Intent(ActivityRegistroUsuario.this, ActivityMainLogin.class));
                         //Condicional que se ejecuta si falla el registro. Si falla salta un mensaje con el error
                         } else {
-                            Toast.makeText(ActivityRegistroUsuario.this, "Fallo en el registro",
+                            Toast.makeText(ActivityRegistroUsuario.this, "Fallo en el registro de Usuario",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+    }
+
+    private void registerdb(String textoCorreo, String textoContra, String textoNombre,
+                            String textoFecha, String textoEdad, String textoNacion){
+
+        // Creamos el HashMap en formato Java
+        Map<String, Object> userMap = new HashMap<>();
+        userMap.put("contraseña", textoContra);
+        userMap.put("nombreUsuario", textoNombre);
+        userMap.put("fechaNacimiento", textoFecha);
+        userMap.put("edad", textoEdad);
+        userMap.put("nacionalidad", textoNacion);
+
+        // Guardamos en Firestore
+        db.collection("Usuario").document(textoCorreo).set(userMap)
+                .addOnSuccessListener(aVoid -> {
+                    Toast.makeText(ActivityRegistroUsuario.this, "Usuario registrado en la bd",
+                            Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(ActivityRegistroUsuario.this, "Fallo en el registro de la bd",
+                            Toast.LENGTH_SHORT).show();
+                });
+
     }
 
     //Metodo para comprobar que los campos (por ahora correo y contraseña) no estan vacios o son nulos

@@ -46,6 +46,7 @@ dependencies {
     // When using de BoM, don't especify versions in Firebase dependencies
     //Aqui esta la dependencia del auth. Creo que más adelante tendremos que añadir otras dependencias de firebase
     implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
