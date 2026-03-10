@@ -1,4 +1,10 @@
 package com.example.proyectoeatq.ControListaCompra;
+/*
+El Adapter es como un organizador o coordinador:
+- Crea los ViewHolders cuando hacen falta.
+- Concecta cada ViewHolder con los datos que debe mostrar
+- Dice cuántos items hay en total
+ */
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -14,48 +20,55 @@ public class ListaAdapter extends RecyclerView.Adapter<CompraViewHolder>{
 
     //? TaskAdapter.java
 
-    // Crear na interfaz
+    /* Interfaz que sirve para que el ViewHolder pueda avisar al Fragment cuando
+     alguien quiere borrar un item. Es como un canal de comunicación entre ellos.
+     "Cualquier clase que implemente esta interfaz tendrá un método itemBorrado,
+     que recibe un int" */
+
+    // todo: cambiar el nombre de la interfaz
     public interface interfazItemBorrado {
         void itemBorrado(int position);
     }
     // Variables
     private List<String> lista;
-    private interfazItemBorrado interfazItemBorrado;
+    private interfazItemBorrado interfazItemBorrado; //el canal de comunicación, como un listener
 
-    //el constructor recibe la lista, y el listener
+    /* El constructor debe recibir un ArrayList con los datos y el canal de
+    comunicación, que avisará cuando alguien borre*/
     public ListaAdapter(List<String> lista, interfazItemBorrado interfazItemBorrado){
         this.lista = lista;
         this.interfazItemBorrado = interfazItemBorrado;
     }
 
-    //es la función que crea el viewholdre y le asigna el item de la lista.
-    //necesitamos conectar el item_lista_compra.xml al CompraViewHolder.
-    //Esto lo hace el onCreateViewHolder
+
+    /* Función CompraViewHolder: crea nuevos ViewHolders cuando el RecyclerView
+    los necesita, y asigna el item a la lista.*/
     @NonNull
     @Override
     public CompraViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        /* Creamos una instancia de LayoutInfalter.
-        Esta clase (LayoutInfalter.) nos permite cargar xml para poder trabajar con ellos.
-        Es parecido a la asociación que hacemos con el setContentView del onCreate.
+        /* 1. Crear una instancia de LayoutInflater. La clase LayoutInflater. permite
+        cargar xml para poder trabajar cno ellos.
+        2. Return, con el que devolvemos el ViewHolder.
+        Le pasamos la view que necesita su constructor, el parent y un attach false).*/
 
-        En el return devolvermos el ViewHolder, en cuyo constructor ya establecimos
-        que recibiría una view (el item_lista_compra.xml). Así que le pasamos el item
-        que vamos a inflar (el xml), el parent y el attach.
-         */
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         return new CompraViewHolder(layoutInflater.inflate(R.layout.item_lista_compra,parent,false));
 
     }
 
-    //Funcion encargada de que, al hacer scroll, guarde a la nueva posición.
-    //contiene una instancia del viewholder.
+    /* Función onBindViwHolder: encargada de que, al hacer scroll, guarde la nueva posicion.
+    Toma un ViewHolder existente y le dice qué datos debe mostrar */
     @Override
     public void onBindViewHolder(@NonNull CompraViewHolder holder, int position) {
+        /* lista.get(posicion) -> obtiene el string asociado a esa posicion
+        El metodo render() del viewholder recibirá el texto que debe mostrar, y el 'listener'*/
         holder.render(lista.get(position), interfazItemBorrado);
 
     }
 
-    // Esta función le dice al RecyclerView cuántos items debe mostrar
+
+    /* getItemCount() le dice al RecyclerView cuántos items debe mostrar
+    para que sepa cuando parar de hacer scroll*/
     @Override
     public int getItemCount() {
         return lista.size();
