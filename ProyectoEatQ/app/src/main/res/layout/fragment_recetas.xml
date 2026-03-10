@@ -19,11 +19,11 @@
             android:layout_marginBottom="30dp">
 
             <TextView
-                android:id="@+id/tvTitulo"
+                android:id="@+id/tvTituloRecetas"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="RECETAS"
+                android:text="@string/titulo_recetas"
                 android:textColor="#5D4037"
                 android:textSize="34sp"
                 android:gravity="center"
@@ -43,7 +43,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="HIDRATOS"
+                android:text="@string/btn_hidratos"
                 android:textSize="11sp"
                 android:backgroundTint="#D8B066"
                 android:textColor="#FFFFFF"
@@ -55,7 +55,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="PROTEÍNAS"
+                android:text="@string/btn_proteinas"
                 android:textSize="11sp"
                 android:backgroundTint="#6FAED9"
                 android:textColor="#FFFFFF"
@@ -66,7 +66,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="VEGETALES"
+                android:text="@string/btn_vegetales"
                 android:textSize="11sp"
                 android:backgroundTint="#6CB063"
                 android:textColor="#FFFFFF"
@@ -94,10 +94,11 @@
                 android:scaleType="centerCrop"
                 android:layout_marginEnd="16dp"/>
             <TextView
+                android:id="@+id/tvNombrePasta"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Plato combinado de Pasta y Pollo a la Parrilla."
+                android:text="@string/receta_pasta_tit"
                 android:textColor="#5D4037"
                 android:textSize="16sp"
                 android:textStyle="bold"/>
@@ -124,10 +125,11 @@
                 android:scaleType="centerCrop"
                 android:layout_marginEnd="16dp"/>
             <TextView
+                android:id="@+id/tvNombreVerduras"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Bowl de Verduras Asadas."
+                android:text="@string/receta_verdura_tit"
                 android:textColor="#2E4D28"
                 android:textSize="16sp"
                 android:textStyle="bold"/>
@@ -154,10 +156,11 @@
                 android:scaleType="centerCrop"
                 android:layout_marginEnd="16dp"/>
             <TextView
+                android:id="@+id/tvNombreProteinas"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Dúo de Proteínas a la Plancha con Quinoa y Espárragos."
+                android:text="@string/receta_proteina_tit"
                 android:textColor="#2B4654"
                 android:textSize="16sp"
                 android:textStyle="bold"/>

@@ -26,7 +26,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="NOTICIAS"
+                android:text="@string/titulo_noticias"
                 android:textColor="#5D4037"
                 android:textSize="34sp"
                 android:gravity="center"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:gravity="center"
-                android:text="EL MÉTODO DEL PLATO"
+                android:text="@string/metodo_plato_titulo"
                 android:textColor="#5D4037"
                 android:textSize="22sp" />
 
@@ -68,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#D7D7D7"
-                android:text="¡INFÓRMATE!"
+                android:text="@string/btn_informate"
                 android:textColor="#000000"
                 app:cornerRadius="20dp"
                 app:strokeColor="#000000"
@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="Actividad Física y Salud Cardiovascular"
+                    android:text="@string/noticia_cardio_tit"
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
@@ -119,7 +119,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:backgroundTint="#D7D7D7"
-                    android:text="VER NOTICIA"
+                    android:text="@string/btn_ver_noticia"
                     android:textColor="#000000"
                     android:textSize="10sp"
                     app:cornerRadius="20dp"
@@ -163,7 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="Bienestar Mental y Reducción del Estrés"
+                    android:text="@string/noticia_mental_tit"
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
@@ -172,7 +172,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:backgroundTint="#D7D7D7"
-                    android:text="VER NOTICIA"
+                    android:text="@string/btn_ver_noticia"
                     android:textColor="#000000"
                     android:textSize="10sp"
                     app:cornerRadius="20dp"

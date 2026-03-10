@@ -24,7 +24,7 @@
                 android:id="@+id/tv_titulo_detalle_deporte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HISTORIAL"
+                android:text="@string/titulo_historial"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -44,7 +44,7 @@
                     android:id="@+id/tv_etiqueta_estirado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tiempo estirado (min):"
+                    android:text="@string/label_t_estirado"
                     android:textColor="#555555"
                     android:textStyle="bold" />
 
@@ -64,7 +64,7 @@
                     android:id="@+id/tv_etiqueta_andado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tiempo andado (min):"
+                    android:text="@string/label_t_andado"
                     android:textColor="#555555"
                     android:textStyle="bold" />
 
@@ -84,7 +84,7 @@
                     android:id="@+id/tv_etiqueta_pisos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pisos subidos:"
+                    android:text="@string/label_pisos"
                     android:textColor="#555555"
                     android:textStyle="bold" />
 
@@ -104,7 +104,7 @@
                     android:id="@+id/tv_etiqueta_sentadillas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sentadillas:"
+                    android:text="@string/label_sentadillas"
                     android:textColor="#555555"
                     android:textStyle="bold" />
 

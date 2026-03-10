@@ -2,103 +2,100 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/layout_lista_compra"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4F4F4"
     tools:context=".ListaCompra">
 
     <ImageView
-        android:id="@+id/LogoEatQ"
-        android:layout_width="418dp"
-        android:layout_height="565dp"
-        android:alpha="0.6"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:visibility="visible"
+        android:id="@+id/iv_fondo_libreta"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.4"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:srcCompat="@drawable/libreta"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nuevo_articulo"
+        app:srcCompat="@drawable/libreta" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="219dp"
-        android:layout_height="45dp"
+    <EditText
+        android:id="@+id/et_nuevo_articulo"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="12dp"
         android:background="@android:drawable/editbox_background_normal"
-        android:ellipsize="none"
-        android:hint="Nuevo artículo...."
+        android:hint="@string/hint_nuevo_articulo"
+        android:inputType="text"
+        android:paddingStart="12dp"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.244"
+        app:layout_constraintEnd_toStartOf="@+id/btn_agregar_articulo"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="102dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnPregunta"
-        android:layout_width="98dp"
-        android:layout_height="48dp"
+        android:id="@+id/btn_agregar_articulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
         android:backgroundTint="@color/amarilloBoton"
         android:text="@string/agregar"
         android:textColor="#1C1C1C"
         app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_nuevo_articulo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        tools:layout_editor_absoluteY="102dp" />
+        app:layout_constraintTop_toTopOf="@+id/et_nuevo_articulo" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/layout_items_lista"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="24dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_borrar_lista"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.100000024">
+        app:layout_constraintTop_toBottomOf="@+id/et_nuevo_articulo">
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/cb_ejemplo_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="#E56F00"
-            android:text="CheckBox"
-            app:buttonIconTint="#E56F00"
-            app:buttonIconTintMode="multiply" />
+            android:text="Ejemplo: Manzanas"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnRegistro"
+        android:id="@+id/btn_borrar_lista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/amarilloBoton"
         android:text="@string/borrar_lista"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.88" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/button_borrarIngr"
+        android:id="@+id/ib_eliminar_item"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="24dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:padding="12dp"
         android:src="@android:drawable/ic_delete"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_items_lista"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.289" />
+        app:layout_constraintTop_toTopOf="@+id/layout_items_lista"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
