@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/libreta"
         tools:src="@tools:sample/backgrounds/scenic" />
 
-    <TextView
+    <EditText
         android:id="@+id/textoArticulo"
         android:layout_width="219dp"
         android:layout_height="45dp"
@@ -106,19 +106,6 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.88" />
 
-    <ImageButton
-        android:id="@+id/btn_borrarItem"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="36dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:padding="12dp"
-        android:src="@android:drawable/ic_delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.289" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

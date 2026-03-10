@@ -12,6 +12,7 @@ import java.util.List;
 
 public class ListaAdapter extends RecyclerView.Adapter<CompraViewHolder>{
 
+    //? TaskAdapter.java
     private List<String> lista;
 
     //el constructor recibe la lista
