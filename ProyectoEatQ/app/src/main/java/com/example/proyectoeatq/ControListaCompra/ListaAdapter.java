@@ -13,11 +13,19 @@ import java.util.List;
 public class ListaAdapter extends RecyclerView.Adapter<CompraViewHolder>{
 
     //? TaskAdapter.java
-    private List<String> lista;
 
-    //el constructor recibe la lista
-    public ListaAdapter(List<String> lista){
+    // Crear na interfaz
+    public interface interfazItemBorrado {
+        void itemBorrado(int position);
+    }
+    // Variables
+    private List<String> lista;
+    private interfazItemBorrado interfazItemBorrado;
+
+    //el constructor recibe la lista, y el listener
+    public ListaAdapter(List<String> lista, interfazItemBorrado interfazItemBorrado){
         this.lista = lista;
+        this.interfazItemBorrado = interfazItemBorrado;
     }
 
     //es la función que crea el viewholdre y le asigna el item de la lista.
@@ -43,7 +51,8 @@ public class ListaAdapter extends RecyclerView.Adapter<CompraViewHolder>{
     //contiene una instancia del viewholder.
     @Override
     public void onBindViewHolder(@NonNull CompraViewHolder holder, int position) {
-        holder.render(lista.get(position));
+        holder.render(lista.get(position), interfazItemBorrado);
+
     }
 
     // Esta función le dice al RecyclerView cuántos items debe mostrar

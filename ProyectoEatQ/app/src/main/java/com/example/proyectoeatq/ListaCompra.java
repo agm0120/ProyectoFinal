@@ -69,10 +69,22 @@ public class ListaCompra extends Fragment {
         //el layoutmanager es el encargado de mostrar cómo se van a mostrar las vistas
         //va aser un linearlayoutmanager, y le pasamos el contexto de fragment
         rv_lista.setLayoutManager(new LinearLayoutManager(getContext()));
-        //va a recibir el listado de la compra (arraylist)
-        adapter = new ListaAdapter(listaCompra);
+        //va a recibir el listado de la compra (arraylist) y el listneer para borrar
+        adapter = new ListaAdapter(listaCompra, new ListaAdapter.interfazItemBorrado(){
+            @Override
+            public void itemBorrado(int posicion){
+                borrarItem(posicion);
+            }
+        });
         //le decimos que el adapter que va a usar es el que acabamos de crear.
         rv_lista.setAdapter(adapter);
+    }
+
+    private void borrarItem(int posicion){
+        listaCompra.remove(posicion);
+        adapter.notifyDataSetChanged();
+        // ? opción 2 adapter.notifyItemRemoved(posicion);
+
     }
 
     private void initListeners() {
