@@ -1,14 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ProyectoEatQ</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="ultimos_dias_resumen">Los últimos siete días</string>
-    <string name="lista_compra">LISTA DE LA COMPRA</string>
     <string name="agregar">Añadir</string>
     <string name="borrar_lista">Borrar lista</string>
     <string name="xborrar">X</string>
-    <string name="andar">Andar</string>
+    <string name="guardar">Guardar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="enviar_correo">Enviar Correo</string>
+    <string name="anotacion_hint">Introducir anotación...</string>
+
+    <string name="titulo_defecto">TÍTULO</string>
+
+    <string name="login_titulo">LOGIN</string>
+    <string name="hint_usuario_email"> Usuario o email</string>
+    <string name="hint_contrasena"> Contraseña</string>
+    <string name="olvido_contrasena">¿Olvidaste la contraseña?</string>
+    <string name="btn_iniciar_sesion">Iniciar Sesion</string>
+    <string name="btn_registrarse">Registrarse</string>
+    <string name="titulo_registro">Registro de usuario</string>
+    <string name="hint_nombre_usuario">Nombre de usuario</string>
+    <string name="hint_correo">Correo Usuario</string>
+    <string name="hint_fecha_nac">Fecha de nacimiento</string>
+    <string name="hint_edad">Edad</string>
+    <string name="hint_nacionalidad">Nacionalidad</string>
+    <string name="btn_crear_usuario">CREAR USUARIO</string>
+
+    <string name="titulo_andar">Andar</string>
     <string name="pregAndar">¿Cuánto tiempo has estado andando?</string>
+    <string name="unidad_horas"> h </string>
+    <string name="unidad_minutos"> min</string>
     <string name="escaleras">Subir escaleras</string>
     <string name="pregEscaleras">¿Cuántos pisos has subido?</string>
     <string name="sentadillas">Sentadillas</string>
@@ -17,7 +40,74 @@
     <string name="pregEstirar">¿Qué parte del cuerpo has estirado?</string>
     <string name="brazos">Brazos</string>
     <string name="piernas">Piernas</string>
-    <string name="torso">Tornos y espalda</string>
+    <string name="torso">Torso y espalda</string>
     <string name="correr">Correr</string>
     <string name="pregCorrer">¿Cuánto tiempo has corrido?</string>
+
+    <string name="titulo_contacto">CONTACTO</string>
+    <string name="sel_historial">Selecciona el historial:</string>
+    <string name="btn_empresa">Empresa</string>
+    <string name="btn_nutricionista">Nutricionista</string>
+    <string name="info_contacto_etiqueta">Información de contacto:</string>
+    <string name="label_correo">Correo Electrónico:</string>
+    <string name="label_telefono">Teléfono:</string>
+    <string name="dato_email_defecto">eatQ@info.com</string>
+    <string name="dato_tel_prefijo">+34 </string>
+    <string name="titulo_historial">HISTORIAL</string>
+    <string name="sel_dia">Selecciona el día:</string>
+    <string name="resumen_comida_dia">Este día has comido:</string>
+
+    <string name="label_t_estirado">Tiempo estirado (min):</string>
+    <string name="label_t_andado">Tiempo andado (min):</string>
+    <string name="label_pisos">Pisos subidos:</string>
+    <string name="label_sentadillas">Sentadillas:</string>
+
+    <string name="titulo_noticias">NOTICIAS</string>
+    <string name="metodo_plato_titulo">EL MÉTODO DEL\nPLATO</string>
+    <string name="que_es_metodo">¿Qué es el Método del Plato?</string>
+    <string name="metodo_desc_placeholder">Aqui va descripcion</string>
+    <string name="btn_informate">¡INFÓRMATE!</string>
+    <string name="noticia_cardio_tit">Actividad Física y Salud Cardiovascular</string>
+    <string name="noticia_mental_tit">Bienestar Mental y Reducción del Estrés</string>
+    <string name="btn_ver_noticia">VER NOTICIA</string>
+
+    <string name="titulo_recetas">RECETAS</string>
+    <string name="cat_hidratos">HIDRATOS</string>
+    <string name="cat_proteinas">PROTEÍNAS</string>
+    <string name="cat_vegetales">VEGETALES</string>
+    <string name="receta_pasta_tit">Plato combinado de Pasta y Pollo a la Parrilla.</string>
+    <string name="receta_verduras_tit">Bowl de Verduras Asadas.</string>
+    <string name="receta_proteinas_tit">Dúo de Proteínas a la Plancha con Quinoa y Espárragos.</string>
+
+    <string name="preg_plato_hoy">¿Este es tu plato de hoy?</string>
+    <string name="btn_subir">Subir</string>
+    <string name="btn_volver_subir">Volver a subir</string>
+    <string name="msg_exito_plato">Bien hecho, este plato está perfectamente equilibrado</string>
+    <string name="resultado_c1">1º cuarto: Tomate</string>
+    <string name="resultado_c2">2º cuarto: Aguacate</string>
+    <string name="resultado_c3">3º cuarto: Pollo</string>
+    <string name="resultado_c4">4º cuarto: Avena</string>
+    <string name="btn_guardar_plato">Guardar plato</string>
+    <string name="btn_repetir_plato">Repetir plato</string>
+
+    <string name="ultimos_dias_resumen">Los últimos siete días</string>
+    <string name="msg_buen_camino">Bien hecho, vas por buen camino. Intenta tomar más carbohidratos</string>
+    <string name="preg_recomendaciones">¿Quieres ver recomendaciones?</string>
+    <string name="btn_intro_plato">Introducir plato</string>
+    <string name="btn_ver_recetas">Ver recetas</string>
+    <string name="titulo_perfil">INFORMACIÓN DE\nUSUARIO</string>
+    <string name="btn_modificar">MODIFICAR</string>
+    <string name="btn_guardar_mayus">GUARDAR</string>
+
+    <string name="lista_compra">LISTA DE LA COMPRA</string>
+    <string name="hint_nuevo_articulo">Nuevo artículo....</string>
+
+    <string name="btn_finalizar_compra">Finalizar Compra</string>
+    <string name="label_total_pagar">Total a pagar:</string>
+    <string name="label_talla">Talla:</string>
+    <string name="label_precio">Precio:</string>
+    <string name="btn_anadir_carrito">Añadir al carrito</string>
+    <string name="label_dificultad">Dificultad:</string>
+    <string name="label_tiempo">Tiempo:</string>
+    <string name="btn_cerrar_sesion">Cerrar Sesión</string>
 </resources>

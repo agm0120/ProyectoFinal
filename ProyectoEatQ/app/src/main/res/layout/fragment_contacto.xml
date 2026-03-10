@@ -27,7 +27,7 @@
             android:id="@+id/tv_titulo_contacto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CONTACTO"
+            android:text="@string/titulo_contacto"
             android:textColor="#000000"
             android:textSize="22sp"
             android:textStyle="bold"
@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Selecciona el historial:"
+            android:text="@string/sel_historial"
             android:textColor="#666666"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +62,7 @@
                 android:layout_width="120dp"
                 android:layout_height="60dp"
                 android:backgroundTint="#37D366"
-                android:text="Empresa"
+                android:text="@string/btn_empresa"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 app:cornerRadius="20dp" />
@@ -73,7 +73,7 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="8dp"
                 android:backgroundTint="#CCCCCC"
-                android:text="Nutricionista"
+                android:text="@string/btn_nutricionista"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 app:cornerRadius="20dp" />
@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="Información de contacto:"
+            android:text="@string/info_contacto_etiqueta"
             android:textColor="#666666"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +111,7 @@
                     android:id="@+id/tv_etiqueta_correo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Correo Electrónico:"
+                    android:text="@string/label_correo"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
@@ -120,14 +120,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:text="eatQ@info.com"
+                    android:text="@string/dato_email_defecto"
                     android:textColor="#333333" />
 
                 <TextView
                     android:id="@+id/tv_etiqueta_telefono"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Teléfono:"
+                    android:text="@string/label_telefono"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
@@ -135,7 +135,7 @@
                     android:id="@+id/tv_dato_telefono"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+34 "
+                    android:text="@string/dato_tel_prefijo"
                     android:textColor="#333333" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -148,7 +148,7 @@
             android:backgroundTint="#FCF6BB"
             android:paddingHorizontal="24dp"
             android:paddingVertical="12dp"
-            android:text="Enviar Correo"
+            android:text="@string/enviar_correo"
             android:textAllCaps="false"
             android:textColor="#000000"
             android:textStyle="bold"

@@ -18,7 +18,7 @@
             android:id="@+id/tv_titulo_pantalla"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TÍTULO"
+            android:text="@string/titulo_defecto"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
