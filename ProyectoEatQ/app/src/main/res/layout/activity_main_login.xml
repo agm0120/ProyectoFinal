@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:id="@+id/layout_principal_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Grisfondo"
     tools:context=".view.Resumen">
 
     <ImageView
-        android:id="@+id/LogoEatQ"
+        android:id="@+id/iv_logo_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtLogin"
+        android:id="@+id/tv_titulo_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -30,10 +30,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LogoEatQ" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo_login" />
 
     <EditText
-        android:id="@+id/campoUsuarioEmail"
+        android:id="@+id/et_login_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
@@ -41,13 +41,14 @@
         android:ems="10"
         android:hint=" Usuario o email"
         android:inputType="textEmailAddress"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_login" />
 
     <EditText
-        android:id="@+id/campoContra"
+        android:id="@+id/et_login_contrasena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -55,27 +56,28 @@
         android:ems="10"
         android:hint=" Contraseña"
         android:inputType="textPassword"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/campoUsuarioEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/et_login_usuario" />
 
     <Button
-        android:id="@+id/btnPregunta"
+        android:id="@+id/btn_olvido_contrasena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
-        android:text="¿Olvidaste la cntraseña?"
+        android:text="¿Olvidaste la contraseña?"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/campoContra" />
+        app:layout_constraintTop_toBottomOf="@+id/et_login_contrasena" />
 
     <Button
-        android:id="@+id/btnIniciarSesion"
+        android:id="@+id/btn_login_entrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -85,10 +87,10 @@
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPregunta" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_olvido_contrasena" />
 
     <Button
-        android:id="@+id/btnRegistro"
+        android:id="@+id/btn_login_ir_registro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -98,10 +100,10 @@
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_entrar" />
 
     <ImageButton
-        android:id="@+id/btnIdioma"
+        android:id="@+id/ib_login_idioma"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginEnd="24dp"

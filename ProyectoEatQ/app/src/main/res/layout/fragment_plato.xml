@@ -2,37 +2,39 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:id="@+id/layout_contenedor_plato"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Grisfondo"
-    >
+    android:background="@color/Grisfondo">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tv_pregunta_plato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
         android:background="@color/Blancotarjetas"
+        android:padding="8dp"
         android:text="¿Este es tu plato de hoy?"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/ib_foto_plato"
         android:layout_width="243dp"
         android:layout_height="243dp"
         android:layout_marginTop="24dp"
+        android:background="?attr/selectableItemBackground"
         android:scaleType="fitCenter"
         android:src="@drawable/anadirimagen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_pregunta_plato" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_subir_plato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -43,10 +45,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/ib_foto_plato" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btn_reintentar_plato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -56,5 +58,6 @@
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_subir_plato" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

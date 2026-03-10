@@ -2,23 +2,26 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_principal_detalle_deporte"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F4F4"
     tools:context=".InformacionHistorialDeporte">
 
     <ScrollView
+        android:id="@+id/scroll_detalle_deporte"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_contenedor_detalle_deporte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="24dp">
 
             <TextView
-                android:id="@+id/titulo_detalle_deporte"
+                android:id="@+id/tv_titulo_detalle_deporte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="HISTORIAL"
@@ -30,14 +33,15 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:id="@+id/contenedor_campos_deporte"
+                android:id="@+id/layout_campos_deporte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@+id/titulo_detalle_deporte">
+                app:layout_constraintTop_toBottomOf="@+id/tv_titulo_detalle_deporte">
 
                 <TextView
+                    android:id="@+id/tv_etiqueta_estirado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tiempo estirado (min):"
@@ -45,17 +49,19 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/et_tiempo_estirado"
+                    android:id="@+id/et_detalle_tiempo_estirado"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="20dp"
                     android:background="@android:color/white"
                     android:elevation="2dp"
+                    android:focusable="false"
                     android:inputType="none"
                     android:padding="12dp" />
 
                 <TextView
+                    android:id="@+id/tv_etiqueta_andado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tiempo andado (min):"
@@ -63,17 +69,19 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/et_tiempo_andado"
+                    android:id="@+id/et_detalle_tiempo_andado"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="20dp"
                     android:background="@android:color/white"
                     android:elevation="2dp"
+                    android:focusable="false"
                     android:inputType="none"
                     android:padding="12dp" />
 
                 <TextView
+                    android:id="@+id/tv_etiqueta_pisos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pisos subidos:"
@@ -81,17 +89,19 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/et_pisos_subidos"
+                    android:id="@+id/et_detalle_pisos_subidos"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="20dp"
                     android:background="@android:color/white"
                     android:elevation="2dp"
+                    android:focusable="false"
                     android:inputType="none"
                     android:padding="12dp" />
 
                 <TextView
+                    android:id="@+id/tv_etiqueta_sentadillas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sentadillas:"
@@ -99,13 +109,14 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/et_sentadillas"
+                    android:id="@+id/et_detalle_sentadillas"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="20dp"
                     android:background="@android:color/white"
                     android:elevation="2dp"
+                    android:focusable="false"
                     android:inputType="none"
                     android:padding="12dp" />
 

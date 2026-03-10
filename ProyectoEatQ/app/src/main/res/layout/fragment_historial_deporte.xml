@@ -13,7 +13,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/titulo_historial_deporte"
+            android:id="@+id/tv_titulo_historial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="HISTORIAL"
@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/etiqueta_seleccionar_historial_dep"
+            android:id="@+id/tv_etiqueta_seleccionar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -34,20 +34,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titulo_historial_deporte" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_historial" />
 
         <LinearLayout
-            android:id="@+id/contenedor_selector_deporte"
+            android:id="@+id/layout_contenedor_selectores"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etiqueta_seleccionar_historial_dep">
+            app:layout_constraintTop_toBottomOf="@+id/tv_etiqueta_seleccionar">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_comida_inactivo"
+                android:id="@+id/btn_historial_deporte"
                 android:layout_width="85dp"
                 android:layout_height="65dp"
                 android:layout_marginEnd="8dp"
@@ -58,7 +58,7 @@
                 app:iconSize="30dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_deporte_activo"
+                android:id="@+id/btn_historial_comida"
                 android:layout_width="85dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#F05268"
@@ -69,7 +69,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/etiqueta_seleccionar_dia_dep"
+            android:id="@+id/tv_etiqueta_dia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -78,10 +78,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contenedor_selector_deporte" />
+            app:layout_constraintTop_toBottomOf="@+id/layout_contenedor_selectores" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/tarjeta_calendario_deporte"
+            android:id="@+id/card_contenedor_calendario"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -90,10 +90,10 @@
             app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etiqueta_seleccionar_dia_dep">
+            app:layout_constraintTop_toBottomOf="@+id/tv_etiqueta_dia">
 
             <CalendarView
-                android:id="@+id/calendario_deporte"
+                android:id="@+id/cv_calendario_historial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.AppCompat.Light" />

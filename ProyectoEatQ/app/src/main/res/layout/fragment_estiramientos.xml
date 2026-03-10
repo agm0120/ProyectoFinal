@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tv_titulo_estirar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/verdeMenu"
@@ -16,6 +17,7 @@
         android:textStyle="bold" />
 
     <LinearLayout
+        android:id="@+id/layout_contenedor_estirar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -23,6 +25,7 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/tv_etiqueta_pregunta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -32,6 +35,7 @@
             android:textSize="17sp" />
 
         <LinearLayout
+            android:id="@+id/layout_opciones_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -39,6 +43,7 @@
             android:paddingStart="40dp">
 
             <CheckBox
+                android:id="@+id/cb_estirar_brazos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="#000000"
@@ -47,6 +52,7 @@
                 android:textSize="18sp" />
 
             <CheckBox
+                android:id="@+id/cb_estirar_piernas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="#000000"
@@ -55,6 +61,7 @@
                 android:textSize="18sp" />
 
             <CheckBox
+                android:id="@+id/cb_estirar_torso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="#000000"
@@ -64,6 +71,7 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/et_anotaciones_estirar"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginBottom="25dp"

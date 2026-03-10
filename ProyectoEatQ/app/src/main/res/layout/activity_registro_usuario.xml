@@ -8,7 +8,7 @@
     tools:context=".ActivityRegistroUsuario">
 
     <TextView
-        android:id="@+id/txtRegistro"
+        android:id="@+id/tv_titulo_registro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgUsuario"
+        android:id="@+id/iv_foto_usuario"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="24dp"
@@ -29,10 +29,10 @@
         android:src="@android:drawable/ic_menu_gallery"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRegistro" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_registro" />
 
     <EditText
-        android:id="@+id/campoNombre"
+        android:id="@+id/et_nombre_usuario"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginHorizontal="32dp"
@@ -44,10 +44,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_foto_usuario" />
 
     <EditText
-        android:id="@+id/campoCorreo"
+        android:id="@+id/et_correo_usuario"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginHorizontal="32dp"
@@ -60,10 +60,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/campoNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nombre_usuario" />
 
     <EditText
-        android:id="@+id/campoContraRegistro"
+        android:id="@+id/et_contra_registro"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginHorizontal="32dp"
@@ -76,10 +76,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/campoCorreo" />
+        app:layout_constraintTop_toBottomOf="@+id/et_correo_usuario" />
 
     <EditText
-        android:id="@+id/campoFecNacRegistro"
+        android:id="@+id/et_fec_nac_registro"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginHorizontal="32dp"
@@ -92,10 +92,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/campoContraRegistro" />
+        app:layout_constraintTop_toBottomOf="@+id/et_contra_registro" />
 
     <EditText
-        android:id="@+id/campoEdadRegistro"
+        android:id="@+id/et_edad_registro"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -107,10 +107,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/campoFecNacRegistro" />
+        app:layout_constraintTop_toBottomOf="@+id/et_fec_nac_registro" />
 
     <EditText
-        android:id="@+id/campoNacionalidad"
+        android:id="@+id/et_nacionalidad_registro"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -122,10 +122,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/campoEdadRegistro" />
+        app:layout_constraintTop_toBottomOf="@+id/et_edad_registro" />
 
     <Button
-        android:id="@+id/btnCrearUsuario"
+        android:id="@+id/btn_crear_usuario"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="32dp"
