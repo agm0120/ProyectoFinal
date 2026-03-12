@@ -8,14 +8,25 @@
     android:background="@color/Grisfondo"
     tools:context=".view.Resumen">
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/bespana"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         android:src="@drawable/logo_proyecto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,12 +34,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="LOGIN"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -36,13 +46,12 @@
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="48dp"
         android:background="@color/white"
         android:ems="10"
         android:hint=" Usuario o email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -50,13 +59,12 @@
         android:id="@+id/editTextTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:background="@color/white"
         android:ems="10"
         android:hint=" Contraseña"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
@@ -64,14 +72,12 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:background="@android:color/transparent"
         android:text="¿Olvidaste la cntraseña?"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
     <Button
@@ -91,7 +97,7 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/amarilloBoton"
         android:text="Registrarse"
         android:textColor="@color/black"
@@ -99,18 +105,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@android:color/transparent"
-        android:scaleType="center"
-        android:src="@drawable/bespana"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.009" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
