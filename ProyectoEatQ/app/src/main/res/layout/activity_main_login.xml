@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:id="@+id/layout_principal_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Grisfondo"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iv_logo_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -31,81 +31,96 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_titulo_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="LOGIN"
+        android:layout_marginTop="24dp"
+        android:text="@string/login_titulo"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo_login" />
 
     <EditText
-        android:id="@+id/usuario"
+        android:id="@+id/et_login_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint=" Usuario o email"
+        android:hint="@string/hint_usuario_email"
         android:inputType="textEmailAddress"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_login" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/et_login_contrasena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint=" Contraseña"
+        android:hint="@string/hint_contrasena"
         android:inputType="textPassword"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usuario" />
+        app:layout_constraintTop_toBottomOf="@+id/et_login_usuario" />
 
     <Button
-        android:id="@+id/btn_añadir"
+        android:id="@+id/btn_olvido_contrasena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="@android:color/transparent"
-        android:text="¿Olvidaste la cntraseña?"
+        android:text="@string/olvido_contrasena"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/et_login_contrasena" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_login_entrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/amarilloBoton"
-        android:text="Iniciar Sesion"
+        android:text="@string/btn_iniciar_sesion"
         android:textColor="@color/black"
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_añadir" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_olvido_contrasena" />
 
     <Button
-        android:id="@+id/btn_registrarse"
+        android:id="@+id/btn_login_ir_registro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/amarilloBoton"
-        android:text="Registrarse"
+        android:text="@string/btn_registrarse"
         android:textColor="@color/black"
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_entrar" />
+
+    <ImageButton
+        android:id="@+id/ib_login_idioma"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/bespana"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.009" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

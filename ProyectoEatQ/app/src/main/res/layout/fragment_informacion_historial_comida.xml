@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_detalle_historial_comida"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F4F4">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_contenedor_detalle_comida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/titulo_detalle_comida"
+            android:id="@+id/tv_titulo_detalle_comida"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HISTORIAL"
+            android:text="@string/titulo_historial"
             android:textColor="#000000"
             android:textSize="22sp"
             android:textStyle="bold"
@@ -23,16 +26,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <FrameLayout
-            android:id="@+id/contenedor_grafica_circular"
+            android:id="@+id/fcv_grafica_circular_comida"
             android:layout_width="280dp"
             android:layout_height="280dp"
             android:layout_marginTop="24dp"
             android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titulo_detalle_comida">
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_detalle_comida">
 
             <View
+                android:id="@+id/v_placeholder_grafica"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:drawable/presence_online"
@@ -40,18 +44,18 @@
         </FrameLayout>
 
         <TextView
-            android:id="@+id/etiqueta_resumen_comida"
+            android:id="@+id/tv_etiqueta_resumen_dia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Este día has comido:"
+            android:text="@string/resumen_comida_dia"
             android:textColor="#666666"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contenedor_grafica_circular" />
+            app:layout_constraintTop_toBottomOf="@+id/fcv_grafica_circular_comida" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/tarjeta_detalle_comida"
+            android:id="@+id/card_detalle_lista_comida"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -62,16 +66,17 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etiqueta_resumen_comida">
+            app:layout_constraintTop_toBottomOf="@+id/tv_etiqueta_resumen_dia">
 
             <TextView
-                android:id="@+id/texto_info_comida_detalle"
+                android:id="@+id/tv_info_comida_detallada"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="120dp"
                 android:padding="20dp"
                 android:text=""
-                android:textColor="#333333" />
+                android:textColor="#333333"
+                tools:text="Desayuno: Avena con frutas\nAlmuerzo: Pollo a la plancha con arroz..." />
         </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

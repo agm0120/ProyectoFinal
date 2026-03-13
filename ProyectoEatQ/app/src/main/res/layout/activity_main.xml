@@ -2,13 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_principal_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Grisfondo"
     tools:context=".ActivityMain">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutHeader"
+        android:id="@+id/layout_cabecera"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#FFFFFF"
@@ -31,11 +32,10 @@
             app:tint="#000000" />
 
         <TextView
-            android:id="@+id/tvHeaderTitle"
+            android:id="@+id/tv_titulo_pantalla"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:text="EatQ"
+            android:text="@string/titulo_defecto"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -59,6 +59,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
+            android:id="@+id/v_divisor_cabecera"
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:background="#000000"
@@ -66,22 +67,22 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
+        android:id="@+id/fcv_contenedor_principal"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/layoutBottomNav"
+        app:layout_constraintBottom_toTopOf="@+id/layout_navegacion_inferior"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutHeader" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_cabecera" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutBottomNav"
+        android:id="@+id/layout_navegacion_inferior"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
-            android:id="@+id/bottomMenuBackground"
+            android:id="@+id/layout_fondo_menu"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@color/verdeMenu"
@@ -90,7 +91,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <ImageButton
-                android:id="@+id/btnMenuCarrito"
+                android:id="@+id/ib_menu_carrito"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -99,10 +100,14 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_carrito" />
 
-            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#4A8B41"/>
+            <View
+                android:id="@+id/v_divisor_menu_1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#4A8B41"/>
 
             <ImageButton
-                android:id="@+id/btnMenuZapatillas"
+                android:id="@+id/ib_menu_zapatillas"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -112,12 +117,13 @@
                 android:src="@drawable/ic_zapatillas" />
 
             <View
+                android:id="@+id/v_espacio_central"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
             <ImageButton
-                android:id="@+id/btnMenuCocinero"
+                android:id="@+id/ib_menu_recetas"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -126,10 +132,14 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_cocinero" />
 
-            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#4A8B41"/>
+            <View
+                android:id="@+id/v_divisor_menu_2"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#4A8B41"/>
 
             <ImageButton
-                android:id="@+id/btnMenuNoticias"
+                android:id="@+id/ib_menu_noticias"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -140,13 +150,14 @@
         </LinearLayout>
 
         <View
+            android:id="@+id/v_borde_superior_menu"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#000000"
-            app:layout_constraintTop_toTopOf="@+id/bottomMenuBackground" />
+            app:layout_constraintTop_toTopOf="@+id/layout_fondo_menu" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabEatQ"
+            android:id="@+id/fab_principal_eatq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
