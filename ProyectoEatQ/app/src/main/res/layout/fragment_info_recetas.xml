@@ -17,19 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center"
-                android:text="EL MÉTODO DEL\nPLATO"
-                android:textColor="#5D4037"
-                android:textSize="26sp" />
-
-        </LinearLayout>
+            android:orientation="horizontal"/>
 
 
         <ImageView
