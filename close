@@ -1,0 +1,64 @@
+[33m57741fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge branch 'rama_CambioId'
+[33m4371298[m Merge branch 'main' of https://github.com/agm0120/ProyectoFinal
+[33m3240f3c[m Merge branch 'rama_Usuario'
+[33m7c61bb8[m comentarios cambiados
+[33m2d1e1eb[m Botón hacia atras.
+[33mbbb8627[m registro en bd hecho
+[33me6cc81b[m[33m ([m[1;31morigin/rama_ListaCompra[m[33m, [m[1;32mrama_ListaCompra[m[33m)[m comentarios actualizados
+[33mfc03930[m[33m ([m[1;31morigin/rama_CambioId[m[33m)[m strings.xml completo
+[33mf4b45b1[m mitad de los strings cambiados
+[33mcf2b2ef[m borrar items funciona
+[33ma5926d0[m todos los cambios de id hechos
+[33mf07ff00[m Arreglo de ids (más claro)
+[33m5d1762c[m añadir items listo
+[33m5e77405[m adapter creado
+[33mc6ef292[m[33m ([m[1;31morigin/rama_Interfaces[m[33m)[m Ajuste de Interfaces y he añádido un el boton usuario.
+[33mc74057e[m algunos cambios
+[33m70fc41e[m[33m ([m[1;31morigin/rama_Usuario[m[33m, [m[1;32mrama_Usuario[m[33m)[m login y registro terminado
+[33m4a6da14[m subida postapocaliptica
+[33m76721b5[m usuario de ejemplo añadido en comentarios
+[33md6a34db[m Registro de nuevos usuarios implementado
+[33m0e052c3[m boton de registro funcionando
+[33me224cf3[m[33m ([m[1;31morigin/rama_Botones[m[33m)[m eliminacion de claves json
+[33m2aa39cd[m archivo json con clave (innecesario)
+[33m0ef6211[m Merge branch 'Cristina_Login'
+[33m6f8e8e1[m[33m ([m[1;31morigin/Cristina_Login[m[33m)[m codigo puesto y errores resueltos
+[33mb9eb792[m[33m ([m[1;31morigin/MiguelAdrian_CambioPantalla[m[33m)[m elegant commit
+[33m9a11cfd[m Cambio de pantallas funcionando
+[33mb78d591[m archivos relacionados correctos
+[33m8c50db3[m[33m ([m[1;31morigin/Miguel_CambioPantalla[m[33m)[m Nombres de las clases y xml aclarados
+[33mb759786[m Main y main2 xml recuperados
+[33m3cfc28d[m Archivos main recuperados
+[33m4baf81d[m Merge branch 'Rama_Cristina'
+[33m066d96d[m Merge branch 'Rama_Adrian'
+[33m611edc5[m Merge branch 'main' of https://github.com/agm0120/ProyectoFinal
+[33mc1cc987[m Merge branch 'Rama_Daniel'
+[33m6c8b36e[m colores rectificados
+[33m55600c6[m Merge branch 'Rama_Miguel'
+[33m0a32996[m[33m ([m[1;31morigin/Rama_Adrian[m[33m)[m Iconos de historial añadidos
+[33mf68dead[m[33m ([m[1;31morigin/Rama_Miguel[m[33m)[m estructura reiniciada
+[33mec44c5f[m[33m ([m[1;31morigin/Rama_Cristina[m[33m)[m todos los cambios
+[33m838f73e[m estructura mvc
+[33m2d0b833[m[33m ([m[1;31morigin/Rama_Daniel[m[33m)[m Activity registro de Usuario.
+[33md143792[m Activity1 Banner Titulos y Menu  inferior
+[33m2396ba7[m commit de creacion de los fragment/activitis
+[33m7fd4119[m fragmentos
+[33m339e66b[m colores switch cambiados
+[33meb86488[m ejercicios
+[33m45acb9b[m lista de la compra
+[33mac123d1[m Creación de Fragments 3.
+[33m3a89697[m Creación de Fragments 2.
+[33me19ae2c[m Cambios en mis fragments
+[33md89e1f7[m fondos puestos
+[33m2a9174f[m Colores añadidos y fragment creados
+[33maf6a030[m Merge branch 'main' into Rama_Cristina
+[33mab50532[m Colores Proyecto
+[33m94bac6b[m pantalla 1 a medias
+[33m9aa518a[m Fragment1 Creado
+[33m6666389[m antes de esto funcionaba
+[33m790590f[m Activity 2 Creada en rama main.
+[33m8a5055e[m nose
+[33m032ec63[m Merge branch 'main' of https://github.com/agm0120/ProyectoFinal
+[33m2909e1b[m Proyecto Vacio
+[33m86212bf[m Añadido .gitignore
+[33m70dfc0e[m hacer readme
