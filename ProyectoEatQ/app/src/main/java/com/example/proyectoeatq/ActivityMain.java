@@ -21,11 +21,11 @@ public class ActivityMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bPlato = findViewById(R.id.fab_principal_eatq);
-        bCompra = findViewById(R.id.ib_menu_carrito);
-        bEjercicio = findViewById(R.id.ib_menu_zapatillas);
-        bRecetas = findViewById(R.id.ib_menu_recetas);
-        bNoticias = findViewById(R.id.ib_menu_noticias);
+        bPlato = findViewById(R.id.fabEatQ);
+        bCompra = findViewById(R.id.btnMenuCarrito);
+        bEjercicio = findViewById(R.id.btnMenuZapatillas);
+        bRecetas = findViewById(R.id.btnMenuCocinero);
+        bNoticias = findViewById(R.id.btnMenuNoticias);
 
         // Fragment que se cargara por defecto
         if (savedInstanceState == null){
@@ -59,7 +59,7 @@ public class ActivityMain extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         //Nuevo fragment a mostrar
-        fragmentTransaction.replace(R.id.fcv_contenedor_principal, fragmento);
+        fragmentTransaction.replace(R.id.fragmentContainerView, fragmento);
 
         // Añade el cambio al historial (pila)
         fragmentTransaction.addToBackStack(null);

@@ -2,101 +2,111 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_lista_compra"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F4F4"
     tools:context=".ListaCompra">
 
     <ImageView
-        android:id="@+id/iv_fondo_libreta"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:alpha="0.4"
-        android:padding="10dp"
-        android:scaleType="fitCenter"
+        android:id="@+id/imageView2"
+        android:layout_width="418dp"
+        android:layout_height="565dp"
+        android:alpha="0.6"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_nuevo_articulo"
-        app:srcCompat="@drawable/libreta" />
+        app:layout_constraintTop_toBottomOf="@+id/textoArticulo"
+        app:srcCompat="@drawable/libreta"
+        tools:src="@tools:sample/backgrounds/scenic" />
 
     <EditText
-        android:id="@+id/et_nuevo_articulo"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="12dp"
+        android:id="@+id/textoArticulo"
+        android:layout_width="219dp"
+        android:layout_height="45dp"
         android:background="@android:drawable/editbox_background_normal"
-        android:hint="@string/hint_nuevo_articulo"
-        android:inputType="text"
-        android:paddingStart="12dp"
+        android:hint="Nuevo artículo...."
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_agregar_articulo"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintEnd_toStartOf="@id/btn_añadir"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btn_borrarLista"
+        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintVertical_bias="0.17"
+        />
 
     <Button
-        android:id="@+id/btn_agregar_articulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:id="@+id/btn_añadir"
+        android:layout_width="98dp"
+        android:layout_height="48dp"
         android:backgroundTint="@color/amarilloBoton"
         android:text="@string/agregar"
         android:textColor="#1C1C1C"
         app:cornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/et_nuevo_articulo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btn_borrarLista"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/et_nuevo_articulo" />
+        app:layout_constraintStart_toEndOf="@+id/textoArticulo"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintVertical_bias="0.17"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_lista"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textoArticulo"
+        app:layout_constraintVertical_bias="0" />
+
+
+
 
     <LinearLayout
-        android:id="@+id/layout_items_lista"
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="100dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btn_borrar_lista"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_nuevo_articulo">
+        app:layout_constraintTop_toBottomOf="@+id/textoArticulo"
+        app:layout_constraintVertical_bias="0.100000024">
 
         <CheckBox
-            android:id="@+id/cb_ejemplo_item"
+            android:id="@+id/checkBox_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="#E56F00"
-            android:text="Ejemplo: Manzanas"
-            android:textColor="@color/black" />
+            android:text="CheckBox"
+            app:buttonIconTint="#E56F00"
+            app:buttonIconTintMode="multiply" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_borrar_lista"
+        android:id="@+id/btn_borrarLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/amarilloBoton"
         android:text="@string/borrar_lista"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.88" />
 
-    <ImageButton
-        android:id="@+id/ib_eliminar_item"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="24dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@android:drawable/ic_delete"
-        app:layout_constraintBottom_toBottomOf="@+id/layout_items_lista"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/layout_items_lista"
-        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
