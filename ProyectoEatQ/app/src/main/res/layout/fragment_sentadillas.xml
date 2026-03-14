@@ -32,6 +32,7 @@
             android:textSize="17sp" />
 
         <EditText
+            android:id="@+id/et_numSentadillas"
             android:layout_width="120dp"
             android:layout_height="90dp"
             android:layout_marginBottom="25dp"
@@ -44,6 +45,7 @@
             android:textSize="35sp" />
 
         <EditText
+            android:id="@+id/et_notaUsuario"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginBottom="25dp"
@@ -55,7 +57,7 @@
             android:textColorHint="#888888" />
 
         <Button
-            android:id="@+id/btn_guardar_repeticiones"
+            android:id="@+id/btn_guardarSentadillas"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/amarilloBoton"

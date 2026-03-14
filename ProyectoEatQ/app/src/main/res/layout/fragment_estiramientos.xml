@@ -39,6 +39,7 @@
             android:paddingStart="40dp">
 
             <CheckBox
+                android:id="@+id/check_brazos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="#000000"
@@ -47,6 +48,7 @@
                 android:textSize="18sp" />
 
             <CheckBox
+                android:id="@+id/check_piernas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="#000000"
@@ -55,6 +57,7 @@
                 android:textSize="18sp" />
 
             <CheckBox
+                android:id="@+id/check_torso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="#000000"
@@ -64,6 +67,7 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/et_notaUsuario"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginBottom="25dp"
@@ -75,7 +79,7 @@
             android:textColorHint="#888888" />
 
         <Button
-            android:id="@+id/btn_guardar_estirar"
+            android:id="@+id/btn_guardarEstirar"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/amarilloBoton"

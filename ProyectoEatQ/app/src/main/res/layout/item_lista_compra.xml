@@ -15,7 +15,7 @@
         xmlns:tools="http://schemas.android.com/tools">
 
         <TextView
-            android:id="@+id/tvLista"
+            android:id="@+id/tv_lista"
             tools:text="mantequilla"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,11 +33,11 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/delete_icon"
-            android:tint="@color/rojoDelete"
+            app:tint="@color/rojoDelete"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvLista"
+            app:layout_constraintStart_toEndOf="@+id/tv_lista"
             app:layout_constraintHorizontal_bias="1"
             android:layout_margin="8dp"
             android:background="?attr/selectableItemBackgroundBorderless"

@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.proyectoeatq.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 /* Usuario creado como ejemplo (para hacer comprobacion):
@@ -30,8 +29,8 @@ public class ActivityMainLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
 
-        usuario = findViewById(R.id.usuario);
-        password = findViewById(R.id.password);
+        usuario = findViewById(R.id.et_usuario);
+        password = findViewById(R.id.et_password);
         btn_login = findViewById(R.id.btn_login);
         btn_registrarse = findViewById(R.id.btn_registrarse);
         auth = FirebaseAuth.getInstance();
