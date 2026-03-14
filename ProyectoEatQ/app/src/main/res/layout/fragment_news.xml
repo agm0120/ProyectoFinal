@@ -60,7 +60,7 @@
                 android:src="@android:drawable/ic_menu_gallery" />
 
             <Button
-                android:id="@+id/btnInformate"
+                android:id="@+id/btn_informacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#D7D7D7"

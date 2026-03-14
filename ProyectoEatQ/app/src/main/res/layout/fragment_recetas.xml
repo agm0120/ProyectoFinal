@@ -15,7 +15,7 @@
         android:layout_marginBottom="20dp">
 
         <Button
-            android:id="@+id/btnHidratos"
+            android:id="@+id/btn_hidratos"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -27,7 +27,7 @@
             android:layout_marginEnd="8dp"/>
 
         <Button
-            android:id="@+id/btnProteinas"
+            android:id="@+id/btn_proteinas"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -39,7 +39,7 @@
             android:layout_marginEnd="8dp"/>
 
         <Button
-            android:id="@+id/btnVegetales"
+            android:id="@+id/btn_vegetales"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

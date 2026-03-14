@@ -32,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_subirPlato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btn_resubirPlato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -56,5 +56,5 @@
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_subirPlato" />
 </androidx.constraintlayout.widget.ConstraintLayout>

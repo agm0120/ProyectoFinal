@@ -21,31 +21,11 @@ import java.util.Map;
 
 public class ActivityRegistroUsuario extends AppCompatActivity {
 
-    private EditText correo;
-
-    private EditText contraseña;
-
-    private EditText nombre;
-
-    private EditText fecha;
-
-    private EditText edad;
-
-    private EditText nacion;
+    private EditText correo, contraseña, nombre, fecha, edad, nacion;
 
     private Button registroUsuario;
 
-    private String textoCorreo;
-
-    private String textoContra;
-
-    private String textoNombre;
-
-    private String textoFecha;
-
-    private String textoEdad;
-
-    private String textoNacion;
+    private String textoCorreo, textoContra, textoNombre, textoFecha, textoEdad, textoNacion;
 
     private FirebaseAuth auth;
 
@@ -56,13 +36,13 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuario);
 
-        correo = findViewById(R.id.etEmail);
-        contraseña =findViewById(R.id.etPassword);
-        nombre = findViewById(R.id.etUsername);
-        fecha = findViewById(R.id.etBirthdate);
-        edad = findViewById(R.id.etAge);
-        nacion = findViewById(R.id.etNationality);
-        registroUsuario = findViewById(R.id.btnCreateUser);
+        correo = findViewById(R.id.et_email);
+        contraseña =findViewById(R.id.et_passwordRegistro);
+        nombre = findViewById(R.id.et_nombreUsuario);
+        fecha = findViewById(R.id.et_fechaNacimiento);
+        edad = findViewById(R.id.et_edad);
+        nacion = findViewById(R.id.et_nacionalidad);
+        registroUsuario = findViewById(R.id.btn_crearUsuario);
 
         auth = FirebaseAuth.getInstance();
         db=FirebaseFirestore.getInstance();
@@ -80,7 +60,7 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
 
 
 
-                //Se comprueba que los dos campos son validos. Mas adelante se incluiran el resto de datos de un usuario
+                //Se comprueba que los dos campos son validos. Mas adelante se incluiran el resto de datos de un et_usuario
                 if(checkEmpty(textoCorreo, textoContra)){
 
                     register(textoCorreo, textoContra);
@@ -96,7 +76,7 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
 
     }
 
-    //Metodo para registrar un nuevo usuario
+    //Metodo para registrar un nuevo et_usuario
     private void register(String textoCorreo, String textoContra) {
         //Metodo de auth para registrar nuevos usuarios. Se le pasa correo y contraseña(minimo seis caracteres)
         auth.createUserWithEmailAndPassword(textoCorreo, textoContra)

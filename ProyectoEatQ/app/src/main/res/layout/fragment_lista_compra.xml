@@ -19,12 +19,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoArticulo"
+        app:layout_constraintTop_toBottomOf="@+id/et_articulo"
         app:srcCompat="@drawable/libreta"
         tools:src="@tools:sample/backgrounds/scenic" />
 
     <EditText
-        android:id="@+id/textoArticulo"
+        android:id="@+id/et_articulo"
         android:layout_width="219dp"
         android:layout_height="45dp"
         android:background="@android:drawable/editbox_background_normal"
@@ -32,7 +32,7 @@
         android:textSize="16sp"
         android:maxLines="1"
         android:singleLine="true"
-        app:layout_constraintEnd_toStartOf="@id/btn_añadir"
+        app:layout_constraintEnd_toStartOf="@id/btn_añadirItem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/btn_borrarLista"
@@ -41,7 +41,7 @@
         />
 
     <Button
-        android:id="@+id/btn_añadir"
+        android:id="@+id/btn_añadirItem"
         android:layout_width="98dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/amarilloBoton"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/btn_borrarLista"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textoArticulo"
+        app:layout_constraintStart_toEndOf="@+id/et_articulo"
         app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintVertical_bias="0.17"
         />
@@ -63,7 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textoArticulo"
+        app:layout_constraintTop_toBottomOf="@id/et_articulo"
         app:layout_constraintVertical_bias="0" />
 
 
@@ -79,7 +79,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoArticulo"
+        app:layout_constraintTop_toBottomOf="@+id/et_articulo"
         app:layout_constraintVertical_bias="0.100000024">
 
         <CheckBox

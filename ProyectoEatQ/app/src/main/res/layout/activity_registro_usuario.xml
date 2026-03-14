@@ -8,7 +8,7 @@
     tools:context=".ActivityRegistroUsuario">
 
     <ImageButton
-        android:id="@+id/btnBack"
+        android:id="@+id/btn_atrasRegistro"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -28,10 +28,10 @@
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_atrasRegistro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+        app:layout_constraintTop_toTopOf="@+id/btn_atrasRegistro" />
 
     <ImageView
         android:id="@+id/ivUserPhoto"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <EditText
-        android:id="@+id/etUsername"
+        android:id="@+id/et_nombreUsuario"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginHorizontal="32dp"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ivUserPhoto" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/et_email"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginHorizontal="32dp"
@@ -73,10 +73,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nombreUsuario" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/et_passwordRegistro"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginHorizontal="32dp"
@@ -89,10 +89,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
     <EditText
-        android:id="@+id/etBirthdate"
+        android:id="@+id/et_fechaNacimiento"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginHorizontal="32dp"
@@ -105,10 +105,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/et_passwordRegistro" />
 
     <EditText
-        android:id="@+id/etAge"
+        android:id="@+id/et_edad"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -120,10 +120,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etBirthdate" />
+        app:layout_constraintTop_toBottomOf="@+id/et_fechaNacimiento" />
 
     <EditText
-        android:id="@+id/etNationality"
+        android:id="@+id/et_nacionalidad"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -135,10 +135,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etAge" />
+        app:layout_constraintTop_toBottomOf="@+id/et_edad" />
 
     <Button
-        android:id="@+id/btnCreateUser"
+        android:id="@+id/btn_crearUsuario"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginHorizontal="32dp"

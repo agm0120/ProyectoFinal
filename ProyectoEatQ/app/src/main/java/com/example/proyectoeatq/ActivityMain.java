@@ -6,7 +6,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,11 +20,11 @@ public class ActivityMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bPlato = findViewById(R.id.fabEatQ);
-        bCompra = findViewById(R.id.btnMenuCarrito);
-        bEjercicio = findViewById(R.id.btnMenuZapatillas);
-        bRecetas = findViewById(R.id.btnMenuCocinero);
-        bNoticias = findViewById(R.id.btnMenuNoticias);
+        bPlato = findViewById(R.id.btn_plato);
+        bCompra = findViewById(R.id.btn_listaCompra);
+        bEjercicio = findViewById(R.id.btn_ejercicio);
+        bRecetas = findViewById(R.id.btn_recetas);
+        bNoticias = findViewById(R.id.btn_noticias);
 
         // Fragment que se cargara por defecto
         if (savedInstanceState == null){
