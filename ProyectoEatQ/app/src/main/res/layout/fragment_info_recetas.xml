@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:gravity="center"
-                android:text="¿Qué es el Método del Plato?"
+                android:text="@string/metodo_plato"
                 android:textColor="#5D4037"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:justificationMode="inter_word"
                 android:lineSpacingExtra="4dp"
-                android:text="Aqui va descripcion"
+                android:text="@string/descripcion_metodo"
                 android:textColor="#3E2723"
                 android:textSize="14sp" />
 

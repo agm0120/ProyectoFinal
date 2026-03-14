@@ -2,22 +2,118 @@
     <string name="app_name">ProyectoEatQ</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Activity Menu -->
+    <string name="EatQ">EatQ</string>
+
+    <!-- Login -->
+    <string name="login">LOGIN</string>
+    <string name="hint_usuario">Usuario o email</string>
+    <string name="hint_contraseña">Contraseña</string>
+    <string name="olvidar">¿Olvidaste tu contraseña?</string>
+    <string name="btn_iniciar_sesion">Iniciar Sesión</string>
+    <string name="btn_registrarse">Crear Usuario</string>
+
+    <!-- RegistroUsuario -->
+    <string name="registro_usuario">Registro de Usuario</string>
+    <string name="hint_nombre">Nombre de usuario</string>
+    <string name="hint_correo">Correo Usuario</string>
+    <string name="hint_fecha">Fecha de Nacimiento</string>
+    <string name="hint_edad">Edad</string>
+    <string name="hint_nacion">Nacionalidad</string>
+
+    <!-- Fragment Resumen -->
     <string name="ultimos_dias_resumen">Los últimos siete días</string>
+    <string name="info_resumen">Bien hecho, vas por buen camino. Intenta tomar más carbohidratos</string>
+    <string name="recomendaciones">¿Quieres ver recomendaciones?</string>
+    <string name="btn_recetas">Ver recetas</string>
+    <string name="btn_introducir_plato">Introducir plato</string>
+
+    <!-- Fragment Plato -->
+    <string name="plato_de_hoy">¿Este es tu plato de hoy?</string>
+    <string name="btn_subir">Subir</string>
+    <string name="btn_volver_subir">Volver a subir</string>
+
+    <!-- Fragment Resultado -->
+    <string name="mensaje_resultado">Bien hecho, este plato está perfectamente equilibrado</string>
+    <string name="btn_guardar_plato">Guardar plato</string>
+    <string name="btn_repetir_plato">Repetir plato</string>
+
+    <!-- Fragment Lista Compra -->
     <string name="lista_compra">LISTA DE LA COMPRA</string>
     <string name="agregar">Añadir</string>
     <string name="borrar_lista">Borrar lista</string>
     <string name="xborrar">X</string>
+    <string name="hint_nuevo_articulo">Nuevo artículo....</string>
+
+    <!-- Fragment Andar -->
     <string name="andar">Andar</string>
     <string name="pregAndar">¿Cuánto tiempo has estado andando?</string>
+    <string name="h"> h </string>
+    <string name="min"> min </string>
+    <string name="hint_introducir_anotacion">Introducir anotación...</string>
+    <string name="btn_guardar">Guardar</string>
+
+    <!-- Fragment Escaleras -->
     <string name="escaleras">Subir escaleras</string>
     <string name="pregEscaleras">¿Cuántos pisos has subido?</string>
+
+    <!-- Fragment Sentadillas -->
     <string name="sentadillas">Sentadillas</string>
     <string name="pregSentadillas">¿Cuántas sentadillas has hecho?</string>
+
+    <!-- Fragment Estirar -->
     <string name="estirar">Estirar</string>
     <string name="pregEstirar">¿Qué parte del cuerpo has estirado?</string>
     <string name="brazos">Brazos</string>
     <string name="piernas">Piernas</string>
-    <string name="torso">Tornos y espalda</string>
-    <string name="correr">Correr</string>
-    <string name="pregCorrer">¿Cuánto tiempo has corrido?</string>
+    <string name="torso">Torso y espalda</string>
+
+    <!-- Fragment Contacto -->
+    <string name="contacto">CONTACTO</string>
+    <string name="selecciona_historial">Selecciona el historial:</string>
+    <string name="btn_empresa">Empresa</string>
+    <string name="btn_nutricionista">Nutricionista</string>
+    <string name="info_contacto">Información de contacto:</string>
+    <string name="correo_electronico">Correo Electrónico:</string>
+    <string name="correoeatQ">eatQ@info.com</string>
+    <string name="telefono">Teléfono:</string>
+    <string name="numero_telefono">+34</string>
+    <string name="btn_enviar_correo">Enviar Correo</string>
+
+    <!-- Fragment Historial Comida -->
+    <string name="historial">HISTORIAL</string>
+    <string name="selecciona_dia">Selecciona el día:</string>
+
+    <!-- Fragment Info Historial Comida -->
+    <string name="este_dia_has_comido">Este día has comido:</string>
+
+    <!-- Fragment Info Historial Deporte -->
+    <string name="tiempo_estirado">Tiempo estirado (min):</string>
+    <string name="tiempo_andado">Tiempo andado (min):</string>
+    <string name="pisos_subidos">Pisos subidos:</string>
+    <string name="sentadillasHistorial">Sentadillas:</string>
+
+    <!-- Fragment Info Recetas-->
+    <string name="metodo_plato">¿Qué es el Método del Plato?</string>
+    <string name="descripcion_metodo">Aqui va descripción</string>
+    
+    <!-- Fragment News -->
+    <string name="noticias">NOTICIAS</string>
+    <string name="el_metodo">EL MÉTODO DEL PLATO</string>
+    <string name="btn_informate">¡INFÓRMATE!</string>
+    <string name="actividad_fisica">Actividad Física y Salud Cardiovascular</string>
+    <string name="ver_noticia">VER NOTICIA</string>
+    <string name="bienestar">Bienestar Mental y Reducción del Estrés</string>
+
+    <!-- Fragment Recetas -->
+    <string name="hidratos">HIDRATOS</string>
+    <string name="proteinas">PROTEINAS</string>
+    <string name="vegetales">VEGETALES</string>
+
+    <!-- Fragment Info Usuario -->
+    <string name="informacion_usuario">INFORMACIÓN DE USUARIO</string>
+    <string name="btn_GUARDAR">GUARDAR</string>
+    <string name="btn_modificar">MODIFICAR</string>
+
 </resources>

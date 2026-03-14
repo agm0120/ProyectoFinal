@@ -13,10 +13,9 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/titulo_historial_deporte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HISTORIAL"
+            android:text="@string/historial"
             android:textColor="#000000"
             android:textSize="22sp"
             android:textStyle="bold"
@@ -73,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Selecciona el día:"
+            android:text="@string/selecciona_dia"
             android:textColor="#666666"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

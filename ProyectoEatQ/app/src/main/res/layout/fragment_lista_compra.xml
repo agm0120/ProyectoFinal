@@ -28,17 +28,16 @@
         android:layout_width="219dp"
         android:layout_height="45dp"
         android:background="@android:drawable/editbox_background_normal"
-        android:hint="Nuevo artículo...."
-        android:textSize="16sp"
+        android:hint="@string/hint_nuevo_articulo"
         android:maxLines="1"
         android:singleLine="true"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_borrarLista"
         app:layout_constraintEnd_toStartOf="@id/btn_añadir"
+        app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/btn_borrarLista"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintVertical_bias="0.17"
-        />
+        app:layout_constraintVertical_bias="0.17" />
 
     <Button
         android:id="@+id/btn_añadir"

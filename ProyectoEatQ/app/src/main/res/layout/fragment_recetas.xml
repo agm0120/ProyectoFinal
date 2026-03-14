@@ -18,36 +18,36 @@
             android:id="@+id/btnHidratos"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:text="HIDRATOS"
-            android:textSize="11sp"
             android:backgroundTint="#D8B066"
+            android:text="@string/hidratos"
             android:textColor="#FFFFFF"
-            app:cornerRadius="50dp"
-            android:layout_marginEnd="8dp"/>
+            android:textSize="11sp"
+            app:cornerRadius="50dp" />
 
         <Button
             android:id="@+id/btnProteinas"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:text="PROTEÍNAS"
-            android:textSize="11sp"
             android:backgroundTint="#6FAED9"
+            android:text="@string/proteinas"
             android:textColor="#FFFFFF"
-            app:cornerRadius="50dp"
-            android:layout_marginEnd="8dp"/>
+            android:textSize="11sp"
+            app:cornerRadius="50dp" />
 
         <Button
             android:id="@+id/btnVegetales"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="VEGETALES"
-            android:textSize="11sp"
             android:backgroundTint="#6CB063"
+            android:text="@string/vegetales"
             android:textColor="#FFFFFF"
-            app:cornerRadius="50dp"/>
+            android:textSize="11sp"
+            app:cornerRadius="50dp" />
     </LinearLayout>
 
     <ScrollView

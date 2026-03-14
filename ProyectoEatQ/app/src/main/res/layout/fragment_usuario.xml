@@ -11,13 +11,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INFORMACIÓN DE\nUSUARIO"
-        android:textColor="#212121"
-        android:textSize="28sp"
-        android:gravity="center"
-        android:fontFamily="sans-serif-light"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="@string/informacion_usuario"
+        android:textColor="#212121"
+        android:textSize="28sp" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="140dp"
@@ -52,7 +52,7 @@
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:singleLine="true"
-            android:text="Nombre de usuario"
+            android:text="@string/hint_nombre"
             android:textColor="#000000"
             android:textSize="14sp" />
     </androidx.cardview.widget.CardView>
@@ -75,7 +75,7 @@
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:singleLine="true"
-            android:text="Correo Usuario"
+            android:text="@string/hint_correo"
             android:textColor="#000000"
             android:textSize="14sp" />
     </androidx.cardview.widget.CardView>
@@ -120,7 +120,7 @@
             android:inputType="date"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
-            android:text="Fecha de nacimiento"
+            android:text="@string/hint_fecha"
             android:textColor="#000000"
             android:textSize="14sp" />
     </androidx.cardview.widget.CardView>
@@ -140,7 +140,7 @@
             android:background="@null"
             android:gravity="center"
             android:inputType="number"
-            android:text="Edad"
+            android:text="@string/hint_edad"
             android:textColor="#000000"
             android:textSize="14sp" />
     </androidx.cardview.widget.CardView>
@@ -160,7 +160,7 @@
             android:background="@null"
             android:gravity="center"
             android:inputType="text"
-            android:text="Nacionalidad"
+            android:text="@string/hint_nacion"
             android:textColor="#000000"
             android:textSize="14sp" />
     </androidx.cardview.widget.CardView>
@@ -176,27 +176,27 @@
             android:id="@+id/btnGuardar"
             android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:text="GUARDAR"
             android:backgroundTint="#546E7A"
+            android:text="@string/btn_GUARDAR"
             android:textColor="#FFFFFF"
             app:cornerRadius="25dp"
             app:strokeColor="#000000"
-            app:strokeWidth="1dp"
-            android:layout_marginEnd="8dp"/>
+            app:strokeWidth="1dp" />
 
         <Button
             android:id="@+id/btnModificar"
             android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:text="MODIFICAR"
             android:backgroundTint="#546E7A"
+            android:text="@string/btn_modificar"
             android:textColor="#FFFFFF"
             app:cornerRadius="25dp"
             app:strokeColor="#000000"
-            app:strokeWidth="1dp"
-            android:layout_marginStart="8dp"/>
+            app:strokeWidth="1dp" />
 
     </LinearLayout>
 

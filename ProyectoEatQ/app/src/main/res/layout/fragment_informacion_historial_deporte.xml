@@ -40,7 +40,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tiempo estirado (min):"
+                    android:text="@string/tiempo_estirado"
                     android:textColor="#555555"
                     android:textStyle="bold" />
 
@@ -58,7 +58,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tiempo andado (min):"
+                    android:text="@string/tiempo_andado"
                     android:textColor="#555555"
                     android:textStyle="bold" />
 
@@ -76,7 +76,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pisos subidos:"
+                    android:text="@string/pisos_subidos"
                     android:textColor="#555555"
                     android:textStyle="bold" />
 
@@ -94,7 +94,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sentadillas:"
+                    android:text="@string/sentadillasHistorial"
                     android:textColor="#555555"
                     android:textStyle="bold" />
 
