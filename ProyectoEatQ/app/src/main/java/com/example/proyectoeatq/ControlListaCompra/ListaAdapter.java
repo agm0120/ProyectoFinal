@@ -6,6 +6,25 @@ El Adapter es como un organizador o coordinador:
 - Dice cuántos items hay en total
  */
 
+/* Este Adapter sirve para mostrar la lista de la compra, y para avisar al Fragment cuando alguien borra un item.
+Un Adapter es una clase que se encarga de conectar los datos con las vistas que los van a mostrar.
+En este caso, el Adapter se llama ListaAdapter, y se conecta con el ViewHolder (CompraViewHolder) y con el Fragment (ListaCompra).
+
+ */
+
+/*
+Un Adapter es una clase que se encarga de conectar los datos con las vistas que los van a mostrar.
+Sirve para mostrar listas de datos en un RecyclerView. El Adapter crea los ViewHolders, les asigna
+los datos que deben mostrar, y le dice al RecyclerView cuántos items hay en total para que sepa
+cuándo parar de hacer scroll.
+En este caso, el Adapter se llama ListaAdapter, y se conecta con el ViewHolder (CompraViewHolder)
+y con el Fragment (ListaCompra). El Adapter crea los ViewHolders, les asigna los datos de la lista
+de la compra que deben mostrar, y le dice al RecyclerView cuántos items hay en total para que sepa
+cuándo parar de hacer scroll. Además, el Adapter tiene una interfaz para avisar al Fragment cuando
+alguien borra un item, para que el Fragment pueda actualizar la lista y el RecyclerView.
+
+ */
+
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -20,24 +39,35 @@ public class ListaAdapter extends RecyclerView.Adapter<CompraViewHolder>{
 
     //? TaskAdapter.java
 
-    /* Interfaz que sirve para que el ViewHolder pueda avisar al Fragment cuando
-     alguien quiere borrar un item. Es como un canal de comunicación entre ellos.
-     "Cualquier clase que implemente esta interfaz tendrá un método itemBorrado,
-     que recibe un int" */
 
     // todo: cambiar el nombre de la interfaz
-    public interface interfazItemBorrado {
-        void itemBorrado(int position);
+    /*
+    Esta interface sirve para que el ViewHolder pueda avisar al Fragment cuando alguien
+    quiere borrar un item.
+    El ViewHolder es el encargado de mostrar cada item de la lista, y cuando alguien pulsa
+    el botón de borrar, el ViewHolder no tiene acceso directo al Fragment para decirle
+    "oye, borra este item". Entonces, lo que hacemos es crear esta interfaz, que es como
+     un canal de comunicación entre el ViewHolder y el Fragment. Cualquier clase que implemente
+     esta interfaz tendrá un método itemBorrado, que recibe un int (la posición del item que se
+     quiere borrar). El Fragment va a implementar esta interfaz, y cuando el ViewHolder llame a
+     itemBorrado con la posición del item a borrar, el Fragment sabrá qué item debe eliminar
+     de la lista.
+     */
+    public interface OnItemDeleteListener {
+        /*Este void itemBorrado, que recibe un int position, es el método que se va a
+        llamar desde el ViewHolder cuando alguien pulse el botón de borrar.
+         */
+        void borrarItem(int position);
     }
     // Variables
     private List<String> lista;
-    private interfazItemBorrado interfazItemBorrado; //el canal de comunicación, como un listener
+    private OnItemDeleteListener OnItemDeleteListener; //el canal de comunicación, como un listener
 
     /* El constructor debe recibir un ArrayList con los datos y el canal de
     comunicación, que avisará cuando alguien borre*/
-    public ListaAdapter(List<String> lista, interfazItemBorrado interfazItemBorrado){
+    public ListaAdapter(List<String> lista, OnItemDeleteListener OnItemDeleteListener){
         this.lista = lista;
-        this.interfazItemBorrado = interfazItemBorrado;
+        this.OnItemDeleteListener = OnItemDeleteListener;
     }
 
 
@@ -62,7 +92,7 @@ public class ListaAdapter extends RecyclerView.Adapter<CompraViewHolder>{
     public void onBindViewHolder(@NonNull CompraViewHolder holder, int position) {
         /* lista.get(posicion) -> obtiene el string asociado a esa posicion
         El metodo render() del viewholder recibirá el texto que debe mostrar, y el 'listener'*/
-        holder.render(lista.get(position), interfazItemBorrado);
+        holder.render(lista.get(position), OnItemDeleteListener);
 
     }
 

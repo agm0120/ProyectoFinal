@@ -79,9 +79,9 @@ public class ListaCompra extends Fragment {
 
         listaCompra = prefs.getList(); //carga la lista guardada en las preferencias
         rv_lista.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new ListaAdapter(listaCompra, new ListaAdapter.interfazItemBorrado(){
+        adapter = new ListaAdapter(listaCompra, new ListaAdapter.OnItemDeleteListener(){
             @Override
-            public void itemBorrado(int posicion){
+            public void borrarItem(int posicion){
                 borrarItem(posicion);
             }
         });
@@ -96,7 +96,7 @@ public class ListaCompra extends Fragment {
         prefs.saveItem(listaCompra); //guarda la lista actualizada en las preferencias
 
     }
-
+    
     private void initListeners() {
         btn_añadir.setOnClickListener(view -> añadirItem()); //forma abreviada
     }
