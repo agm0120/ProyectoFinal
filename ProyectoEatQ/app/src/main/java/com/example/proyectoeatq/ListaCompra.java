@@ -1,5 +1,7 @@
 package com.example.proyectoeatq;
 
+import static com.example.proyectoeatq.ControlListaCompra.AppApplication.prefs;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.proyectoeatq.ControListaCompra.ListaAdapter;
+import com.example.proyectoeatq.ControlListaCompra.ListaAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -52,6 +54,9 @@ public class ListaCompra extends Fragment {
         super.onViewCreated(view,savedIntanceState);
 
         initUI(view);
+        //prefs;
+
+
 
 
     }

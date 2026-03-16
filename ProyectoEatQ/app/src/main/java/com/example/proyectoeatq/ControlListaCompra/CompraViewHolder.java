@@ -1,4 +1,4 @@
-package com.example.proyectoeatq.ControListaCompra;
+package com.example.proyectoeatq.ControlListaCompra;
 
 import android.view.View;
 import android.widget.ImageView;

@@ -1,4 +1,4 @@
-package com.example.proyectoeatq.ControListaCompra;
+package com.example.proyectoeatq.ControlListaCompra;
 /*
 El Adapter es como un organizador o coordinador:
 - Crea los ViewHolders cuando hacen falta.
