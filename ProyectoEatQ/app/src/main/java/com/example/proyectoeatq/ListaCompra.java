@@ -54,7 +54,6 @@ public class ListaCompra extends Fragment {
         super.onViewCreated(view,savedIntanceState);
 
         initUI(view);
-        //prefs;
 
 
 
@@ -67,28 +66,34 @@ public class ListaCompra extends Fragment {
         initRecyclerView();
     }
 
-    /* Función que va a configurar el RecyclerView para añadirle
-    el adapter y que funcione todo el fujo
-     */
+
+    /* Función que va a configurar el RecyclerView para añadirle el adapter y
+    que funcione todo el fujo */
     private void initRecyclerView() {
-        //el layoutmanager es el encargado de mostrar cómo se van a mostrar las vistas
-        //va aser un linearlayoutmanager, y le pasamos el contexto de fragment
+        /*
+        El layout manager es el encargado de mostrar cómo se van a mostrar las vistas.
+        En este caso, va a ser un LinearLayoutManager, que muestra los items en una lista vertical.
+        A este LinearLayoutManager le vamos a pasar el contexto del fragment, para que sepa
+        dónde mostrar las vistas.
+        El ListaAdapter.interfazItemBorrado es como un listener, en este caso para borrar */
+
+        listaCompra = prefs.getList(); //carga la lista guardada en las preferencias
         rv_lista.setLayoutManager(new LinearLayoutManager(getContext()));
-        //va a recibir el listado de la compra (arraylist) y el listneer para borrar
         adapter = new ListaAdapter(listaCompra, new ListaAdapter.interfazItemBorrado(){
             @Override
             public void itemBorrado(int posicion){
                 borrarItem(posicion);
             }
         });
-        //le decimos que el adapter que va a usar es el que acabamos de crear.
-        rv_lista.setAdapter(adapter);
+        rv_lista.setAdapter(adapter); //el adapter que va a usar es el que acabamos de crear
+
     }
 
-    private void borrarItem(int posicion){
+    private void borrarItem(int posicion){ // ?deleteTask
         listaCompra.remove(posicion);
         adapter.notifyDataSetChanged();
         // ? opción 2 adapter.notifyItemRemoved(posicion);
+        prefs.saveItem(listaCompra); //guarda la lista actualizada en las preferencias
 
     }
 
@@ -98,10 +103,12 @@ public class ListaCompra extends Fragment {
 
     private void añadirItem() { //? addTask()
         String item = textoArticulo.getText().toString().trim();
+        //añade el item a la lista, pero solo si no está vacío
         if(!item.isEmpty()){ listaCompra.add(item);}
         //le dice al adapter que se han añadido nuevos valores par que pinte de nuevo la lista
         adapter.notifyDataSetChanged();
         textoArticulo.setText("");
+        prefs.saveItem(listaCompra); //guarda la lista actualizada en las preferencias
     }
 
     //Método para inicializar los componentes
