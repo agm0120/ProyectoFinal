@@ -32,31 +32,33 @@ public class ListaCompra extends Fragment {
 
     List<String> listaCompra = new ArrayList<>(); //? tasks
 
+
+    /* En el Fragment no se usará onCreate porque el Fragment tiene un ciclo de vida diferente
+    al de una Activity. En un Fragment, el método onCreate() se llama antes de que se cree la
+    vista, por lo que no es el lugar adecuado para inicializar componentes de la interfaz de
+    usuario o configurar el RecyclerView. En su lugar, se utiliza el método onViewCreated(),
+    que se llama después de que la vista del Fragment ha sido creada, para realizar estas tareas.*/
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /* El onCreate se podrá utiilzar para:
-        - Recibir argumentos con getArguments()
-        - Inicializar ViewModels
-        - Configurar cosas que no dependan de la vista
-         */
     }
 
+    /* El onCreatedView se usa solo para inflar el layout del Fragment, es decir,
+    para convertir el XML en una vista que se pueda usar en el código.*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       // Se usa solo para inflar el layout
         return inflater.inflate(R.layout.fragment_lista_compra, container, false);
     }
 
+    /* El onViewCreated se usa para para todo lo que tenga que ver con la UI,
+      como inicializar los componentes, configurar el RecyclerView, etc.*/
     @Override
     public void onViewCreated(@NotNull View view, Bundle savedIntanceState){
         // Se usará para todo lo que tenga que ver con la UI
         super.onViewCreated(view,savedIntanceState);
 
         initUI(view);
-
-
-
 
     }
 
@@ -66,27 +68,18 @@ public class ListaCompra extends Fragment {
         initRecyclerView();
     }
 
-
-    /* Función que va a configurar el RecyclerView para añadirle el adapter y
-    que funcione todo el fujo */
+    /* Función para inicializar el RecyclerView, que es el componente que se encarga
+    de mostrar la lista de la compra. Hay que añadirle el adapter, que es el encargado
+    de mostrar cada item de la lista, y el layout manager, que es el encargado de
+    mostrar cómo se van a mostrar las vistas
+    En este caso hemos elegido un layout lineal, al que le pasamos el context del Fragment
+    para que sepa dónde mostrar las vistas.*/
     private void initRecyclerView() {
-        /*
-        El layout manager es el encargado de mostrar cómo se van a mostrar las vistas.
-        En este caso, va a ser un LinearLayoutManager, que muestra los items en una lista vertical.
-        A este LinearLayoutManager le vamos a pasar el contexto del fragment, para que sepa
-        dónde mostrar las vistas.
-        El ListaAdapter.interfazItemBorrado es como un listener, en este caso para borrar */
 
         listaCompra = prefs.getList(); //carga la lista guardada en las preferencias
         rv_lista.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new ListaAdapter(listaCompra, new ListaAdapter.OnItemDeleteListener(){
-            @Override
-            public void borrarItem(int posicion){
-                borrarItem(posicion);
-            }
-        });
-        rv_lista.setAdapter(adapter); //el adapter que va a usar es el que acabamos de crear
-
+        adapter = new ListaAdapter(listaCompra, posicion -> borrarItem(posicion)); //forma abreviada con lambda
+        rv_lista.setAdapter(adapter); //le pasamos el adapter que acabamos de crear
     }
 
     private void borrarItem(int posicion){ // ?deleteTask
@@ -117,10 +110,5 @@ public class ListaCompra extends Fragment {
         textoArticulo = view.findViewById(R.id.textoArticulo);
         rv_lista = view.findViewById(R.id.rv_lista);
     }
-
-
-
-
-
 
 }
