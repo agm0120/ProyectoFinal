@@ -79,18 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textoArticulo"
-        app:layout_constraintVertical_bias="0.100000024">
-
-        <CheckBox
-            android:id="@+id/checkBox_item"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:buttonTint="#E56F00"
-            android:text="CheckBox"
-            app:buttonIconTint="#E56F00"
-            app:buttonIconTintMode="multiply" />
-
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.100000024"/>
 
     <Button
         android:id="@+id/btn_borrarLista"
