@@ -60,7 +60,28 @@ public class Resumen extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_resumen, container, false);
+
+        View boton = view.findViewById(R.id.btn_introducirPlato);
+
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirSiguienteFragment();
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_resumen, container, false);
+        return view;
+    }
+
+    private void abrirSiguienteFragment() {
+        // Reemplaza 'OtroFragment' por el nombre real de tu clase destino
+        Fragment nuevoFragment = new SubirPlato();
+
+        getParentFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContainerView, nuevoFragment) // R.id.container es el ID del FrameLayout en tu Activity principal
+                .addToBackStack(null) // Permite volver atrás
+                .commit();
     }
 }
