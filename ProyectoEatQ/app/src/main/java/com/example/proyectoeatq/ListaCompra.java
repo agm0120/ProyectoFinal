@@ -1,6 +1,6 @@
 package com.example.proyectoeatq;
 
-import static com.example.proyectoeatq.ControlListaCompra.AppApplication.prefs;
+import static com.example.proyectoeatq.AppApplication.prefs;
 
 import android.os.Bundle;
 
@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.proyectoeatq.ControlListaCompra.ListaAdapter;
+import com.example.proyectoeatq.ControlListaCompra.LCAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -28,7 +28,7 @@ public class ListaCompra extends Fragment {
     private RecyclerView rv_lista; //? rvTasks
     //creamos la instancia del ListaAdapter
     //vamos a ir llamándolo cada vez que modifiquemos la lista de la compra
-    private ListaAdapter adapter;  //? adapter
+    private LCAdapter adapter;  //? adapter
 
     List<String> listaCompra = new ArrayList<>(); //? tasks
 
@@ -78,7 +78,7 @@ public class ListaCompra extends Fragment {
 
         listaCompra = prefs.getList(); //carga la lista guardada en las preferencias
         rv_lista.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new ListaAdapter(listaCompra, posicion -> borrarItem(posicion)); //forma abreviada con lambda
+        adapter = new LCAdapter(listaCompra, posicion -> borrarItem(posicion)); //forma abreviada con lambda
         rv_lista.setAdapter(adapter); //le pasamos el adapter que acabamos de crear
     }
 

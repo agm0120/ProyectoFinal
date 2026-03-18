@@ -1,6 +1,8 @@
-package com.example.proyectoeatq.ControlListaCompra;
+package com.example.proyectoeatq;
 
 import android.app.Application;
+
+import com.example.proyectoeatq.Preferences;
 
 /*
 Application va a hacer que esta sea la primera clase por la que pase la app cuando se inicie.

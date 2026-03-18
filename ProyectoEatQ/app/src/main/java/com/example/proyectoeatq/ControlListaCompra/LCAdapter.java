@@ -19,7 +19,7 @@ import com.example.proyectoeatq.R;
 
 import java.util.List;
 
-public class ListaAdapter extends RecyclerView.Adapter<CompraViewHolder>{
+public class LCAdapter extends RecyclerView.Adapter<LCViewHolder>{
 
     //? TaskAdapter.java
 
@@ -45,7 +45,7 @@ public class ListaAdapter extends RecyclerView.Adapter<CompraViewHolder>{
     comunicación, que avisará cuando un item se borre */
     /* El constructor debe recibir un ArrayList con los datos y el OnItemDeleteListener,
     que avisará cuando se le de al botón para borrar un item */
-    public ListaAdapter(List<String> lista, OnItemDeleteListener oidListener){
+    public LCAdapter(List<String> lista, OnItemDeleteListener oidListener){
         this.lista = lista;
         this.oidListener = oidListener;
     }
@@ -55,7 +55,7 @@ public class ListaAdapter extends RecyclerView.Adapter<CompraViewHolder>{
     RecyclerView lo necesite. */
     @NonNull
     @Override
-    public CompraViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LCViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         /* 1. Creamos el layoutInflater, que es el encargado de convertir el XML
         en una vista que podamos usar en el código.
@@ -64,7 +64,7 @@ public class ListaAdapter extends RecyclerView.Adapter<CompraViewHolder>{
         que se añada automáticamente al parent, ya que el RecyclerView se encarga de eso).*/
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        return new CompraViewHolder(layoutInflater.inflate(R.layout.item_lista_compra,parent,false));
+        return new LCViewHolder(layoutInflater.inflate(R.layout.item_lista_compra,parent,false));
 
     }
 
@@ -78,7 +78,7 @@ public class ListaAdapter extends RecyclerView.Adapter<CompraViewHolder>{
 
      */
     @Override
-    public void onBindViewHolder(@NonNull CompraViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LCViewHolder holder, int position) {
         /* lista.get(posicion) -> obtiene el string asociado a esa posicion
         El metodo render() del viewholder recibirá el texto que debe mostrar, y el 'listener'*/
         holder.render(lista.get(position), oidListener);

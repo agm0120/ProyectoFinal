@@ -1,4 +1,4 @@
-package com.example.proyectoeatq.ControlListaCompra;
+package com.example.proyectoeatq;
 
 import android.content.Context;
 import android.content.SharedPreferences;

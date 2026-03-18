@@ -6,7 +6,7 @@
      al iniciar la app, Android ejecute el onCreate() de AppApplication y
      los prefs se inicialicen correctamente -->
     <application
-        android:name=".ControlListaCompra.AppApplication"
+        android:name=".AppApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

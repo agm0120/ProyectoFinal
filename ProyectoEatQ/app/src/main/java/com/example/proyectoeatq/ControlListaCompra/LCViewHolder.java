@@ -16,7 +16,7 @@ Es como un molde o plantilla para cada item.
 Lo que hace es recoger las vistas del layout de cada item (en este caso,
 el layout item_lista_compra.xml), y tiene una función render() que recibe
 los datos de cada item y los muestra en esas vistas.*/
-public class CompraViewHolder extends RecyclerView.ViewHolder {
+public class LCViewHolder extends RecyclerView.ViewHolder {
 
     //Referencias de las vistas de item_lista_compra.xml
     private TextView tvLista;
@@ -25,7 +25,7 @@ public class CompraViewHolder extends RecyclerView.ViewHolder {
 
 
     // Constructor (se ejecuta una vez por cada ViewHolder creado)
-    public CompraViewHolder(View itemView) { //itemView = el layout inflado
+    public LCViewHolder(View itemView) { //itemView = el layout inflado
         super(itemView);  // Llama al constructor de RecyclerView.ViewHolder
         tvLista = itemView.findViewById(R.id.tvLista);
         btn_borrarItem = itemView.findViewById(R.id.btn_borrarItem);
@@ -36,7 +36,7 @@ public class CompraViewHolder extends RecyclerView.ViewHolder {
     /* El método render() recibe los datos y los coloca en las vistas guardadas
     (las vistas del layout). Esta función va a ir iterando, de forma que la variable
     item tendrá un valor diferente cada vez. */
-    public void render(String item, ListaAdapter.OnItemDeleteListener oidl){
+    public void render(String item, LCAdapter.OnItemDeleteListener oidl){
 
         tvLista.setText(item); //pone el texto (el item) en el TextView
 
