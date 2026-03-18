@@ -66,8 +66,12 @@ public class LCViewHolder extends RecyclerView.ViewHolder {
      y al desmarcarlo vuelve al estado por defecto */
     private void configuracionCheckbox() {
 
+
         // ? No se si debería guardar tambien en alguna parte los check
         // ? para que al cerrar la app o cambiar de ventana no se pierdan
+
+        // ? Se podría añadir un boton al final de la pagin apara borrar solo
+        // ? items que tienen el check (ya comprados)
 
         check_item.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
