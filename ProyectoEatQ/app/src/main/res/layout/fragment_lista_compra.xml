@@ -5,55 +5,48 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListaCompra">
+    android:background="@color/fondoLC"
+    tools:context=".ListaCompra"
+    >
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="418dp"
-        android:layout_height="565dp"
-        android:alpha="0.6"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoArticulo"
-        app:srcCompat="@drawable/libreta"
-        tools:src="@tools:sample/backgrounds/scenic" />
 
     <EditText
         android:id="@+id/textoArticulo"
-        android:layout_width="219dp"
-        android:layout_height="45dp"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="30dp"
         android:background="@android:drawable/editbox_background_normal"
         android:hint="Nuevo artículo...."
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:maxLines="1"
         android:singleLine="true"
         app:layout_constraintEnd_toStartOf="@id/btn_añadir"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/btn_borrarLista"
-        app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintVertical_bias="0.17"
         />
 
     <Button
         android:id="@+id/btn_añadir"
-        android:layout_width="98dp"
+        android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:backgroundTint="@color/amarilloBoton"
-        android:text="@string/agregar"
+        android:layout_marginEnd="15dp"
+        android:textSize="18dp"
         android:textColor="#1C1C1C"
+        android:text="@string/agregar"
+        android:backgroundTint="@color/amarilloBoton"
+        app:strokeColor="@color/grisMedio"
+        app:strokeWidth="1dp"
         app:cornerRadius="15dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/btn_borrarLista"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textoArticulo"
-        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.17"
         />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_lista"
@@ -63,36 +56,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textoArticulo"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintVertical_bias="0.2" />
 
-
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="100dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoArticulo"
-        app:layout_constraintVertical_bias="0.100000024"/>
 
     <Button
         android:id="@+id/btn_borrarLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:cornerRadius="15dp"
         android:backgroundTint="@color/amarilloBoton"
         android:text="@string/borrar_lista"
+        android:textSize="18dp"
         android:textColor="@color/black"
+        app:strokeColor="@color/grisMedio"
+        app:strokeWidth="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textoArticulo"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintVertical_bias="0.88" />
 
 
