@@ -24,7 +24,6 @@ import java.util.Locale;
 public class SubirPlato extends Fragment {
 
     private ImageButton imgButtonPlato;
-
     private Button buttonSubir;
     private String rutaFotoActual; // Guardará la ruta del archivo físico
     private ActivityResultLauncher<Uri> cameraLauncher;
@@ -91,7 +90,7 @@ public class SubirPlato extends Fragment {
 
     private void abrirSiguienteFragment() {
         // Reemplaza 'OtroFragment' por el nombre real de tu clase destino
-        Fragment nuevoFragment = new SubirPlato();
+        Fragment nuevoFragment = new ResultadoPlato();
 
         getParentFragmentManager().beginTransaction()
                 .replace(R.id.fragmentContainerView, nuevoFragment) // R.id.container es el ID del FrameLayout en tu Activity principal
