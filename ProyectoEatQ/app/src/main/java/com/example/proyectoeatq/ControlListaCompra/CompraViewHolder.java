@@ -66,6 +66,9 @@ public class CompraViewHolder extends RecyclerView.ViewHolder {
      y al desmarcarlo vuelve al estado por defecto */
     private void configuracionCheckbox() {
 
+        // ? No se si debería guardar tambien en alguna parte los check
+        // ? para que al cerrar la app o cambiar de ventana no se pierdan
+
         check_item.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 tvLista.setPaintFlags(tvLista.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
