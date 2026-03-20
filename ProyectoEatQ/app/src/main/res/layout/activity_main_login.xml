@@ -9,7 +9,7 @@
     tools:context=".Resumen">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_idioma"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="16dp"
@@ -34,8 +34,8 @@
         android:id="@+id/tv_titulo_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/login_titulo"
+        android:layout_marginTop="16dp"
+        android:text="@string/login"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,13 +43,13 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_logo_login" />
 
     <EditText
-        android:id="@+id/et_login_usuario"
+        android:id="@+id/et_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="@string/hint_usuario_email"
+        android:hint="@string/hint_usuario"
         android:inputType="textEmailAddress"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,32 +57,32 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_titulo_login" />
 
     <EditText
-        android:id="@+id/et_login_contrasena"
+        android:id="@+id/et_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="@string/hint_contrasena"
+        android:hint="@string/hint_contraseña"
         android:inputType="textPassword"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_login_usuario" />
+        app:layout_constraintTop_toBottomOf="@+id/et_usuario" />
 
     <Button
-        android:id="@+id/btn_olvido_contrasena"
+        android:id="@+id/btn_recuperarPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="@android:color/transparent"
-        android:text="@string/olvido_contrasena"
+        android:text="@string/olvidar"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_login_contrasena" />
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
     <Button
         android:id="@+id/btn_login_entrar"
@@ -95,7 +95,7 @@
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_olvido_contrasena" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_recuperarPassword" />
 
     <Button
         android:id="@+id/btn_login_ir_registro"

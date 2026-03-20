@@ -26,11 +26,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/titulo_noticias"
-                android:textColor="#5D4037"
-                android:textSize="34sp"
+                android:fontFamily="sans-serif-light"
                 android:gravity="center"
-                android:fontFamily="sans-serif-light"/>
+                android:text="@string/noticias"
+                android:textColor="#5D4037"
+                android:textSize="34sp" />
 
         </LinearLayout>
 
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:gravity="center"
-                android:text="@string/metodo_plato_titulo"
+                android:text="@string/el_metodo"
                 android:textColor="#5D4037"
                 android:textSize="22sp" />
 
@@ -64,7 +64,7 @@
                 android:src="@android:drawable/ic_menu_gallery" />
 
             <Button
-                android:id="@+id/btn_informate_plato"
+                android:id="@+id/btn_informacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#D7D7D7"
@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="@string/noticia_cardio_tit"
+                    android:text="@string/actividad_fisica"
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
@@ -119,7 +119,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:backgroundTint="#D7D7D7"
-                    android:text="@string/btn_ver_noticia"
+                    android:text="@string/ver_noticia"
                     android:textColor="#000000"
                     android:textSize="10sp"
                     app:cornerRadius="20dp"
@@ -163,7 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="@string/noticia_mental_tit"
+                    android:text="@string/bienestar"
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
@@ -172,7 +172,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:backgroundTint="#D7D7D7"
-                    android:text="@string/btn_ver_noticia"
+                    android:text="@string/ver_noticia"
                     android:textColor="#000000"
                     android:textSize="10sp"
                     app:cornerRadius="20dp"

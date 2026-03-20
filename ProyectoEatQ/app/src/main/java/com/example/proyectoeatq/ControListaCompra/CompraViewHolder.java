@@ -17,7 +17,7 @@ public class CompraViewHolder extends RecyclerView.ViewHolder {
     // Constructor
     public CompraViewHolder(View itemView) { //itemView = el layout inflado
         super(itemView);  // Llama al constructor de RecyclerView.ViewHolder
-        tvLista = itemView.findViewById(R.id.tvLista);
+        tvLista = itemView.findViewById(R.id.tv_lista);
         btn_borrarItem = itemView.findViewById(R.id.btn_borrarItem);
 
     }

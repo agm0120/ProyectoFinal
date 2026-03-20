@@ -45,7 +45,7 @@
                     android:textStyle="bold" />
 
                 <Switch
-                    android:id="@+id/sw_activar_andar"
+                    android:id="@+id/switch_andar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:height="48dp"
@@ -90,7 +90,7 @@
                     android:textStyle="bold" />
 
                 <Switch
-                    android:id="@+id/sw_activar_escaleras"
+                    android:id="@+id/switch_escaleras"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:height="48dp"
@@ -107,45 +107,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#808080" />
-
-            <LinearLayout
-                android:id="@+id/layout_item_correr"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp">
-
-                <ImageView
-                    android:id="@+id/iv_icono_correr"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/correr" />
-
-                <TextView
-                    android:id="@+id/tv_nombre_correr"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_weight="1"
-                    android:text="@string/correr"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <Switch
-                    android:id="@+id/sw_activar_correr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:height="48dp"
-                    android:checked="true"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:thumbTint="@color/colores_switch"
-                    android:trackTint="@color/barraswitch"
-                    android:translationX="-4dp" />
-            </LinearLayout>
 
             <View
                 android:id="@+id/divisor_3"
@@ -180,7 +141,7 @@
                     android:textStyle="bold" />
 
                 <Switch
-                    android:id="@+id/sw_activar_estirar"
+                    android:id="@+id/switch_estirar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:height="48dp"
@@ -225,7 +186,7 @@
                     android:textStyle="bold" />
 
                 <Switch
-                    android:id="@+id/sw_activar_sentadillas"
+                    android:id="@+id/switch_sentadillas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:height="48dp"
