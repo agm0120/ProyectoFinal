@@ -12,6 +12,10 @@
     <color name="barraswitch">#484f57</color>
     <color name="negroTexto">#1B1B1B</color>
     <color name="rojoDelete">#9A0202</color>
+    <color name="grisMedio">#3A3A3A</color>
+    <color name="verdeCheckOn">#036607</color>
+    <color name="textoChecked">#818181</color>
+    <color name="fondoLC">#e1fade</color>
 
 
 
