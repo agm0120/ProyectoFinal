@@ -15,43 +15,31 @@
         android:layout_marginBottom="20dp">
 
         <Button
-            android:id="@+id/btnHidratos"
+            android:id="@+id/btn_hidratos"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:text="HIDRATOS"
-            android:textSize="11sp"
             android:backgroundTint="#D8B066"
+            android:text="@string/hidratos"
             android:textColor="#FFFFFF"
-            app:cornerRadius="50dp"
-            android:layout_marginEnd="8dp"/>
-
-            <TextView
-                android:id="@+id/tvTituloRecetas"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/titulo_recetas"
-                android:textColor="#5D4037"
-                android:textSize="34sp"
-                android:gravity="center"
-                android:fontFamily="sans-serif-light"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="PROTEÍNAS"
             android:textSize="11sp"
+            app:cornerRadius="50dp" />
+
+        <Button
+            android:id="@+id/btn_proteinas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
             android:backgroundTint="#6FAED9"
+            android:text="@string/proteinas"
             android:textColor="#FFFFFF"
-            app:cornerRadius="50dp"
-            android:layout_marginEnd="8dp"/>
+            android:textSize="11sp"
+            app:cornerRadius="50dp" />
 
             <Button
-                android:id="@+id/btnHidratos"
+                android:id="@+id/btn_hidratos"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -63,7 +51,7 @@
                 android:layout_marginEnd="8dp"/>
 
             <Button
-                android:id="@+id/btnProteinas"
+                android:id="@+id/btn_proteinas"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -74,11 +62,11 @@
                 android:layout_marginEnd="8dp"/>
 
             <Button
-                android:id="@+id/btnVegetales"
+                android:id="@+id/btn_vegetales"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_vegetales"
+                android:text="@string/vegetales"
                 android:textSize="11sp"
                 android:backgroundTint="#6CB063"
                 android:textColor="#FFFFFF"

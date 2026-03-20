@@ -22,11 +22,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_mensaje_progreso"
+        android:id="@+id/et_articulo"
         android:layout_width="357dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
-        android:text="@string/msg_buen_camino"
+        android:text="@string/info_resumen"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -48,30 +48,42 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_ver_recetas_resumen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="@color/amarilloBoton"
-        android:text="@string/btn_ver_recetas"
-        android:textColor="@color/black"
-        app:cornerRadius="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_introducir_plato_resumen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_introducir_plato_resumen"
+        android:id="@+id/btn_introducirPlato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="136dp"
         android:backgroundTint="@color/amarilloBoton"
-        android:text="@string/btn_intro_plato"
+        android:text="@string/btn_introducir_plato"
         android:textColor="@color/black"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_verRecetas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/amarilloBoton"
+        android:text="@string/btn_recetas"
+        android:textColor="@color/black"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_introducirPlato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:text="@string/recomendaciones"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_verRecetas"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
