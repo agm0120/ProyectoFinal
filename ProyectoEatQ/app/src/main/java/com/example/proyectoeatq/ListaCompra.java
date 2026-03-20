@@ -107,7 +107,7 @@ public class ListaCompra extends Fragment {
     //Método para inicializar los componentes
     private void initView(View view) {
         btn_añadir = view.findViewById(R.id.btn_añadir);
-        textoArticulo = view.findViewById(R.id.et_articulo);
+        textoArticulo = view.findViewById(R.id.textoArticulo);
         rv_lista = view.findViewById(R.id.rv_lista);
     }
 
