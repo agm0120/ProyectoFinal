@@ -123,6 +123,6 @@
     <!-- Fragment Info Usuario -->
     <string name="informacion_usuario">INFORMACIÓN DE USUARIO</string>
     <string name="btn_GUARDAR">GUARDAR</string>
-    <string name="btn_modificar">MODIFICAR</string>
+
 
 </resources>
