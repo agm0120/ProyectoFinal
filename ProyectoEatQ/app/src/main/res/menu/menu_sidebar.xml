@@ -3,7 +3,13 @@
     <item
         android:id="@+id/nav_perfil"
         android:icon="@drawable/ic_usuario"
-        android:title="Mi Perfil" />
+        android:title="Mi Perfil de Usuario" />
+    <item
+        android:id="@+id/nav_hitorial"
+        android:title="Historial" />
+    <item
+        android:id="@+id/nav_contactos"
+        android:title="Contactos" />
     <item
         android:id="@+id/nav_config"
         android:title="Configuración" />
