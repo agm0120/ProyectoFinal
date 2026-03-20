@@ -33,8 +33,8 @@ public class ActivityMainLogin extends AppCompatActivity {
         password = findViewById(R.id.et_password);
 
         // --- CORRECCIÓN: Ahora coinciden con los IDs de tu XML ---
-        btn_login = findViewById(R.id.btn_login_entrar);
-        btn_registrarse = findViewById(R.id.btn_login_ir_registro);
+        btn_login = findViewById(R.id.btn_login);
+        btn_registrarse = findViewById(R.id.btn_registrarse);
         // ---------------------------------------------------------
 
         auth = FirebaseAuth.getInstance();
@@ -49,8 +49,9 @@ public class ActivityMainLogin extends AppCompatActivity {
                 if(checkEmpty(textoUsuario, textoPassword)){
                     login(textoUsuario, textoPassword);
                 } else {
-                    // --- MEJORA: Avisamos si se dejan los campos en blanco ---
-                    Toast.makeText(ActivityMainLogin.this, "Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivityMainLogin.this,
+                            "Por favor, complete todos los campos",
+                            Toast.LENGTH_LONG).show();
                 }
             }
         });
