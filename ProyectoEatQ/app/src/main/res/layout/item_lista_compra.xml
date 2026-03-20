@@ -23,7 +23,7 @@
             android:layout_marginStart="5dp"
             app:buttonTint="@color/check_colors"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tvLista"
+            app:layout_constraintEnd_toStartOf="@id/tv_lista"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

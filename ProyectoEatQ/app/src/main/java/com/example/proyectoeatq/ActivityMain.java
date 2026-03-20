@@ -87,8 +87,8 @@ public class ActivityMain extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        //Nuevo fragment a mostrar
-        fragmentTransaction.replace(R.id.fcv_contenedor_principal, fragmento);
+        //Nuevo fragment a mostrar (CORREGIDO EL ID AQUÍ)
+        fragmentTransaction.replace(R.id.fragmentContainerView, fragmento);
 
         // Añade el cambio al historial (pila)
         fragmentTransaction.addToBackStack(null);

@@ -30,6 +30,12 @@
     <string name="btn_recetas">Ver recetas</string>
     <string name="btn_introducir_plato">Introducir plato</string>
 
+    <!-- DANI HA CREADOS ESTOS PARA PODER EJECUTAR - PENDIENTE DE REVISAR -->
+    <string name="intro_resultado_c1">Introducir plato</string>
+    <string name="intro_resultado_c2">Introducir plato</string>
+    <string name="intro_resultado_c3">Introducir plato</string>
+    <string name="intro_resultado_c4">Introducir plato</string>
+
     <!-- Fragment Plato -->
     <string name="plato_de_hoy">¿Este es tu plato de hoy?</string>
     <string name="btn_subir">Subir</string>

@@ -25,7 +25,7 @@
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
-                android:text="@string/metodo_plato_titulo"
+                android:text="@string/metodo_plato"
                 android:textColor="#5D4037"
                 android:textSize="26sp" />
 

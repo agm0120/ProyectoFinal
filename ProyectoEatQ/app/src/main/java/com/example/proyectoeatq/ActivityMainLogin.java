@@ -22,7 +22,7 @@ public class ActivityMainLogin extends AppCompatActivity {
     private Button btn_login, btn_registrarse;
     private FirebaseAuth auth;
     private String textoUsuario, textoPassword;
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +31,12 @@ public class ActivityMainLogin extends AppCompatActivity {
 
         usuario = findViewById(R.id.et_usuario);
         password = findViewById(R.id.et_password);
-        btn_login = findViewById(R.id.btn_login);
-        btn_registrarse = findViewById(R.id.btn_registrarse);
+
+        // --- CORRECCIÓN: Ahora coinciden con los IDs de tu XML ---
+        btn_login = findViewById(R.id.btn_login_entrar);
+        btn_registrarse = findViewById(R.id.btn_login_ir_registro);
+        // ---------------------------------------------------------
+
         auth = FirebaseAuth.getInstance();
 
 
@@ -42,9 +46,11 @@ public class ActivityMainLogin extends AppCompatActivity {
                 textoUsuario = usuario.getText().toString();
                 textoPassword = password.getText().toString();
 
-
                 if(checkEmpty(textoUsuario, textoPassword)){
                     login(textoUsuario, textoPassword);
+                } else {
+                    // --- MEJORA: Avisamos si se dejan los campos en blanco ---
+                    Toast.makeText(ActivityMainLogin.this, "Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -67,7 +73,7 @@ public class ActivityMainLogin extends AppCompatActivity {
                         startActivity(new Intent(ActivityMainLogin.this, ActivityMain.class));
                     }else{
                         Toast.makeText(ActivityMainLogin.this,
-                                "Error en la autenticacion",
+                                "Error en la autenticación",
                                 Toast.LENGTH_LONG).show();
                     }
                 });
@@ -77,7 +83,5 @@ public class ActivityMainLogin extends AppCompatActivity {
     private boolean checkEmpty(String usuario, String password) {
         return !usuario.isEmpty() && !password.isEmpty();
     }
-
-
 
 }

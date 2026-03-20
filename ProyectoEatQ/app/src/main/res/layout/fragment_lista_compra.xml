@@ -6,9 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondoLC"
-    tools:context=".ListaCompra"
-    >
-
+    tools:context=".ListaCompra">
 
     <EditText
         android:id="@+id/textoArticulo"
@@ -21,15 +19,12 @@
         android:textSize="18sp"
         android:maxLines="1"
         android:singleLine="true"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/btn_borrarLista"
-        app:layout_constraintEnd_toStartOf="@id/btn_añadirItem"
+        app:layout_constraintEnd_toStartOf="@id/btn_añadir"
         app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/btn_borrarLista"
-        app:layout_constraintVertical_bias="0.05"
-        />
+        app:layout_constraintBottom_toBottomOf="@id/btn_borrar_lista"
+        app:layout_constraintVertical_bias="0.05" />
 
     <Button
         android:id="@+id/btn_añadir"
@@ -43,13 +38,11 @@
         app:strokeColor="@color/grisMedio"
         app:strokeWidth="1dp"
         app:cornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="@id/btn_borrarLista"
+        app:layout_constraintBottom_toBottomOf="@id/btn_borrar_lista"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textoArticulo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05"
-        />
-
+        app:layout_constraintVertical_bias="0.05" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_lista"
@@ -59,10 +52,8 @@
         android:layout_marginBottom="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btn_borrarLista"
-        app:layout_constraintTop_toBottomOf="@id/textoArticulo"
-         />
-
+        app:layout_constraintBottom_toTopOf="@id/btn_borrar_lista"
+        app:layout_constraintTop_toBottomOf="@id/textoArticulo" />
 
     <Button
         android:id="@+id/btn_borrar_lista"
@@ -79,9 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textoArticulo"
-        app:layout_constraintVertical_bias="0.94"
-         />
-
+        app:layout_constraintVertical_bias="0.94" />
 
     <ImageButton
         android:id="@+id/ib_eliminar_item"
@@ -90,9 +79,9 @@
         android:layout_marginEnd="24dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@android:drawable/ic_delete"
-        app:layout_constraintBottom_toBottomOf="@+id/layout_items_lista"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/layout_items_lista"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

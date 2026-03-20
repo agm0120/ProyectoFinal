@@ -47,7 +47,7 @@ public class SubirPlato extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_plato, container, false);
         buttonSubir = view.findViewById(R.id.btn_subirPlato);
-        imgButtonPlato = view.findViewById(R.id.imageButton2);
+        imgButtonPlato = view.findViewById(R.id.ib_foto_plato);
 
         imgButtonPlato.setOnClickListener(v -> abrirCamara());
 

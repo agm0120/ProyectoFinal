@@ -27,7 +27,7 @@ public class LCViewHolder extends RecyclerView.ViewHolder {
     // Constructor (se ejecuta una vez por cada ViewHolder creado)
     public LCViewHolder(View itemView) { //itemView = el layout inflado
         super(itemView);  // Llama al constructor de RecyclerView.ViewHolder
-        tvLista = itemView.findViewById(R.id.tvLista);
+        tvLista = itemView.findViewById(R.id.tv_lista);
         btn_borrarItem = itemView.findViewById(R.id.btn_borrarItem);
         check_item = itemView.findViewById(R.id.check_item);
 
