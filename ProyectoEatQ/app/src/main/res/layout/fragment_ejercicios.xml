@@ -6,20 +6,19 @@
     tools:context=".Ejercicios">
 
     <ScrollView
-        android:id="@+id/scroll_ejercicios"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="100dp">
 
+        <!--Linear Layout VERTICAL (contendor)-->
         <LinearLayout
-            android:id="@+id/layout_contenedor_ejercicios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/Grisfondo"
             android:orientation="vertical">
 
+            <!--LinearLayout HORIZONTAL 1 (andar)-->
             <LinearLayout
-                android:id="@+id/layout_item_andar"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:gravity="center_vertical"
@@ -28,13 +27,13 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:id="@+id/iv_icono_andar"
+                    android:id="@+id/icoAndar"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:src="@drawable/andar" />
 
                 <TextView
-                    android:id="@+id/tv_nombre_andar"
+                    android:id="@+id/tv_andar"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -63,8 +62,8 @@
                 android:layout_height="1dp"
                 android:background="#808080" />
 
+            <!--LinearLayout HORIZONTAL 2 (subir escaleras)-->
             <LinearLayout
-                android:id="@+id/layout_item_escaleras"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:gravity="center_vertical"
@@ -73,13 +72,13 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:id="@+id/iv_icono_escaleras"
+                    android:id="@+id/icoEscaleras"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:src="@drawable/escaleras" />
 
                 <TextView
-                    android:id="@+id/tv_nombre_escaleras"
+                    android:id="@+id/tv_escaleras"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -103,19 +102,12 @@
             </LinearLayout>
 
             <View
-                android:id="@+id/divisor_2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#808080" />
 
-            <View
-                android:id="@+id/divisor_3"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#808080" />
-
+            <!--LinearLayout HORIZONTAL 3 (estirar)-->
             <LinearLayout
-                android:id="@+id/layout_item_estirar"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:gravity="center_vertical"
@@ -124,13 +116,13 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:id="@+id/iv_icono_estirar"
+                    android:id="@+id/icoEstirar"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:src="@drawable/estirar" />
 
                 <TextView
-                    android:id="@+id/tv_nombre_estirar"
+                    android:id="@+id/tv_estirar"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -154,13 +146,12 @@
             </LinearLayout>
 
             <View
-                android:id="@+id/divisor_4"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#808080" />
 
+            <!--LinearLayout HORIZONTAL 4 (sentadillas)-->
             <LinearLayout
-                android:id="@+id/layout_item_sentadillas"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:gravity="center_vertical"
@@ -169,13 +160,13 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:id="@+id/iv_icono_sentadillas"
+                    android:id="@+id/icoSentadillas"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:src="@drawable/sentadillas" />
 
                 <TextView
-                    android:id="@+id/tv_nombre_sentadillas"
+                    android:id="@+id/tv_sentadillas"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
