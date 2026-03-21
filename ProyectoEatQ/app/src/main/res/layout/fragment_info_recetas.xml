@@ -25,9 +25,10 @@
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
-                android:text="@string/metodo_plato"
+                android:text="@string/el_metodo"
                 android:textColor="#5D4037"
-                android:textSize="26sp" />
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
