@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ProyectoEatQ</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -30,12 +29,6 @@
     <string name="btn_recetas">Ver recetas</string>
     <string name="btn_introducir_plato">Introducir plato</string>
 
-    <!-- DANI HA CREADOS ESTOS PARA PODER EJECUTAR - PENDIENTE DE REVISAR -->
-    <string name="intro_resultado_c1">Introducir plato</string>
-    <string name="intro_resultado_c2">Introducir plato</string>
-    <string name="intro_resultado_c3">Introducir plato</string>
-    <string name="intro_resultado_c4">Introducir plato</string>
-
     <!-- Fragment Plato -->
     <string name="plato_de_hoy">¿Este es tu plato de hoy?</string>
     <string name="btn_subir">Subir</string>
@@ -50,14 +43,6 @@
     <string name="lista_compra">LISTA DE LA COMPRA</string>
     <string name="agregar">Añadir</string>
     <string name="borrar_lista">Borrar lista</string>
-    <string name="guardar">Guardar</string>
-    <string name="aceptar">Aceptar</string>
-    <string name="cancelar">Cancelar</string>
-    <string name="enviar_correo">Enviar Correo</string>
-    <string name="anotacion_hint">Introducir anotación...</string>
-    <string name="btn_modificar">MODIFICAR</string>
-    <string name="btn_guardar_mayus">GUARDAR</string>
-    <string name="btn_cerrar_sesion">Cerrar Sesión</string>
     <string name="xborrar">X</string>
     <string name="hint_nuevo_articulo">Nuevo artículo....</string>
 
@@ -112,7 +97,7 @@
     <!-- Fragment Info Recetas-->
     <string name="metodo_plato">¿Qué es el Método del Plato?</string>
     <string name="descripcion_metodo">Aqui va descripción</string>
-    
+
     <!-- Fragment News -->
     <string name="noticias">NOTICIAS</string>
     <string name="el_metodo">EL MÉTODO DEL PLATO</string>
@@ -129,6 +114,6 @@
     <!-- Fragment Info Usuario -->
     <string name="informacion_usuario">INFORMACIÓN DE USUARIO</string>
     <string name="btn_GUARDAR">GUARDAR</string>
-
+    <string name="btn_modificar">MODIFICAR</string>
 
 </resources>
