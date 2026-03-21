@@ -1,10 +1,8 @@
 package com.example.proyectoeatq;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +45,7 @@ public class SubirPlato extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_plato, container, false);
         buttonSubir = view.findViewById(R.id.btn_subirPlato);
-        imgButtonPlato = view.findViewById(R.id.ib_foto_plato);
+        imgButtonPlato = view.findViewById(R.id.imb_subirPlato);
 
         imgButtonPlato.setOnClickListener(v -> abrirCamara());
 
