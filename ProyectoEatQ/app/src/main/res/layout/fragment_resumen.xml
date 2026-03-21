@@ -2,48 +2,34 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_resumen_semanal"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Grisfondo">
+    android:background="@color/Grisfondo"
+    >
 
     <TextView
-        android:id="@+id/tv_titulo_resumen"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:backgroundTintMode="add"
         android:text="@string/ultimos_dias_resumen"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/et_articulo"
+        android:id="@+id/tv_infoResumen"
         android:layout_width="357dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginBottom="28dp"
         android:text="@string/info_resumen"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_pregunta_recomendacion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_pregunta_recomendacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:text="@string/recomendaciones"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_ver_recetas_resumen"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -55,7 +41,7 @@
         android:backgroundTint="@color/amarilloBoton"
         android:text="@string/btn_introducir_plato"
         android:textColor="@color/black"
-        app:cornerRadius="8dp"
+        app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
