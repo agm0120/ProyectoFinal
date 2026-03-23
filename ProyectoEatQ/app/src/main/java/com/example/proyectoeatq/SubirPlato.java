@@ -19,12 +19,32 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+//Imports para crear un bitmap de la foto tomada por el usuario
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
+import android.widget.Toast;
+
+// Imports para la IA
+import com.google.ai.client.generativeai.GenerativeModel;
+import com.google.ai.client.generativeai.java.GenerativeModelFutures;
+import com.google.ai.client.generativeai.type.Content;
+import com.google.ai.client.generativeai.type.GenerateContentResponse;
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
+
+// Necesario para identificar la version de sistema y saber que metodo usar
+import androidx.core.content.ContextCompat;
+
 public class SubirPlato extends Fragment {
 
     private ImageButton imgButtonPlato;
     private Button buttonSubir;
     private String rutaFotoActual; // Guardará la ruta del archivo físico
     private ActivityResultLauncher<Uri> cameraLauncher;
+    private GenerativeModelFutures model;
+    private String textoIA;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +59,12 @@ public class SubirPlato extends Fragment {
                         imgButtonPlato.setImageURI(Uri.parse(rutaFotoActual));
                     }
                 });
+
+        String apiKey = BuildConfig.GEMINI_API_KEY;
+
+        // Se inicializa el modelo de la IA
+        GenerativeModel gm = new GenerativeModel("gemini-1.5-flash", apiKey);
+        model = GenerativeModelFutures.from(gm);
     }
 
     @Override
@@ -52,7 +78,7 @@ public class SubirPlato extends Fragment {
         buttonSubir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                abrirSiguienteFragment();
+                procesarImagenConIA();
             }
         });
         return view;
@@ -86,13 +112,60 @@ public class SubirPlato extends Fragment {
         return imagen;
     }
 
-    private void abrirSiguienteFragment() {
-        // Reemplaza 'OtroFragment' por el nombre real de tu clase destino
+    private void abrirSiguienteFragment(String infoIA) {
         Fragment nuevoFragment = new ResultadoPlato();
 
+        // Pasamos la respuesta de la IA al siguiente fragmento
+        Bundle args = new Bundle();
+        args.putString("info_ia", infoIA);
+        nuevoFragment.setArguments(args);
+
         getParentFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainerView, nuevoFragment) // R.id.container es el ID del FrameLayout en tu Activity principal
-                .addToBackStack(null) // Permite volver atrás
+                .replace(R.id.fragmentContainerView, nuevoFragment)
+                .addToBackStack(null)
                 .commit();
+    }
+
+    //Metodo para consultar a la IA pasandole la imagen de la camara
+    private void procesarImagenConIA() {
+        if (rutaFotoActual == null) {
+            Toast.makeText(getContext(), "Primero toma una foto", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // 1. Convertir la ruta del archivo a Bitmap
+        Bitmap bitmap = BitmapFactory.decodeFile(rutaFotoActual);
+
+        // 2. Crear el prompt para la IA
+        Content content = new Content.Builder()
+                .addText("Dime si esto es un plato de comida.")
+                .addImage(bitmap)
+                .build();
+
+        // 3. Llamada asíncrona
+        ListenableFuture<GenerateContentResponse> response = model.generateContent(content);
+
+        Futures.addCallback(response, new FutureCallback<GenerateContentResponse>() {
+            @Override
+            public void onSuccess(GenerateContentResponse result) {
+                textoIA = result.getText();
+
+                // IMPORTANTE: Volver al hilo principal para tocar la UI o navegar
+                getActivity().runOnUiThread(() -> {
+                    Log.d("GEMINI_OK", textoIA);
+                    // Aquí puedes pasar el texto al siguiente fragment
+                    abrirSiguienteFragment(textoIA);
+                });
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                getActivity().runOnUiThread(() -> {
+                    Log.e("GEMINI_ERROR", t.getMessage());
+                    Toast.makeText(getContext(), "Error en la IA: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                });
+            }
+        // Linea necesaria para detectar version del sistema y saber que metodo usar automaticamente
+        }, androidx.core.content.ContextCompat.getMainExecutor(getContext()));
     }
 }
