@@ -1,6 +1,8 @@
 package com.example.proyectoeatq;
 
 import android.annotation.SuppressLint;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +29,7 @@ public class InformacionHistorial extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // 2. "Inflamos" la vista para poder buscar los ID del XML
+        // 2. "Inflamos" la vista para poder buscar los ID del' XML
         View vista = inflater.inflate(R.layout.fragment_informacion_historial_deporte, container, false);
 
         // 3. Enlazamos las variables con los ID que pusiste en el XML
@@ -35,11 +37,20 @@ public class InformacionHistorial extends Fragment {
         btnDeporte = vista.findViewById(R.id.btn_historial_deporte);
         btnComida = vista.findViewById(R.id.btn_historial_comida);
 
+        // Lógica de los Botones
+        btnDeporte.setOnClickListener(v -> {
+            actualizarInterfaz(true); // Izquierda -> Rojo
+        });
+
+        btnComida.setOnClickListener(v -> {
+            actualizarInterfaz(false); // Derecha -> Verde
+        });
+
         // 4. Programamos qué pasa al tocar el calendario
         cvCalendario.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int anio, int mes, int diaDelMes) {
-                // El mes viene de 0 a 11, así que sumamos 1 para que sea humano (1 a 12)
+                // El mes viene de 0 a 11 (1 a 12)
                 int mesReal = mes + 1;
 
                 // Creamos un texto con la fecha
@@ -66,5 +77,17 @@ public class InformacionHistorial extends Fragment {
         });
 
         return vista;
+
+        
     }
+        private void actualizarInterfaz(boolean esDeporteSeleccionado) {
+            if (esDeporteSeleccionado) {
+                btnDeporte.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#F44336")));
+                btnComida.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#BDBDBD")));
+            } else {
+                btnComida.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4CAF50")));
+                btnDeporte.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#BDBDBD")));
+            }
+        }
+
 }
