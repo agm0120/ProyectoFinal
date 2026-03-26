@@ -57,7 +57,29 @@ public class ActivityMain extends AppCompatActivity {
 
         // Detectar clics dentro de las opciones del menú lateral
         navigationView.setNavigationItemSelectedListener(item -> {
-            // Cierra el menú al pulsar una opción
+            int id = item.getItemId();
+
+            if (id == R.id.nav_perfil) {
+                // Asumiendo que tienes un fragmento llamado PerfilUsuario
+                cambiarFragment(new InformacionUsuario());
+
+            } else if (id == R.id.nav_hitorial) { // Ojo al nombre en tu XML: nav_hitorial
+               // TODO: Crear el fragmento de historial y cambiarlo aquí
+                // cambiarFragment(new Historial());
+
+            } else if (id == R.id.nav_contactos) {
+                cambiarFragment(new Contacto());
+
+            } else if (id == R.id.nav_config) {
+                //TODO: Crear el fragmento de configuración y cambiarlo aquí
+               // cambiarFragment(new Configuracion());
+
+            } else if (id == R.id.nav_logout) {
+                // Lógica de salida
+                finish();
+            }
+
+            // Cierra el menú al pulsar una opción (usando END porque lo abres por la derecha)
             drawerLayout.closeDrawer(GravityCompat.END);
             return true;
         });
@@ -100,7 +122,7 @@ public class ActivityMain extends AppCompatActivity {
 
     }
 
-    private void cambiarFragment (Fragment fragmento){
+    public void cambiarFragment (Fragment fragmento){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
