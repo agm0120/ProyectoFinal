@@ -63,7 +63,7 @@ public class SubirPlato extends Fragment {
         String apiKey = BuildConfig.GEMINI_API_KEY;
 
         // Se inicializa el modelo de la IA
-        GenerativeModel gm = new GenerativeModel("gemini-1.5-flash", apiKey);
+        GenerativeModel gm = new GenerativeModel("models/gemini-2.5-flash", apiKey);
         model = GenerativeModelFutures.from(gm);
     }
 
