@@ -71,7 +71,14 @@
                 android:minHeight="120dp"
                 android:padding="20dp"
                 android:text=""
+<<<<<<< Updated upstream
                 android:textColor="#333333" />
+=======
+                android:textColor="#333333"
+                tools:text="Desayuno: Avena con frutas\nAlmuerzo: Pollo a la plancha con arroz..." />
+
+            
+>>>>>>> Stashed changes
         </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
