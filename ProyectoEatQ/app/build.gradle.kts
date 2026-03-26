@@ -2,7 +2,8 @@ plugins {
     id("com.android.application")
     //Add the Google services Gradle plugin
     id("com.google.gms.google-services")
-
+    // Plugin para uso privado de la clave de la API IA
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -28,6 +29,9 @@ android {
             )
         }
     }
+    buildFeatures {
+        buildConfig = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -46,6 +50,12 @@ dependencies {
     // Firebase dependencies. Dependencia del auth y hueco para otras posibles
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
+
+    // SDK de Google AI para Android
+    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+
+    // Necesario para manejar tareas asíncronas en Java
+    implementation("com.google.guava:guava:31.1-android")
 
     //Test dependencies
     testImplementation("junit:junit:4.13.2")
