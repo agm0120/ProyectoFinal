@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -22,7 +23,7 @@ public class ActivityMain extends AppCompatActivity {
     private ImageButton bCompra, bEjercicio, bRecetas, bNoticias;
 
     // --- AÑADIDO PARA EL MENÚ LATERAL: Variables ---
-    private ImageButton bPerfil;
+    private ImageButton bPerfil, btn_atrasMain;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     // -----------------------------------------------
@@ -37,6 +38,7 @@ public class ActivityMain extends AppCompatActivity {
         bEjercicio = findViewById(R.id.btn_ejercicio);
         bRecetas = findViewById(R.id.btn_recetas);
         bNoticias = findViewById(R.id.btn_noticias);
+        btn_atrasMain = findViewById(R.id.btn_atrasMain);
 
         // --- AÑADIDO PARA EL MENÚ LATERAL: Inicializar vistas y clics ---
         bPerfil = findViewById(R.id.btn_perfilUsuario);
@@ -46,6 +48,11 @@ public class ActivityMain extends AppCompatActivity {
         // Al pulsar tu foto de perfil, se abre el menú por la derecha
         bPerfil.setOnClickListener(v -> {
             drawerLayout.openDrawer(GravityCompat.END);
+        });
+
+        //Botón back
+        btn_atrasMain.setOnClickListener(v -> {
+            onBackPressed();
         });
 
         // Detectar clics dentro de las opciones del menú lateral
@@ -79,6 +86,16 @@ public class ActivityMain extends AppCompatActivity {
 
         bPlato.setOnClickListener(v -> {
             cambiarFragment(new Resumen());
+        });
+
+        getSupportFragmentManager().addOnBackStackChangedListener(() -> {
+            int stackCount = getSupportFragmentManager().getBackStackEntryCount();
+            //Si hay más de 1 fragmento, se muestra la flecha. si no, se oculta.
+            if(stackCount > 1){
+                btn_atrasMain.setVisibility(View.VISIBLE);
+            }else {
+                btn_atrasMain.setVisibility(View.GONE);
+            }
         });
 
     }
