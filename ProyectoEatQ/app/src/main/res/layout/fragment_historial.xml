@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F4F4"
-    tools:context=".HistorialDeporte">
+    tools:context=".InformacionHistorial">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_etiqueta_seleccionar">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_historial_deporte"
+                android:id="@+id/btn_historialDeporte"
                 android:layout_width="85dp"
                 android:layout_height="65dp"
                 android:layout_marginEnd="8dp"
@@ -58,7 +58,7 @@
                 app:iconSize="30dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_historial_comida"
+                android:id="@+id/btn_historialComida"
                 android:layout_width="85dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#F05268"
@@ -93,7 +93,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_etiqueta_dia">
 
             <CalendarView
-                android:id="@+id/cv_calendario_historial"
+                android:id="@+id/cv_historial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.AppCompat.Light" />

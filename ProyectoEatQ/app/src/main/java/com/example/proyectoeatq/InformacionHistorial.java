@@ -16,9 +16,9 @@ import com.google.android.material.button.MaterialButton; // Para tus botones
 public class InformacionHistorial extends Fragment {
 
     // 1. Definimos las variables privadas (los objetos que usaremos)
-    private CalendarView cvCalendario;
-    private MaterialButton btnDeporte;
-    private MaterialButton btnComida;
+    private CalendarView cv_calendarioHistorial;
+    private MaterialButton btn_cargarDeporte;
+    private MaterialButton btn_cargarComida;
 
     public InformacionHistorial() {
         // Constructor necesario
@@ -30,24 +30,18 @@ public class InformacionHistorial extends Fragment {
                              Bundle savedInstanceState) {
 
         // 2. "Inflamos" la vista para poder buscar los ID del' XML
-        View vista = inflater.inflate(R.layout.fragment_informacion_historial_deporte, container, false);
+        View vista = inflater.inflate(R.layout.fragment_historial, container, false);
 
         // 3. Enlazamos las variables con los ID que pusiste en el XML
-        cvCalendario = vista.findViewById(R.id.cv_calendario_historial);
-        btnDeporte = vista.findViewById(R.id.btn_historial_deporte);
-        btnComida = vista.findViewById(R.id.btn_historial_comida);
+        cv_calendarioHistorial = vista.findViewById(R.id.cv_historial);
+        btn_cargarDeporte = vista.findViewById(R.id.btn_historialDeporte);
+        btn_cargarComida = vista.findViewById(R.id.btn_historialComida);
 
-        // Lógica de los Botones
-        btnDeporte.setOnClickListener(v -> {
-            actualizarInterfaz(true); // Izquierda -> Rojo
-        });
 
-        btnComida.setOnClickListener(v -> {
-            actualizarInterfaz(false); // Derecha -> Verde
-        });
+
 
         // 4. Programamos qué pasa al tocar el calendario
-        cvCalendario.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        cv_calendarioHistorial.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int anio, int mes, int diaDelMes) {
                 // El mes viene de 0 a 11 (1 a 12)
@@ -62,16 +56,18 @@ public class InformacionHistorial extends Fragment {
         });
 
         // 5. Programamos qué pasa al tocar los botones (solo para que hagan algo)
-        btnDeporte.setOnClickListener(new View.OnClickListener() {
+        btn_cargarDeporte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                actualizarInterfaz(true); // Izquierda -> Rojo
                 Toast.makeText(getContext(), "Cambiando a Deporte", Toast.LENGTH_SHORT).show();
             }
         });
 
-        btnComida.setOnClickListener(new View.OnClickListener() {
+        btn_cargarComida.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                actualizarInterfaz(false); // Derecha -> Verde
                 Toast.makeText(getContext(), "Cambiando a Comida", Toast.LENGTH_SHORT).show();
             }
         });
@@ -82,11 +78,11 @@ public class InformacionHistorial extends Fragment {
     }
         private void actualizarInterfaz(boolean esDeporteSeleccionado) {
             if (esDeporteSeleccionado) {
-                btnDeporte.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#F44336")));
-                btnComida.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#BDBDBD")));
+                btn_cargarDeporte.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#F44336")));
+                btn_cargarComida.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#BDBDBD")));
             } else {
-                btnComida.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4CAF50")));
-                btnDeporte.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#BDBDBD")));
+                btn_cargarComida.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4CAF50")));
+                btn_cargarDeporte.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#BDBDBD")));
             }
         }
 
