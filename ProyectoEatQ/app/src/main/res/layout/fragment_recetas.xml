@@ -54,108 +54,13 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"/>
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_recetas"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:fillViewport="true"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="20dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/fondo_redondeado"
-                android:backgroundTint="#F9F5C6"
-                android:gravity="center_vertical"
-                android:padding="10dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginBottom="15dp">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:background="#E0E0E0"
-                    android:scaleType="centerCrop"
-                    android:layout_marginEnd="16dp"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Plato combinado de Pasta y Pollo a la Parrilla."
-                    android:textColor="#5D4037"
-                    android:textSize="16sp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/fondo_redondeado"
-                android:backgroundTint="#D5F5CD"
-                android:gravity="center_vertical"
-                android:padding="10dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginBottom="15dp">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:background="#E0E0E0"
-                    android:scaleType="centerCrop"
-                    android:layout_marginEnd="16dp"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Bowl de Verduras Asadas."
-                    android:textColor="#2E4D28"
-                    android:textSize="16sp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/fondo_redondeado"
-                android:backgroundTint="#C8EBF7"
-                android:gravity="center_vertical"
-                android:padding="10dp"
-                android:layout_marginBottom="15dp">
-
-                <ImageView
-                    android:id="@+id/imgProteinas"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:background="#E0E0E0"
-                    android:scaleType="centerCrop"
-                    android:layout_marginEnd="16dp"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Dúo de Proteínas a la Plancha con Quinoa."
-                    android:textColor="#2B4654"
-                    android:textSize="16sp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
 </LinearLayout>
