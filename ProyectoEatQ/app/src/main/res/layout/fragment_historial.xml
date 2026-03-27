@@ -96,7 +96,7 @@
                 android:id="@+id/cv_calendario_historial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/Theme.AppCompat.Dark" />
+                android:theme="@style/Theme.AppCompat.Light" />
         </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
