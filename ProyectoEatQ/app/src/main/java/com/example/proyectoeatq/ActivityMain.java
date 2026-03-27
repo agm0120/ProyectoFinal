@@ -63,9 +63,9 @@ public class ActivityMain extends AppCompatActivity {
                 // Asumiendo que tienes un fragmento llamado PerfilUsuario
                 cambiarFragment(new InformacionUsuario());
 
-            } else if (id == R.id.nav_hitorial) { // Ojo al nombre en tu XML: nav_hitorial
+            } else if (id == R.id.nav_historial) { // Ojo al nombre en tu XML: nav_hitorial
                // TODO: Crear el fragmento de historial y cambiarlo aquí
-                // cambiarFragment(new Historial());
+                cambiarFragment(new InformacionHistorial());
 
             } else if (id == R.id.nav_contactos) {
                 cambiarFragment(new Contacto());
