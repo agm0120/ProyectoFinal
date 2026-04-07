@@ -47,6 +47,13 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
 
+    // Librería Glide: Encargada de procesar URLs de internet y cargar las imágenes eficientemente en los ImageView.
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    /*Permite que la app se conecte y descargue los datos de las recetas desde Firebase Realtime Database en tiempo real.*/
+    implementation("com.google.firebase:firebase-database")
+
+
     //Test dependencies
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
