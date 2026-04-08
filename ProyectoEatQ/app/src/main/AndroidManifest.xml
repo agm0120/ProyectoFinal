@@ -9,6 +9,11 @@
     <!--Permiso para poder abrir la cámara del móvil -->
     <uses-feature android:name="android.hardware.camera" android:required="true" />
 
+    <!-- Para poder acceder al auth y coger el IDU del usuario -->
+    <queries>
+        <package android:name="com.google.android.gms" />
+    </queries>
+
     <!--
     android:icon para cambiar icono de la app
     -->

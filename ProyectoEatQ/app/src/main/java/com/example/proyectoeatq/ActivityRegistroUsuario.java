@@ -60,11 +60,10 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
 
 
 
-                //Se comprueba que los dos campos son validos. Mas adelante se incluiran el resto de datos de un et_usuario
+                //Se comprueba que los dos campos son validos. Mas adelante se incluiran el resto de datos de un usuario
                 if(checkEmpty(textoCorreo, textoContra)){
 
                     register(textoCorreo, textoContra);
-                    registerdb(textoCorreo, textoContra, textoNombre, textoFecha, textoEdad,textoNacion);
 
                 }else {
                     Toast.makeText(ActivityRegistroUsuario.this, "Por favor, rellena todos los campos",
@@ -76,48 +75,53 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
 
     }
 
-    //Metodo para registrar un nuevo et_usuario
+    //Metodo para registrar un nuevo usuario
     private void register(String textoCorreo, String textoContra) {
-        //Metodo de auth para registrar nuevos usuarios. Se le pasa correo y contraseña(minimo seis caracteres)
         auth.createUserWithEmailAndPassword(textoCorreo, textoContra)
-                //Metodo para realizar algo una vez se termine el registro
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(Task<AuthResult> task) {
-                        //Condicional que se ejecuta si el registro es correcto. Si lo es se vuelve a la pantalla de login
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(ActivityRegistroUsuario.this, ActivityMainLogin.class));
-                        //Condicional que se ejecuta si falla el registro. Si falla salta un mensaje con el error
+                            // 1. Obtenemos el UID del usuario recién creado
+                            String uid = auth.getCurrentUser().getUid();
+
+                            // 2. Llamamos a la base de datos pasando el UID
+                            registerdb(uid, textoCorreo, textoContra, textoNombre, textoFecha, textoEdad, textoNacion);
+
+                            // Se mueve el Intent al éxito de la escritura en DB para asegurar que todo se guardó
                         } else {
-                            Toast.makeText(ActivityRegistroUsuario.this, "Fallo en el registro de Usuario",
+                            Toast.makeText(ActivityRegistroUsuario.this, "Fallo en el registro de Auth",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
 
-    private void registerdb(String textoCorreo, String textoContra, String textoNombre,
+    private void registerdb(String uid, String textoCorreo, String textoContra, String textoNombre,
                             String textoFecha, String textoEdad, String textoNacion){
 
-        // Creamos el HashMap en formato Java
         Map<String, Object> userMap = new HashMap<>();
+
+        userMap.put("correo", textoCorreo);
         userMap.put("contraseña", textoContra);
         userMap.put("nombreUsuario", textoNombre);
         userMap.put("fechaNacimiento", textoFecha);
         userMap.put("edad", textoEdad);
         userMap.put("nacionalidad", textoNacion);
 
-        // Guardamos en Firestore
-        db.collection("Usuario").document(textoCorreo).set(userMap)
+        // Usamos el UID como nombre del documento
+        db.collection("Usuario").document(uid).set(userMap)
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(ActivityRegistroUsuario.this, "Usuario registrado en la bd",
+                    Toast.makeText(ActivityRegistroUsuario.this, "Usuario registrado con éxito",
                             Toast.LENGTH_SHORT).show();
+                    // Redirigir al Login solo DESPUÉS de que la base de datos confirme la escritura
+                    startActivity(new Intent(ActivityRegistroUsuario.this, ActivityMainLogin.class));
+                    finish(); // Cerramos la actividad de registro para que no puedan volver atrás
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(ActivityRegistroUsuario.this, "Fallo en el registro de la bd",
+                    Toast.makeText(ActivityRegistroUsuario.this, "Error al guardar datos: " + e.getMessage(),
                             Toast.LENGTH_SHORT).show();
                 });
-
     }
 
     //Metodo para comprobar que los campos (por ahora correo y contraseña) no estan vacios o son nulos
