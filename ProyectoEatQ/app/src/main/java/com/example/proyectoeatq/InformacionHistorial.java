@@ -20,11 +20,13 @@ public class InformacionHistorial extends Fragment {
     private MaterialButton btn_cargarDeporte;
     private MaterialButton btn_cargarComida;
 
+    private boolean deporteActivo = false; //de primeras el deporte no está seleccionado
+
     public InformacionHistorial() {
-        // Constructor necesario
+          // Required empty public constructor
     }
 
-    @SuppressLint("MissingInflatedId")
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,6 +39,9 @@ public class InformacionHistorial extends Fragment {
         btn_cargarDeporte = vista.findViewById(R.id.btn_historialDeporte);
         btn_cargarComida = vista.findViewById(R.id.btn_historialComida);
 
+        //Llamamos a cargar Comida para que al abrir el fragmento, ya esté seleccionado y se vea la interfaz de comida
+        configurarModoComida();
+
 
 
 
@@ -44,45 +49,48 @@ public class InformacionHistorial extends Fragment {
         cv_calendarioHistorial.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int anio, int mes, int diaDelMes) {
-                // El mes viene de 0 a 11 (1 a 12)
+                // El mes viene de 0 a 11 (1 a 12). Luego creamos un texto con la fecha seleccionada
                 int mesReal = mes + 1;
-
-                // Creamos un texto con la fecha
                 String fecha = diaDelMes + "/" + mesReal + "/" + anio;
 
-                // Mostramos un aviso rápido en pantalla con la fecha elegida
-                Toast.makeText(getContext(), "Seleccionaste: " + fecha, Toast.LENGTH_SHORT).show();
+                // Si deporteActivo es true, muestra "Deporte", si es false, muestra "Comida"
+                String tipo = deporteActivo ? "Deporte" : "Comida";
+                Toast.makeText(getContext(), "Viendo: " + tipo + " del: " + fecha, Toast.LENGTH_SHORT).show();
             }
         });
 
-        // 5. Programamos qué pasa al tocar los botones (solo para que hagan algo)
-        btn_cargarDeporte.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actualizarInterfaz(true); // Izquierda -> Rojo
-                Toast.makeText(getContext(), "Cambiando a Deporte", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        btn_cargarComida.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actualizarInterfaz(false); // Derecha -> Verde
-                Toast.makeText(getContext(), "Cambiando a Comida", Toast.LENGTH_SHORT).show();
-            }
-        });
+        //Para los botones, llamamos a las funciones que configuran cada modo (deporte o comida)
+        // y dentro de esas funciones, actualizamos la interfaz
+        btn_cargarDeporte.setOnClickListener(v -> configurarModoDeporte());
+        btn_cargarComida.setOnClickListener(v -> configurarModoComida());
 
         return vista;
-
-        
     }
-        private void actualizarInterfaz(boolean esDeporteSeleccionado) {
-            if (esDeporteSeleccionado) {
-                btn_cargarDeporte.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#F44336")));
-                btn_cargarComida.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#BDBDBD")));
+
+    private void configurarModoComida() {
+        deporteActivo = false; // Indicamos que el modo deporte no está activo
+        actualizarInterfaz(false); //boton de comida en verde
+        Toast.makeText(getContext(), "Historial de Comida", Toast.LENGTH_SHORT).show();
+    }
+
+    private void configurarModoDeporte() {
+        deporteActivo = true; // Indicamos que el modo deporte está activo
+        actualizarInterfaz(true); //boton de deporte en rojo
+        Toast.makeText(getContext(), "Historial de Deporte", Toast.LENGTH_SHORT).show();
+    }
+
+    private void actualizarInterfaz(boolean deporteSeleccionado) {
+
+        int verdeActivo = getContext().getColor(R.color.verdeLogo);
+        int grisInactivo = getContext().getColor(R.color.grisBoton);
+
+            if (deporteSeleccionado) {
+                btn_cargarDeporte.setBackgroundTintList(ColorStateList.valueOf(verdeActivo));
+                btn_cargarComida.setBackgroundTintList(ColorStateList.valueOf(grisInactivo));
             } else {
-                btn_cargarComida.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4CAF50")));
-                btn_cargarDeporte.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#BDBDBD")));
+                btn_cargarDeporte.setBackgroundTintList(ColorStateList.valueOf(grisInactivo));
+                btn_cargarComida.setBackgroundTintList(ColorStateList.valueOf(verdeActivo));
             }
         }
 
