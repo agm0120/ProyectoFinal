@@ -25,6 +25,9 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.widget.Toast;
 
+// Para poder abrir la galeria del telefono
+import androidx.activity.result.PickVisualMediaRequest;
+
 // Imports para la IA
 import com.google.ai.client.generativeai.GenerativeModel;
 import com.google.ai.client.generativeai.java.GenerativeModelFutures;
@@ -42,7 +45,8 @@ public class SubirPlato extends Fragment {
     private ImageButton imgButtonPlato;
     private Button buttonSubir;
     private String rutaFotoActual; // Guardará la ruta del archivo físico
-    private ActivityResultLauncher<Uri> cameraLauncher;
+    private ActivityResultLauncher<Uri> cameraLauncher; // Lanzador de la camara
+    private ActivityResultLauncher<PickVisualMediaRequest> galleryLauncher; // Lanzador de la galeria
     private GenerativeModelFutures model;
     private String textoIA;
 
@@ -60,6 +64,16 @@ public class SubirPlato extends Fragment {
                     }
                 });
 
+        galleryLauncher = registerForActivityResult(
+                new ActivityResultContracts.PickVisualMedia(),
+                uri -> {
+                    if (uri != null) {
+                        // Guardamos la URI de la galería para que el botón "Subir" pueda leerla
+                        rutaFotoActual = uri.toString();
+                        imgButtonPlato.setImageURI(uri);
+                    }
+                });
+
         String apiKey = BuildConfig.GEMINI_API_KEY;
 
         // Se inicializa el modelo de la IA
@@ -73,7 +87,7 @@ public class SubirPlato extends Fragment {
         buttonSubir = view.findViewById(R.id.btn_subirPlato);
         imgButtonPlato = view.findViewById(R.id.imb_subirPlato);
 
-        imgButtonPlato.setOnClickListener(v -> abrirCamara());
+        imgButtonPlato.setOnClickListener(v -> mostrarOpcionesImagen());
 
         buttonSubir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +96,24 @@ public class SubirPlato extends Fragment {
             }
         });
         return view;
+    }
+
+    private void mostrarOpcionesImagen() {
+        // Puedes usar un AlertDialog sencillo para preguntar
+        String[] opciones = {"Cámara", "Galería"};
+        new android.app.AlertDialog.Builder(getContext())
+                .setTitle("Seleccionar imagen")
+                .setItems(opciones, (dialog, which) -> {
+                    if (which == 0) abrirCamara();
+                    else abrirGaleria();
+                })
+                .show();
+    }
+
+    private void abrirGaleria() {
+        galleryLauncher.launch(new PickVisualMediaRequest.Builder()
+                .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
+                .build());
     }
 
     private void abrirCamara() {
@@ -129,43 +161,47 @@ public class SubirPlato extends Fragment {
     //Metodo para consultar a la IA pasandole la imagen de la camara
     private void procesarImagenConIA() {
         if (rutaFotoActual == null) {
-            Toast.makeText(getContext(), "Primero toma una foto", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Primero selecciona una foto", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // 1. Convertir la ruta del archivo a Bitmap
-        Bitmap bitmap = BitmapFactory.decodeFile(rutaFotoActual);
-
-        // 2. Crear el prompt para la IA
-        Content content = new Content.Builder()
-                .addText("Dime si esto es un plato de comida.")
-                .addImage(bitmap)
-                .build();
-
-        // 3. Llamada asíncrona
-        ListenableFuture<GenerateContentResponse> response = model.generateContent(content);
-
-        Futures.addCallback(response, new FutureCallback<GenerateContentResponse>() {
-            @Override
-            public void onSuccess(GenerateContentResponse result) {
-                textoIA = result.getText();
-
-                // IMPORTANTE: Volver al hilo principal para tocar la UI o navegar
-                getActivity().runOnUiThread(() -> {
-                    Log.d("GEMINI_OK", textoIA);
-                    // Aquí puedes pasar el texto al siguiente fragment
-                    abrirSiguienteFragment(textoIA);
-                });
+        try {
+            Bitmap bitmap;
+            // Si la ruta empieza por "content://", viene de la galería
+            if (rutaFotoActual.startsWith("content://")) {
+                Uri uri = Uri.parse(rutaFotoActual);
+                bitmap = BitmapFactory.decodeStream(getContext().getContentResolver().openInputStream(uri));
+            } else {
+                // Si no, es una ruta de archivo (Cámara)
+                bitmap = BitmapFactory.decodeFile(rutaFotoActual);
             }
 
-            @Override
-            public void onFailure(Throwable t) {
-                getActivity().runOnUiThread(() -> {
-                    Log.e("GEMINI_ERROR", t.getMessage());
-                    Toast.makeText(getContext(), "Error en la IA: " + t.getMessage(), Toast.LENGTH_LONG).show();
-                });
-            }
-        // Linea necesaria para detectar version del sistema y saber que metodo usar automaticamente
-        }, androidx.core.content.ContextCompat.getMainExecutor(getContext()));
+            Content content = new Content.Builder()
+                    .addText("Dime si esto es un plato de comida.")
+                    .addImage(bitmap)
+                    .build();
+
+            ListenableFuture<GenerateContentResponse> response = model.generateContent(content);
+
+            Futures.addCallback(response, new FutureCallback<GenerateContentResponse>() {
+                @Override
+                public void onSuccess(GenerateContentResponse result) {
+                    textoIA = result.getText();
+                    getActivity().runOnUiThread(() -> abrirSiguienteFragment(textoIA));
+                }
+
+                @Override
+                public void onFailure(Throwable t) {
+                    getActivity().runOnUiThread(() -> {
+                        Log.e("GEMINI_ERROR", t.getMessage());
+                        Toast.makeText(getContext(), "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                    });
+                }
+            }, ContextCompat.getMainExecutor(getContext()));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(getContext(), "Error al cargar la imagen", Toast.LENGTH_SHORT).show();
+        }
     }
 }
