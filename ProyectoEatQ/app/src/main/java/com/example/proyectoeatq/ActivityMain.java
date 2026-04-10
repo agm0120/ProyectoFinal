@@ -72,7 +72,7 @@ public class ActivityMain extends AppCompatActivity {
 
             } else if (id == R.id.nav_config) {
                 //TODO: Crear el fragmento de configuración y cambiarlo aquí
-               // cambiarFragment(new Configuracion());
+                cambiarFragment(new Configuracion());
 
             } else if (id == R.id.nav_logout) {
                 // Lógica de salida
