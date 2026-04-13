@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +25,7 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
     private EditText correo, contraseña, nombre, fecha, edad, nacion;
 
     private Button registroUsuario;
+    private ImageButton atrasRegistro;
 
     private String textoCorreo, textoContra, textoNombre, textoFecha, textoEdad, textoNacion;
 
@@ -43,9 +45,17 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
         edad = findViewById(R.id.et_edad);
         nacion = findViewById(R.id.et_nacionalidad);
         registroUsuario = findViewById(R.id.btn_crearUsuario);
+        atrasRegistro = findViewById(R.id.btn_atrasRegistro);
 
         auth = FirebaseAuth.getInstance();
         db=FirebaseFirestore.getInstance();
+
+        atrasRegistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ActivityRegistroUsuario.this, ActivityMainLogin.class));
+            }
+        });
 
         registroUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,8 +67,6 @@ public class ActivityRegistroUsuario extends AppCompatActivity {
                 textoFecha = fecha.getText().toString();
                 textoEdad = edad.getText().toString();
                 textoNacion = nacion.getText().toString();
-
-
 
                 //Se comprueba que los dos campos son validos. Mas adelante se incluiran el resto de datos de un usuario
                 if(checkEmpty(textoCorreo, textoContra)){
