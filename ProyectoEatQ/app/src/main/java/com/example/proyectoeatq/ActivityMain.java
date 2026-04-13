@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -15,6 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 // --------------------------------------------------------------
 
 public class ActivityMain extends AppCompatActivity {
@@ -75,7 +78,20 @@ public class ActivityMain extends AppCompatActivity {
                 cambiarFragment(new Configuracion());
 
             } else if (id == R.id.nav_logout) {
-                // Lógica de salida
+                // 1. Cerrar sesión en Firebase
+                FirebaseAuth.getInstance().signOut();
+
+                // 2. Crear un Intent para ir a la pantalla de Login
+                Intent intent = new Intent(ActivityMain.this, ActivityMainLogin.class);
+
+                // 3. Limpiar el historial de actividades para que no pueda volver atrás con el botón del móvil
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                Toast.makeText(ActivityMain.this, "Cerrando sesión", Toast.LENGTH_LONG).show();
+
+                startActivity(intent);
+
+                // 4. Cerrar la activity actual
                 finish();
             }
 
