@@ -23,6 +23,7 @@ import java.util.Locale;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 // Para poder abrir la galeria del telefono
@@ -43,12 +44,13 @@ import androidx.core.content.ContextCompat;
 public class SubirPlato extends Fragment {
 
     private ImageButton imgButtonPlato;
-    private Button buttonSubir;
+    private Button buttonSubir, buttonVolverSubir;
     private String rutaFotoActual; // Guardará la ruta del archivo físico
     private ActivityResultLauncher<Uri> cameraLauncher; // Lanzador de la camara
     private ActivityResultLauncher<PickVisualMediaRequest> galleryLauncher; // Lanzador de la galeria
     private GenerativeModelFutures model;
     private String textoIA;
+    private TextView textoOrientativo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,9 @@ public class SubirPlato extends Fragment {
                     if (result) {
                         // Si 'result' es true, la foto se guardó con éxito en alta resolución
                         imgButtonPlato.setImageURI(Uri.parse(rutaFotoActual));
+                        // Hacer visible boton "Volver a Subir"
+                        buttonVolverSubir.setVisibility(View.VISIBLE);
+                        textoOrientativo.setText(R.string.plato_de_hoy);
                     }
                 });
 
@@ -71,6 +76,9 @@ public class SubirPlato extends Fragment {
                         // Guardamos la URI de la galería para que el botón "Subir" pueda leerla
                         rutaFotoActual = uri.toString();
                         imgButtonPlato.setImageURI(uri);
+                        // Hacer visible boton "Volver a Subir"
+                        buttonVolverSubir.setVisibility(View.VISIBLE);
+                        textoOrientativo.setText(R.string.plato_de_hoy);
                     }
                 });
 
@@ -85,7 +93,12 @@ public class SubirPlato extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_plato, container, false);
         buttonSubir = view.findViewById(R.id.btn_subirPlato);
+        buttonVolverSubir = view.findViewById(R.id.btn_resubirPlato);
         imgButtonPlato = view.findViewById(R.id.imb_subirPlato);
+        textoOrientativo = view.findViewById(R.id.tv_pregunta_plato);
+
+        // Ocultar boton "Volver a Subir"
+        buttonVolverSubir.setVisibility(View.GONE);
 
         imgButtonPlato.setOnClickListener(v -> mostrarOpcionesImagen());
 
@@ -95,6 +108,9 @@ public class SubirPlato extends Fragment {
                 procesarImagenConIA();
             }
         });
+
+        // Funcion del boton "Volver a subir"
+        buttonVolverSubir.setOnClickListener(v -> mostrarOpcionesImagen());
         return view;
     }
 
