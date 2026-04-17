@@ -40,17 +40,17 @@ dependencies {
     implementation("com.google.android.material:material:1.13.0")
     implementation("androidx.constraintlayout:constraintlayout:2.2.1")
 
-    // Firebase BoM. Necesario para incluir las dependenciasde los otros servicios de firebase.
+    //Firebase BoM. Necesario para incluir las dependenciasde los otros servicios de firebase.
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
 
-    // Firebase dependencies. Dependencia del auth y hueco para otras posibles
+    //Firebase dependencies. Dependencia del auth y hueco para otras posibles
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
 
-    // Librería Glide: Encargada de procesar URLs de internet y cargar las imágenes eficientemente en los ImageView.
+    //Librería Glide: Encargada de procesar URLs de internet y cargar las imágenes eficientemente en los ImageView.
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
-    /*Permite que la app se conecte y descargue los datos de las recetas desde Firebase Realtime Database en tiempo real.*/
+    //Permite que la app se conecte y descargue los datos de las recetas desde Firebase Realtime Database en tiempo real.*/
     implementation("com.google.firebase:firebase-database")
 
 

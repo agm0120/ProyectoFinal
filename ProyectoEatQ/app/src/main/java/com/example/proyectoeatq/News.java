@@ -1,6 +1,8 @@
 package com.example.proyectoeatq;
 
 import android.app.AlertDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -68,20 +70,33 @@ public class News extends Fragment {
 
         // 1. Vincular componentes usando los IDs exactos del XML
         Button btnInformate = view.findViewById(R.id.btn_informacion);
+        Button btnNoticiaActividad = view.findViewById(R.id.btnVerNoticia1);
+        Button btnNoticiaBienestar = view.findViewById(R.id.btnVerNoticia2);
+
         ImageView imgPlato = view.findViewById(R.id.imgMetodoPlato);
         ImageView imgRunning = view.findViewById(R.id.imgRunning);
         ImageView imgYoga = view.findViewById(R.id.imgYoga);
 
-        // 2. Asignar imágenes (Asegúrate de que los nombres coincidan con los de tu carpeta res/drawable)
-        // Ejemplo: R.drawable.metodo_plato, R.drawable.running_news, R.drawable.yoga_relax
-        // imgPlato.setImageResource(R.drawable.metodo_plato);
-        // imgRunning.setImageResource(R.drawable.running_news);
-        // imgYoga.setImageResource(R.drawable.yoga_relax);
-
-        // 3. Configurar la acción del botón "Infórmate"
+        // 2. Configurar la acción del botón "Infórmate"
         btnInformate.setOnClickListener(v -> {
             showPopupInformativo();
         });
+
+        // 3. Configurar acciones para abrir las URLs de las noticias
+        btnNoticiaActividad.setOnClickListener(v -> {
+            abrirUrl("https://www.who.int/es/news-room/fact-sheets/detail/physical-activity");
+        });
+
+        btnNoticiaBienestar.setOnClickListener(v -> {
+            abrirUrl("https://www.mayoclinic.org/es/healthy-lifestyle/stress-management/basics/stress-relief/hlv-20049495");
+        });
+    }
+
+    // Método auxiliar para abrir URLs externas
+    private void abrirUrl(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
     }
 
     // Método para mostrar el AlertDialog con la información detallada

@@ -95,7 +95,6 @@ public class Recetas extends Fragment {
             }
         });
     }
-
     private void initListeners() {
         // Preparado para filtrar en el futuro
         btn_hidratos.setOnClickListener(v -> { /* Filtrar por hidratos */ });

@@ -27,6 +27,7 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.RecetaVi
     @Override
     public RecetaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //diseño XML para crear la estructura visual de cada elemento de la lista.
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_lista_receta, parent, false);
         return new RecetaViewHolder(view);
     }
