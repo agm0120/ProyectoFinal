@@ -24,12 +24,13 @@ import java.util.List;
 
 public class ListaCompra extends Fragment {
 
-    private Button btn_añadir; // ? btnAddTask
+    private Button btn_añadir, btn_borrarLista; // ? btnAddTask
     private EditText textoArticulo; //? etTask
     private RecyclerView rv_lista; //? rvTasks
     //creamos la instancia del ListaAdapter
     //vamos a ir llamándolo cada vez que modifiquemos la lista de la compra
     private LCAdapter adapter;  //? adapter
+
 
     List<LCItem> listaCompra = new ArrayList<>(); //? tasks
 
@@ -97,6 +98,13 @@ public class ListaCompra extends Fragment {
     
     private void initListeners() {
         btn_añadir.setOnClickListener(view -> añadirItem()); //forma abreviada
+        btn_borrarLista.setOnClickListener(view -> borrarLista());
+    }
+
+    private void borrarLista() {
+        listaCompra.clear(); //borra todos los items de la lista
+        adapter.notifyDataSetChanged(); //le dice al adapter que se han añadido nuevos valores par que pinte de nuevo la lista
+        prefs.saveItem(listaCompra); //guarda la lista actualizada en las preferencias
     }
 
     private void añadirItem() { //? addTask()
@@ -114,6 +122,7 @@ public class ListaCompra extends Fragment {
         btn_añadir = view.findViewById(R.id.btn_añadir);
         textoArticulo = view.findViewById(R.id.textoArticulo);
         rv_lista = view.findViewById(R.id.rv_lista);
+        btn_borrarLista = view.findViewById(R.id.btn_borrarLista);
     }
 
 }
