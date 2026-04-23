@@ -192,8 +192,18 @@ public class SubirPlato extends Fragment {
                 bitmap = BitmapFactory.decodeFile(rutaFotoActual);
             }
 
+            String promptIA = "Actúa como un nutricionista experto. Analiza la imagen según el Método del Plato " +
+                    "(50% vegetales, 25% proteína, 25% carbohidratos). " +
+                    "Responde ÚNICAMENTE en formato JSON con los siguientes campos: " +
+                    "es_comida (boolean), " +
+                    "analisis_detallado (string breve), " +
+                    "porcentajes (objeto con: vegetales, proteinas, carbohidratos como enteros), " +
+                    "puntuacion (int de 1 a 10), " +
+                    "sugerencia (string para mejorar el plato). " +
+                    "No añadas formato markdown ni texto extra.";
+
             Content content = new Content.Builder()
-                    .addText("Dime si esto es un plato de comida.")
+                    .addText(promptIA)
                     .addImage(bitmap)
                     .build();
 
