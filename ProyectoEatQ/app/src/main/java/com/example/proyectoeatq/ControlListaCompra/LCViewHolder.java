@@ -39,20 +39,25 @@ public class LCViewHolder extends RecyclerView.ViewHolder {
     public void render(String item, boolean checked, LCAdapter.OnItemDeleteListener oidl, LCAdapter.OnCheckChangedListener checkListener){
 
         tvLista.setText(item); //pone el texto (el item) en el TextView
-        resetCheckbox(checked);
+        //quitamos listener para que no salte al setear el estado del checkbox, para evitar problemas de reciclaje de vistas
 
+        check_item.setOnCheckedChangeListener(null);
+
+        //ponemos el check y el estilo que toca segun la memoria
+        check_item.setChecked(checked);
+        aplicarEstiloVisual(checked);
+
+
+        //ponemos el listneer para cuando el usuario marque o desmarque el checkbox,
+        // para que se actualice el estilo visual y se avise al Fragment del cambio
         check_item.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            aplicarEstiloVisual(isChecked);
             if (checkListener != null) {
                 checkListener.checkChanged(getAdapterPosition(), isChecked);
             }
 
-        configuracionCheckbox(isChecked);
 
         });
-
-
-
-
 
 
         /* Función para el boton de borrar item, que al pulsarlo, llama al método
@@ -68,38 +73,8 @@ public class LCViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-    /* Función para el checkbox, que al marcarlo, pone el texto del item tachado y de color gris,
-     y al desmarcarlo vuelve al estado por defecto */
-    private void configuracionCheckbox(boolean checked) {
-
-
-        // ? No se si debería guardar tambien en alguna parte los check
-        // ? para que al cerrar la app o cambiar de ventana no se pierdan
-
-        // ? Se podría añadir un boton al final de la pagin apara borrar solo
-        // ? items que tienen el check (ya comprados)
-
-        check_item.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (checked) {
-                tvLista.setPaintFlags(tvLista.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                tvLista.setTextColor(itemView.getContext().getResources().getColor(R.color.textoChecked));
-            } else {
-                tvLista.setPaintFlags(tvLista.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
-                tvLista.setTextColor(itemView.getContext().getResources().getColor(R.color.negroTexto));
-            }
-        });
-
-    }
-
-    //método para resetear el estado del checkbox a su estado por defecto, para evitar problemas de reciclaje de vistas
-    private void resetCheckbox(boolean checked) {
-
-        check_item.setOnCheckedChangeListener(null); //reseteo del listener para evitar problemas de reciclaje de vistas
-        check_item.setChecked(checked); //reseteo del estado del checkbox a su estado por defecto
-        // me aseguro de que el texto está en su estado normal
-        configuracionCheckbox(checked);
-
-        if(checked){
+    private void aplicarEstiloVisual(boolean marcado) {
+        if(marcado){
             tvLista.setPaintFlags(tvLista.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             tvLista.setTextColor(itemView.getContext().getResources().getColor(R.color.textoChecked));
         } else {
@@ -108,8 +83,9 @@ public class LCViewHolder extends RecyclerView.ViewHolder {
 
         }
 
-
-
-
     }
+
+
+
+
 }
