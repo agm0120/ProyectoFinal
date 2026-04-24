@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.proyectoeatq.ControlListaCompra.LCAdapter;
+import com.example.proyectoeatq.ControlListaCompra.LCItem;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -23,14 +24,15 @@ import java.util.List;
 
 public class ListaCompra extends Fragment {
 
-    private Button btn_añadir; // ? btnAddTask
+    private Button btn_añadir, btn_borrarLista; // ? btnAddTask
     private EditText textoArticulo; //? etTask
     private RecyclerView rv_lista; //? rvTasks
     //creamos la instancia del ListaAdapter
     //vamos a ir llamándolo cada vez que modifiquemos la lista de la compra
     private LCAdapter adapter;  //? adapter
 
-    List<String> listaCompra = new ArrayList<>(); //? tasks
+
+    List<LCItem> listaCompra = new ArrayList<>(); //? tasks
 
 
     /* En el Fragment no se usará onCreate porque el Fragment tiene un ciclo de vida diferente
@@ -78,7 +80,11 @@ public class ListaCompra extends Fragment {
 
         listaCompra = prefs.getList(); //carga la lista guardada en las preferencias
         rv_lista.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new LCAdapter(listaCompra, posicion -> borrarItem(posicion)); //forma abreviada con lambda
+        adapter = new LCAdapter(listaCompra, posicion -> borrarItem(posicion), (pos, checked) -> {
+                    listaCompra.get(pos).checked = checked;
+                    prefs.saveItem(listaCompra);
+
+                } ); //le pasamos la lista de la compra y el canal de comunicación para borrar items
         rv_lista.setAdapter(adapter); //le pasamos el adapter que acabamos de crear
     }
 
@@ -92,12 +98,19 @@ public class ListaCompra extends Fragment {
     
     private void initListeners() {
         btn_añadir.setOnClickListener(view -> añadirItem()); //forma abreviada
+        btn_borrarLista.setOnClickListener(view -> borrarLista());
+    }
+
+    private void borrarLista() {
+        listaCompra.clear(); //borra todos los items de la lista
+        adapter.notifyDataSetChanged(); //le dice al adapter que se han añadido nuevos valores par que pinte de nuevo la lista
+        prefs.saveItem(listaCompra); //guarda la lista actualizada en las preferencias
     }
 
     private void añadirItem() { //? addTask()
         String item = textoArticulo.getText().toString().trim();
         //añade el item a la lista, pero solo si no está vacío
-        if(!item.isEmpty()){ listaCompra.add(item);}
+        if(!item.isEmpty()){ listaCompra.add(new LCItem (item, false)); }
         //le dice al adapter que se han añadido nuevos valores par que pinte de nuevo la lista
         adapter.notifyDataSetChanged();
         textoArticulo.setText("");
@@ -109,6 +122,7 @@ public class ListaCompra extends Fragment {
         btn_añadir = view.findViewById(R.id.btn_añadir);
         textoArticulo = view.findViewById(R.id.textoArticulo);
         rv_lista = view.findViewById(R.id.rv_lista);
+        btn_borrarLista = view.findViewById(R.id.btn_borrarLista);
     }
 
 }
