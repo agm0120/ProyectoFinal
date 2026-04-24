@@ -27,6 +27,14 @@ public class News extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    // --- DECLARACIÓN DE COMPONENTES COMO ATRIBUTOS DE CLASE ---
+    private Button btnInformate;
+    private Button btnNoticiaActividad;
+    private Button btnNoticiaBienestar;
+    private ImageView imgPlato;
+    private ImageView imgRunning;
+    private ImageView imgYoga;
+
     public News() {
         // Required empty public constructor
     }
@@ -34,10 +42,6 @@ public class News extends Fragment {
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment News.
      */
     public static News newInstance(String param1, String param2) {
         News fragment = new News();
@@ -69,13 +73,13 @@ public class News extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // 1. Vincular componentes usando los IDs exactos del XML
-        Button btnInformate = view.findViewById(R.id.btn_informacion);
-        Button btnNoticiaActividad = view.findViewById(R.id.btnVerNoticia1);
-        Button btnNoticiaBienestar = view.findViewById(R.id.btnVerNoticia2);
+        btnInformate = view.findViewById(R.id.btn_informacion);
+        btnNoticiaActividad = view.findViewById(R.id.btn_ver_noticia_cardio); // ID corregido
+        btnNoticiaBienestar = view.findViewById(R.id.btn_ver_noticia_mental); // ID corregido
 
-        ImageView imgPlato = view.findViewById(R.id.imgMetodoPlato);
-        ImageView imgRunning = view.findViewById(R.id.imgRunning);
-        ImageView imgYoga = view.findViewById(R.id.imgYoga);
+        imgPlato = view.findViewById(R.id.iv_imagen_metodo_plato); // ID corregido
+        imgRunning = view.findViewById(R.id.iv_imagen_noticia_running); // ID corregido
+        imgYoga = view.findViewById(R.id.iv_imagen_noticia_yoga); // ID corregido
 
         // 2. Configurar la acción del botón "Infórmate"
         btnInformate.setOnClickListener(v -> {
