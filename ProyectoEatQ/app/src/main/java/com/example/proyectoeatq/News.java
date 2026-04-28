@@ -27,18 +27,18 @@ public class News extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    // --- DECLARACIÓN DE COMPONENTES ---
+    private Button btnInformate;
+    private Button btnNoticiaActividad;
+    private Button btnNoticiaBienestar;
+    private ImageView imgPlato;
+    private ImageView imgRunning;
+    private ImageView imgYoga;
+
     public News() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment News.
-     */
     public static News newInstance(String param1, String param2) {
         News fragment = new News();
         Bundle args = new Bundle();
@@ -68,14 +68,14 @@ public class News extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // 1. Vincular componentes usando los IDs exactos del XML
-        Button btnInformate = view.findViewById(R.id.btn_informacion);
-        Button btnNoticiaActividad = view.findViewById(R.id.btnVerNoticia1);
-        Button btnNoticiaBienestar = view.findViewById(R.id.btnVerNoticia2);
+        // 1. Vincular componentes usando los IDs originales de tu XML
+        btnInformate = view.findViewById(R.id.btn_informacion);
+        btnNoticiaActividad = view.findViewById(R.id.btnVerNoticia1);
+        btnNoticiaBienestar = view.findViewById(R.id.btnVerNoticia2);
 
-        ImageView imgPlato = view.findViewById(R.id.imgMetodoPlato);
-        ImageView imgRunning = view.findViewById(R.id.imgRunning);
-        ImageView imgYoga = view.findViewById(R.id.imgYoga);
+        imgPlato = view.findViewById(R.id.imgMetodoPlato);
+        imgRunning = view.findViewById(R.id.imgRunning);
+        imgYoga = view.findViewById(R.id.imgYoga);
 
         // 2. Configurar la acción del botón "Infórmate"
         btnInformate.setOnClickListener(v -> {
@@ -92,11 +92,17 @@ public class News extends Fragment {
         });
     }
 
-    // Método auxiliar para abrir URLs externas
+    // Método auxiliar para abrir URLs externas con control de errores UX (try-catch)
     private void abrirUrl(String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
-        startActivity(intent);
+
+        try {
+            startActivity(intent);
+        } catch (android.content.ActivityNotFoundException e) {
+            // Si el móvil no tiene navegador instalado, capturamos el error y avisamos al usuario
+            android.widget.Toast.makeText(getContext(), "No hay ninguna aplicación disponible para abrir este enlace", android.widget.Toast.LENGTH_SHORT).show();
+        }
     }
 
     // Método para mostrar el AlertDialog con la información detallada
