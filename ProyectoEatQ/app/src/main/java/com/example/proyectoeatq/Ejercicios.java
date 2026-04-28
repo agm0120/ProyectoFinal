@@ -52,8 +52,8 @@ public class Ejercicios extends Fragment {
             switch_andar.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 if(isChecked){
                     // Si el switch se activa, mostramos el diálogo
-                    DialogAndar dialogAndar = new DialogAndar();
-                    dialogAndar.show(getParentFragmentManager(), "DialogAndar");
+                    EmergenteAndar emergenteAndar = new EmergenteAndar();
+                    emergenteAndar.show(getParentFragmentManager(), "EmergenteAndar");
                 }
             });
         }
@@ -62,8 +62,8 @@ public class Ejercicios extends Fragment {
             switch_escaleras.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 if(isChecked){
                     // Si el switch se activa, mostramos el diálogo
-                    DialogEscaleras dialogEscaleras = new DialogEscaleras();
-                    dialogEscaleras.show(getParentFragmentManager(), "DialogEscaleras");
+                    EmergenteEscaleras emergenteEscaleras = new EmergenteEscaleras();
+                    emergenteEscaleras.show(getParentFragmentManager(), "EmergenteEscaleras");
                 }
             });
         }

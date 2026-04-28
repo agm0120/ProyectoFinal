@@ -1,0 +1,58 @@
+package com.example.proyectoeatq;
+
+import android.content.Context;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Date;
+import java.util.Map;
+
+public class GestorFirebase {
+
+    private FirebaseFirestore db;
+    private FirebaseAuth auth;
+    private Context context;
+
+    //Constructor para inicializar la conexión a Firestore
+    public GestorFirebase(Context context) {
+        db = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+        this.context = context;
+    }
+
+    //Método para obtener la instancia de Firestore
+    public String obtenerUidActual(){
+        if(auth.getCurrentUser() != null){
+            return auth.getCurrentUser().getUid();
+        }
+        return null; //TODO: Manejar el caso en que no haya un usuario autenticado
+    }
+
+    //Método para cerrar sesión del usuario actual
+    public void cerrarSesion(){
+        auth.signOut();
+    }
+
+    public void guardarDatos(String nombreColeccion, Map<String, Object> datos){
+        String uid = obtenerUidActual();
+
+        Toast.makeText(context, "Llamando a guardarDatos...", Toast.LENGTH_SHORT).show();
+
+        if(uid != null){
+            //añadismo el "sello" del usuario y la fecha automáticamente
+            datos.put("Usuario", uid);
+            datos.put("Fecha", new Date());
+
+            db.collection(nombreColeccion).add(datos).addOnSuccessListener(documentReference -> {
+                //Exito, los datos se guardaron correctamente
+                Toast.makeText(context, "Actividad guardada correctamente", Toast.LENGTH_SHORT).show();
+            }).addOnFailureListener(e -> {
+                // Error al guardar
+                Toast.makeText(context, "Error al guardar actividad: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            });
+        }
+    }
+
+}
