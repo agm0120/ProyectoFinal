@@ -196,7 +196,7 @@ public class SubirPlato extends Fragment {
                     "(50% vegetales, 25% proteína, 25% carbohidratos). " +
                     "Responde ÚNICAMENTE en formato JSON con los siguientes campos: " +
                     "es_comida (boolean), " +
-                    "analisis_detallado (string breve), " +
+                    "analisis_detallado (string muy breve y sencillo), " +
                     "porcentajes (objeto con: vegetales, proteinas, carbohidratos como enteros), " +
                     "puntuacion (int de 1 a 10), " +
                     "sugerencia (string para mejorar el plato). " +
@@ -220,7 +220,7 @@ public class SubirPlato extends Fragment {
                 public void onFailure(Throwable t) {
                     getActivity().runOnUiThread(() -> {
                         Log.e("GEMINI_ERROR", t.getMessage());
-                        Toast.makeText(getContext(), "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "Error: Error de conexión con la API", Toast.LENGTH_LONG).show();
                     });
                 }
             }, ContextCompat.getMainExecutor(getContext()));

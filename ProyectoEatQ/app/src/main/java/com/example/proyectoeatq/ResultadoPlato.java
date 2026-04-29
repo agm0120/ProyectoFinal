@@ -1,11 +1,13 @@
 package com.example.proyectoeatq;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,11 +23,22 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 public class ResultadoPlato extends Fragment {
 
     private String infoIA;
     private TextView tvResultado;
     private PieChart pieChart;
+    private FirebaseAuth auth;
+    private FirebaseFirestore db;
+    private Button buttonGuardar;
 
     public ResultadoPlato() { }
 
@@ -44,18 +57,70 @@ public class ResultadoPlato extends Fragment {
 
         tvResultado = view.findViewById(R.id.textView5);
         pieChart = view.findViewById(R.id.pieChart_comida);
+        buttonGuardar = view.findViewById(R.id.btn_guardarPlato);
+
+        auth = FirebaseAuth.getInstance();
+        db=FirebaseFirestore.getInstance();
+
+        String uid = auth.getCurrentUser().getUid();
 
         if (infoIA != null) {
-            procesarYMostrarDatos(infoIA);
+            procesarYMostrarDatos(infoIA, uid);
         } else {
             tvResultado.setText("No se recibió información de la IA.");
         }
 
+        buttonGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                // 1. Limpieza de Markdown
+                String jsonLimpio = infoIA.replaceAll("```json", "")
+                        .replaceAll("```", "")
+                        .trim();
+
+                JSONObject jsonObject = new JSONObject(jsonLimpio);
+
+                // 2. EXTRAER VALORES (Corregido para tu JSON anidado)
+                if (!jsonObject.has("porcentajes")) {
+                    throw new Exception("El JSON no contiene la llave 'porcentajes'");
+                }
+
+                JSONObject porcentajes = jsonObject.getJSONObject("porcentajes");
+
+                // Usamos optDouble para evitar cierres si falta una llave específica
+                // Revisa que estas llaves ("vegetales", "proteinas", etc.) coincidan exactamente con tu JSON
+                float vegetales = (float) porcentajes.optDouble("vegetales", 0);
+                float proteinas = (float) porcentajes.optDouble("proteinas", 0);
+                float carbohidratos = (float) porcentajes.optDouble("carbohidratos", 0); // Ajusté esta llave
+
+                String analisis = jsonObject.getString("analisis_detallado");
+
+                guardarPlato(uid, analisis, vegetales, proteinas, carbohidratos);
+
+                } catch (Exception e) {
+                    Log.e("JSON_ERROR", "Error al parsear: " + e.getMessage());
+                    tvResultado.setText("Ocurrió un error al procesar los resultados.");
+                    Toast.makeText(getContext(), "Error en el formato de datos", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         return view;
     }
 
-    private void procesarYMostrarDatos(String rawJson) {
+    private void abrirSiguienteFragment() {
+        Fragment nuevoFragment = new Resumen();
+
+        getParentFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContainerView, nuevoFragment)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    private void procesarYMostrarDatos(String rawJson, String uid) {
         try {
+            Log.d("JSON_IA_RAW", rawJson);
             // 1. Limpieza de Markdown
             String jsonLimpio = rawJson.replaceAll("```json", "")
                     .replaceAll("```", "")
@@ -78,8 +143,8 @@ public class ResultadoPlato extends Fragment {
 
 
             // --- Mostrar el análisis de texto formateado (No el JSON crudo) ---
-            if (jsonObject.has("analisis_detailed")) {
-                tvResultado.setText(jsonObject.getString("analisis_detailed"));
+            if (jsonObject.has("analisis_detallado")) {
+                tvResultado.setText(jsonObject.getString("analisis_detallado"));
             } else {
                 tvResultado.setText(jsonObject.toString(4)); // Fallback si no hay texto legible
             }
@@ -120,12 +185,10 @@ public class ResultadoPlato extends Fragment {
 
         // Configuración estética general del gráfico
         pieChart.setData(data);
+        pieChart.setDrawHoleEnabled(false);
+        pieChart.setDrawEntryLabels(false);
         pieChart.setUsePercentValues(true); // Usar valores relativos (%)
         pieChart.getDescription().setEnabled(false); // Quitar leyenda fea
-        pieChart.setCenterText("Distribución\nNutricional");
-        pieChart.setCenterTextSize(16f);
-        pieChart.setDrawHoleEnabled(true);
-        pieChart.setHoleColor(Color.TRANSPARENT); // Agujero transparente
         pieChart.animateY(1200); // Animación suave
 
         // Configurar Leyenda
@@ -135,5 +198,31 @@ public class ResultadoPlato extends Fragment {
         pieChart.getLegend().setHorizontalAlignment(com.github.mikephil.charting.components.Legend.LegendHorizontalAlignment.CENTER);
 
         pieChart.invalidate(); // Refrescar gráfico
+    }
+
+    private void guardarPlato(String uid, String analisisTexto, float veg, float prot, float carb) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        Map<String, Object> datosComida = new HashMap<>();
+        datosComida.put("analisis", analisisTexto);
+        datosComida.put("fecha", new Timestamp(new Date()));
+
+        Map<String, Object> porcentajes = new HashMap<>();
+        porcentajes.put("vegetales", veg);
+        porcentajes.put("proteinas", prot);
+        porcentajes.put("carbohidratos", carb);
+
+        datosComida.put("porcentajes", porcentajes);
+
+        db.collection("Comida").document(uid).set(datosComida)
+                .addOnSuccessListener(aVoid -> {
+                    Toast.makeText(getContext(), "Plato registrado",
+                            Toast.LENGTH_SHORT).show();
+                    abrirSiguienteFragment();
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(getContext(), "Error al guardar plato",
+                            Toast.LENGTH_SHORT).show();
+                });
     }
 }
