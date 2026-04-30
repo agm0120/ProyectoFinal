@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F4F4"
-    tools:context=".InformacionHistorial">
+    tools:context=".Historial">
 
     <ScrollView
         android:id="@+id/scroll_detalle_deporte"
@@ -49,7 +49,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/et_detalle_tiempo_estirado"
+                    android:id="@+id/et_partesEstiradas"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
@@ -69,7 +69,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/et_detalle_tiempo_andado"
+                    android:id="@+id/et_tiempoAndado"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
@@ -89,7 +89,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/et_detalle_pisos_subidos"
+                    android:id="@+id/et_pisosSubidos"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
@@ -109,7 +109,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/et_detalle_sentadillas"
+                    android:id="@+id/et_sentadillasRealizadas"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"

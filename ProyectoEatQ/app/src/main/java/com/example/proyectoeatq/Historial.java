@@ -1,8 +1,6 @@
 package com.example.proyectoeatq;
 
-import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.button.MaterialButton; // Para tus botones
 
-public class InformacionHistorial extends Fragment {
+import java.util.Calendar;
+
+public class Historial extends Fragment {
 
     // 1. Definimos las variables privadas (los objetos que usaremos)
     private CalendarView cv_calendarioHistorial;
@@ -22,7 +22,7 @@ public class InformacionHistorial extends Fragment {
 
     private boolean deporteActivo = false; //de primeras el deporte no está seleccionado
 
-    public InformacionHistorial() {
+    public Historial() {
           // Required empty public constructor
     }
 
@@ -49,6 +49,11 @@ public class InformacionHistorial extends Fragment {
         cv_calendarioHistorial.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int anio, int mes, int diaDelMes) {
+                // convertimos la fecha seleccionada en milisegundos para pasarla siguiente fragment
+                Calendar cal = Calendar.getInstance();
+                cal.set(anio, mes, diaDelMes);
+                long fechaSeleccionada = cal.getTimeInMillis();
+
                 // El mes viene de 0 a 11 (1 a 12). Luego creamos un texto con la fecha seleccionada
                 int mesReal = mes + 1;
                 String fecha = diaDelMes + "/" + mesReal + "/" + anio;
@@ -56,6 +61,22 @@ public class InformacionHistorial extends Fragment {
                 // Si deporteActivo es true, muestra "Deporte", si es false, muestra "Comida"
                 String tipo = deporteActivo ? "Deporte" : "Comida";
                 Toast.makeText(getContext(), "Viendo: " + tipo + " del: " + fecha, Toast.LENGTH_SHORT).show();
+
+                if(deporteActivo){
+                    //cremosa la instancia del framento de información
+                    HistorialDeporte infoFragment = HistorialDeporte.newInstance(fechaSeleccionada);
+
+                    //lo cargamos en el contenedor principal
+                    //TODO:fragmentContainerView debe ser el ID del FrameLayout del Activity principal donde quieres mostrar el fragmento de información,
+                    getParentFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentContainerView, infoFragment)
+                            .addToBackStack(null) // para que al pulsar atrás vuelva al historial
+                            .commit();
+                }else{
+                    //Aquí debería ir la lógica para el historial de comida
+                    Toast.makeText(getContext(), "Historial de comida en desarrollo", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

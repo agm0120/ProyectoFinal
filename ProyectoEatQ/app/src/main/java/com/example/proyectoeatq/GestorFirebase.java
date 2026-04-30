@@ -55,4 +55,39 @@ public class GestorFirebase {
         }
     }
 
+        //Método para recuperar datos de una colección específica
+    public FirebaseFirestore getDb(){
+
+        return db;
+    }
+
+    //Método para recuperar datos de una colección específica, filtrando por el usuario actual y un rango de fechas
+    public void consultarDatosPorFecha(String coleccion,Date inicio, Date fin, OnDatosRecuperadosListener listener){
+        String uid = obtenerUidActual();
+        if(uid == null) return;
+
+        db.collection(coleccion)
+                .whereEqualTo("Usuario", uid)
+                .whereGreaterThanOrEqualTo("Fecha", inicio)
+                .whereLessThanOrEqualTo("Fecha", fin)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    //Datos recuperados exitosamente
+                    listener.onSuccess(queryDocumentSnapshots);
+                })
+                .addOnFailureListener(e -> {
+                    //Error al recuperar datos
+                    Toast.makeText(context, "Error al recuperar datos: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+
+
+    }
+
+    // Interfaz para manejar la respuesta de la consulta de datos, ya que es asíncrona
+    public interface OnDatosRecuperadosListener {
+        void onSuccess(com.google.firebase.firestore.QuerySnapshot snapshots);
+    }
+
+
+
 }
