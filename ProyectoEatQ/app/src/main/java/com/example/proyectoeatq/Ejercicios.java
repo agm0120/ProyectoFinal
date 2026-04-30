@@ -52,8 +52,8 @@ public class Ejercicios extends Fragment {
             switch_andar.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 if(isChecked){
                     // Si el switch se activa, mostramos el diálogo
-                    EmergenteAndar emergenteAndar = new EmergenteAndar();
-                    emergenteAndar.show(getParentFragmentManager(), "EmergenteAndar");
+                    EmergenteAndar em_andar = new EmergenteAndar();
+                    em_andar.show(getParentFragmentManager(), "EmergenteAndar");
                 }
             });
         }
@@ -62,8 +62,8 @@ public class Ejercicios extends Fragment {
             switch_escaleras.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 if(isChecked){
                     // Si el switch se activa, mostramos el diálogo
-                    EmergenteEscaleras emergenteEscaleras = new EmergenteEscaleras();
-                    emergenteEscaleras.show(getParentFragmentManager(), "EmergenteEscaleras");
+                    EmergenteEscaleras em_escaleras = new EmergenteEscaleras();
+                    em_escaleras.show(getParentFragmentManager(), "EmergenteEscaleras");
                 }
             });
         }
@@ -72,8 +72,8 @@ public class Ejercicios extends Fragment {
             switch_sentadillas.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 if(isChecked){
                     // Si el switch se activa, mostramos el diálogo
-                    DialogSentadillas dialogSentadillas = new DialogSentadillas();
-                    dialogSentadillas.show(getParentFragmentManager(), "DialogSentadillas");
+                    EmergenteSentadillas em_sentadillas = new EmergenteSentadillas();
+                    em_sentadillas.show(getParentFragmentManager(), "EmergenteSentadillas");
                 }
             });
         }
@@ -82,8 +82,8 @@ public class Ejercicios extends Fragment {
             switch_estirar.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 if(isChecked){
                     // Si el switch se activa, mostramos el diálogo
-                    DialogEstirar dialogEstirar = new DialogEstirar();
-                    dialogEstirar.show(getParentFragmentManager(), "DialogEstirar");
+                    EmergenteEstiramientos em_estiramientos = new EmergenteEstiramientos();
+                    em_estiramientos.show(getParentFragmentManager(), "EmergenteEstiramientos");
                 }
             });
         }
