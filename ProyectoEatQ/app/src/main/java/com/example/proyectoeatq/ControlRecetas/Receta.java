@@ -1,4 +1,4 @@
-package com.example.proyectoeatq;
+package com.example.proyectoeatq.ControlRecetas;
 
 public class Receta {
     private String nombre;

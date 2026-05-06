@@ -1,4 +1,4 @@
-package com.example.proyectoeatq;
+package com.example.proyectoeatq.ControlRecetas;
 
 
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
+import com.example.proyectoeatq.R;
+
 import java.util.List;
 
 // Defino clase principal para manejar la lista y la hago heredar del adaptador de Android.

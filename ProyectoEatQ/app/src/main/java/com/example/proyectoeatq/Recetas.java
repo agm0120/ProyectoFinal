@@ -1,6 +1,5 @@
 package com.example.proyectoeatq;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.proyectoeatq.ControlRecetas.Receta;
+import com.example.proyectoeatq.ControlRecetas.RecetasAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
