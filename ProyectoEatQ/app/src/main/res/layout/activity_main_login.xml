@@ -24,7 +24,7 @@
         android:id="@+id/iv_logo_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/logo_proyecto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         android:id="@+id/et_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:background="@color/white"
         android:ems="10"
         android:hint="@string/hint_usuario"
@@ -56,19 +56,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_titulo_login" />
 
-    <EditText
-        android:id="@+id/et_password"
+    <!-- Reemplaza el bloque de et_password y btn_recuperarPassword por este -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:hint="@string/hint_contraseña"
-        android:inputType="textPassword"
-        android:padding="8dp"
+        app:hintEnabled="false"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_usuario" />
+        app:layout_constraintTop_toBottomOf="@+id/et_usuario">
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="@string/hint_contraseña"
+            android:inputType="textPassword"
+            android:padding="12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/cb_recordar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Recordarme"
+        app:layout_constraintStart_toStartOf="@+id/til_password"
+        app:layout_constraintTop_toBottomOf="@+id/til_password" />
 
     <Button
         android:id="@+id/btn_recuperarPassword"
@@ -80,15 +98,16 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintTop_toBottomOf="@+id/cb_recordar" />
+
+    <!-- IMPORTANTE: El btn_login ahora debe estar debajo de btn_recuperarPassword -->
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/amarilloBoton"
         android:text="@string/btn_iniciar_sesion"
         android:textColor="@color/black"
@@ -101,13 +120,15 @@
         android:id="@+id/btn_registrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/amarilloBoton"
         android:text="@string/btn_registrarse"
         android:textColor="@color/black"
         app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

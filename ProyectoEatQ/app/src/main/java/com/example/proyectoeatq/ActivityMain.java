@@ -15,6 +15,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import android.content.Intent;
 // --------------------------------------------------------------
 
 public class ActivityMain extends AppCompatActivity {
@@ -75,8 +77,22 @@ public class ActivityMain extends AppCompatActivity {
                 cambiarFragment(new Configuracion());
 
             } else if (id == R.id.nav_logout) {
-                // Lógica de salida
-                finish();
+                // 1. Cerramos sesión en Firebase
+                FirebaseAuth.getInstance().signOut();
+
+                // 2. Resetamos el preference de "Recuerdame"
+                Preferences misPreferencias = new Preferences(ActivityMain.this);
+                misPreferencias.setRecordar(false);
+
+                //3. Volvemos al login
+                Intent intent = new Intent(ActivityMain.this, ActivityMainLogin.class);
+
+                // Limpiamos el historial de actividades para que el usuario
+                //no pueda volver al Main pulsando Atrás
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                startActivity(intent);
+                finish(); //cerramos la actividad
             }
 
             // Cierra el menú al pulsar una opción (usando END porque lo abres por la derecha)

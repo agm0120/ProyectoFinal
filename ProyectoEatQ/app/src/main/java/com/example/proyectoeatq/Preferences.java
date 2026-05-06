@@ -17,6 +17,7 @@ public class Preferences {
     //clave con la que guardaremos los items
     static final String ITEMS = "valor_item"; // ? tasks_value
     static SharedPreferences prefs;
+    static final String KEY_RECORDAR = "usuario_recordado";
 
 
 
@@ -25,8 +26,8 @@ public class Preferences {
         prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
     }
 
-    // Metodo para guardar información
-    public void saveItem(List<String> lista){
+    // Metodo para guardar información de la lista de la compra
+    public void saveItem(List<LCItem> lista){
         /* Ya que el SharedPreferences solo permite guardar colecciones como Set
         (no acepta List), convertimos nuestra List a Set para poder guradarla.
         Usamos LinkedHashSet para manetner el orden de la lista origina (el HashSet
@@ -36,14 +37,23 @@ public class Preferences {
 
     }
 
-    //Metodo para recuperar informacion
-    public List<String> getList(){
+    //Metodo para recuperar informacion de la lista de la compra
+    public List<LCItem> getList(){
         /* Al recuperar la información, hacemos el proceso inverso: obtenemos el Set
          y lo convertimos a List */
         Set <String> set = prefs.getStringSet(ITEMS, new LinkedHashSet<>());
         return new ArrayList<>(set);
 
 
+    }
+
+    //MÉTODOS PARA EL LOGIN ("RECUERDAME")
+    public void setRecordar(boolean valor){
+        prefs.edit().putBoolean(KEY_RECORDAR, valor).apply();
+    }
+
+    public boolean isRecordado(){
+        return prefs.getBoolean(KEY_RECORDAR, false);
     }
 
 
