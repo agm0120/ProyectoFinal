@@ -146,7 +146,7 @@ public class ResultadoPlato extends Fragment {
             if (jsonObject.has("analisis_detallado")) {
                 tvResultado.setText(jsonObject.getString("analisis_detallado"));
             } else {
-                tvResultado.setText(jsonObject.toString(4)); // Fallback si no hay texto legible
+                tvResultado.setText(jsonObject.toString(4));
             }
 
             // 3. Configurar el gráfico con los datos extraídos
@@ -188,7 +188,7 @@ public class ResultadoPlato extends Fragment {
         pieChart.setDrawHoleEnabled(false);
         pieChart.setDrawEntryLabels(false);
         pieChart.setUsePercentValues(true); // Usar valores relativos (%)
-        pieChart.getDescription().setEnabled(false); // Quitar leyenda fea
+        pieChart.getDescription().setEnabled(false); //
         pieChart.animateY(1200); // Animación suave
 
         // Configurar Leyenda
@@ -213,8 +213,9 @@ public class ResultadoPlato extends Fragment {
         porcentajes.put("carbohidratos", carb);
 
         datosComida.put("porcentajes", porcentajes);
+        datosComida.put("usuario", uid);
 
-        db.collection("Comida").document(uid).set(datosComida)
+        db.collection("Comida").add(datosComida)
                 .addOnSuccessListener(aVoid -> {
                     Toast.makeText(getContext(), "Plato registrado",
                             Toast.LENGTH_SHORT).show();
