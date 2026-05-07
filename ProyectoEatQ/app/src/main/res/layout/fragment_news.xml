@@ -61,7 +61,7 @@
                 android:layout_marginBottom="12dp"
                 android:background="#E0E0E0"
                 android:scaleType="centerCrop"
-                android:src="@android:drawable/ic_menu_gallery" />
+                android:src="@drawable/plato_saludable" />
 
             <Button
                 android:id="@+id/btn_informacion"
@@ -94,7 +94,7 @@
                 android:layout_marginEnd="12dp"
                 android:background="#E0E0E0"
                 android:scaleType="centerCrop"
-                android:src="@android:drawable/ic_menu_gallery" />
+                android:src="@drawable/practicar_deporte" />
 
             <LinearLayout
                 android:id="@+id/layout_texto_noticia_cardio"
@@ -147,7 +147,7 @@
                 android:layout_marginEnd="12dp"
                 android:background="#E0E0E0"
                 android:scaleType="centerCrop"
-                android:src="@android:drawable/ic_menu_gallery" />
+                android:src="@drawable/adios_estres" />
 
             <LinearLayout
                 android:id="@+id/layout_texto_noticia_mental"

@@ -90,8 +90,8 @@
     <string name="este_dia_has_comido">Este día has comido:</string>
 
     <!-- Fragment Info Historial Deporte -->
-    <string name="tiempo_estirado">Tiempo estirado (min):</string>
-    <string name="tiempo_andado">Tiempo andado (min):</string>
+    <string name="tiempo_estirado">Partes estiradas:</string>
+    <string name="tiempo_andado">Tiempo andado:</string>
     <string name="pisos_subidos">Pisos subidos:</string>
     <string name="sentadillasHistorial">Sentadillas:</string>
 

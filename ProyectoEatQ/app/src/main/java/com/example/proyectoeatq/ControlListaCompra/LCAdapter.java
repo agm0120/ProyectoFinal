@@ -36,18 +36,24 @@ public class LCAdapter extends RecyclerView.Adapter<LCViewHolder>{
     public interface OnItemDeleteListener {
         void borrarItem(int position);
     }
+
+    public interface OnCheckChangedListener{
+        void checkChanged(int position, boolean checked);
+    }
     // Variables extraídas del Fragment para que el Adapter pueda usarlas.
     // El Adapter necesita la lista de la compra
-    private List<String> lista;
+    private List<LCItem> lista;
     private OnItemDeleteListener oidListener;
+    private OnCheckChangedListener checkListener;
 
     /* El constructor debe recibir un ArrayList con los datos y el canal de
     comunicación, que avisará cuando un item se borre */
     /* El constructor debe recibir un ArrayList con los datos y el OnItemDeleteListener,
     que avisará cuando se le de al botón para borrar un item */
-    public LCAdapter(List<String> lista, OnItemDeleteListener oidListener){
+    public LCAdapter(List<LCItem> lista, OnItemDeleteListener oidListener, OnCheckChangedListener ccl){
         this.lista = lista;
         this.oidListener = oidListener;
+        this.checkListener = ccl;
     }
 
 
@@ -79,9 +85,16 @@ public class LCAdapter extends RecyclerView.Adapter<LCViewHolder>{
      */
     @Override
     public void onBindViewHolder(@NonNull LCViewHolder holder, int position) {
+        LCItem item = lista.get(position);
+
         /* lista.get(posicion) -> obtiene el string asociado a esa posicion
         El metodo render() del viewholder recibirá el texto que debe mostrar, y el 'listener'*/
-        holder.render(lista.get(position), oidListener);
+        holder.render(item.texto, item.checked, oidListener, (pos, isChecked) -> {
+            lista.get(pos).checked = isChecked;
+            if (checkListener != null) {
+                checkListener.checkChanged(pos, isChecked);
+            }
+        });
 
     }
 
