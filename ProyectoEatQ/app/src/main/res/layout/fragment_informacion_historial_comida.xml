@@ -35,12 +35,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_titulo_detalle_comida">
 
-            <View
-                android:id="@+id/v_placeholder_grafica"
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart_historial_comida"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:drawable/presence_online"
-                android:backgroundTint="#E0E0E0" />
+                android:layout_height="match_parent" />
         </FrameLayout>
 
         <TextView
@@ -48,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="@string/este_dia_has_comido"
+            android:text=""
             android:textColor="#666666"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"

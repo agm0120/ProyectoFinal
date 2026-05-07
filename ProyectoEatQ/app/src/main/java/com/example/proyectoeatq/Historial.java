@@ -73,8 +73,14 @@ public class Historial extends Fragment {
                             .addToBackStack(null) // para que al pulsar atrás vuelva al historial
                             .commit();
                 }else{
+
+                    HistorialComida infoFragment = HistorialComida.newInstance(fechaSeleccionada);
+                    getParentFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentContainerView, infoFragment)
+                            .addToBackStack(null) // para que al pulsar atrás vuelva al historial
+                            .commit();
                     //Aquí debería ir la lógica para el historial de comida
-                    Toast.makeText(getContext(), "Historial de comida en desarrollo", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), "Historial de comida en desarrollo", Toast.LENGTH_SHORT).show();
                 }
 
             }
