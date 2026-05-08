@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
         android:background="@color/Blancotarjetas"
-        android:text="@string/plato_de_hoy"
+        android:text="@string/elegir_imagen"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

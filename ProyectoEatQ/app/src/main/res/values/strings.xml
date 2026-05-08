@@ -30,6 +30,7 @@
     <string name="btn_introducir_plato">Introducir plato</string>
 
     <!-- Fragment Plato -->
+    <string name="elegir_imagen">Pulsa para elegir una imagen</string>
     <string name="plato_de_hoy">¿Este es tu plato de hoy?</string>
     <string name="btn_subir">Subir</string>
     <string name="btn_volver_subir">Volver a subir</string>
