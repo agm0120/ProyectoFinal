@@ -13,19 +13,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link News#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class News extends Fragment {
 
-    // Parámetros de inicialización del fragmento
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    private String mParam1;
-    private String mParam2;
 
     // --- DECLARACIÓN DE COMPONENTES COMO ATRIBUTOS DE CLASE ---
     private Button btnInformate;
@@ -46,8 +36,7 @@ public class News extends Fragment {
     public static News newInstance(String param1, String param2) {
         News fragment = new News();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -55,10 +44,7 @@ public class News extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
