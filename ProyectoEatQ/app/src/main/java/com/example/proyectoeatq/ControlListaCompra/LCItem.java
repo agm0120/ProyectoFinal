@@ -12,7 +12,7 @@ public class LCItem {
 
     @Override
     public String toString(){
-        return texto + ": " + checked;
+        return texto + ":" + checked;
     }
 
     public static LCItem fromString(String s){

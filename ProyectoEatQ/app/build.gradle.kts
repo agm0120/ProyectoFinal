@@ -39,6 +39,9 @@ android {
 }
 
 dependencies {
+    //Navigation Component dependencies. Permiten la navegación entre fragmentos y actividades de la app.
+    implementation ("androidx.navigation:navigation-fragment:2.7.7")
+    implementation ("androidx.navigation:navigation-ui:2.7.7")
 
     implementation("androidx.appcompat:appcompat:1.7.1")
     implementation("com.google.android.material:material:1.13.0")
