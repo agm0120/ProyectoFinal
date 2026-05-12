@@ -1,15 +1,15 @@
 package com.example.proyectoeatq.ControlRecetas;
 
 public class Receta {
-    private String Nombre, Descripción, Imagen, Tipo;
+    private String Nombre, Descripcion, Imagen, Tipo;
 
 
     // Constructor vacío obligatorio para Firebase
     public Receta() {}
 
-    public Receta(String nombre, String descripción, String imagen, String tipo) {
+    public Receta(String nombre, String descripcion, String imagen, String tipo) {
         this.Nombre = nombre;
-        this.Descripción = descripción;
+        this.Descripcion = descripcion;
         this.Imagen = imagen;
         this.Tipo = tipo;
     }
@@ -17,6 +17,6 @@ public class Receta {
     // Getters (Importantes para el Adaptador)
     public String getNombre() { return Nombre; }
     public String getImagen() { return Imagen; }
-    public String getDescripción() { return Descripción; }
+    public String getDescripcion() { return Descripcion; }
     public String getTipo() { return Tipo; }
 }

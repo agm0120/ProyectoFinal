@@ -64,7 +64,7 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.RecetaVi
         ImageView imgDetalle = dialogView.findViewById(R.id.img_detalleFoto);
 
         tvNombre.setText(receta.getNombre());
-        tvDesc.setText(receta.getDescripción() != null ? receta.getDescripción() : "No hay descripción disponible.");
+        tvDesc.setText(receta.getDescripcion() != null ? receta.getDescripcion() : "No hay descripción disponible.");
 
         Glide.with(v.getContext()).load(receta.getImagen()).into(imgDetalle);
 
