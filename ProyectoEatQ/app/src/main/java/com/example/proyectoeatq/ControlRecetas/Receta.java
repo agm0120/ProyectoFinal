@@ -1,20 +1,22 @@
 package com.example.proyectoeatq.ControlRecetas;
 
 public class Receta {
-    private String nombre;
-    private int colorFondo;
-    private String imagenUrl; // Aquí Firebase meterá el enlace (ej: "https://firebasestorage...")
+    private String Nombre, Descripción, Imagen, Tipo;
+
 
     // Constructor vacío obligatorio para Firebase
     public Receta() {}
 
-    public Receta(String nombre, int colorFondo, String imagenUrl) {
-        this.nombre = nombre;
-        this.colorFondo = colorFondo;
-        this.imagenUrl = imagenUrl;
+    public Receta(String nombre, String descripción, String imagen, String tipo) {
+        this.Nombre = nombre;
+        this.Descripción = descripción;
+        this.Imagen = imagen;
+        this.Tipo = tipo;
     }
 
-    public String getNombre() { return nombre; }
-    public int getColorFondo() { return colorFondo; }
-    public String getImagenUrl() { return imagenUrl; }
+    // Getters (Importantes para el Adaptador)
+    public String getNombre() { return Nombre; }
+    public String getImagen() { return Imagen; }
+    public String getDescripción() { return Descripción; }
+    public String getTipo() { return Tipo; }
 }
