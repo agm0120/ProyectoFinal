@@ -53,7 +53,7 @@ public class Resumen extends Fragment {
 
         btn_verRecetas.setOnClickListener(v -> navegar(new Recetas()));
 
-        cargarResumenSemanal(); // 👈 IMPORTANTE
+        cargarResumenSemanal();
 
         return view;
     }
