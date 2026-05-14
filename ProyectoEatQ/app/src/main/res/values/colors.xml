@@ -18,6 +18,9 @@
     <color name="fondoLC">#e1fade</color>
     <color name="azulUsuario">#b3e5fc</color>
     <color name="grisBoton">#bdbdbd</color>
+    <color name="verdeGrafico">#4CAF50</color>
+    <color name="rojoGrafico">#F44336</color>
+    <color name="amarilloGrafico">#FFC107</color>
 
 
 

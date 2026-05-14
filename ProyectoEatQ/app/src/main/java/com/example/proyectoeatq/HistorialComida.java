@@ -213,9 +213,9 @@ public class HistorialComida extends Fragment {
         // COLORES
         ArrayList<Integer> colors = new ArrayList<>();
 
-        colors.add(Color.parseColor("#4CAF50")); // Verde
-        colors.add(Color.parseColor("#F44336")); // Rojo
-        colors.add(Color.parseColor("#FFC107")); // Amarillo
+        colors.add(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.verdeGrafico));
+        colors.add(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.rojoGrafico));
+        colors.add(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.amarilloGrafico));
 
         dataSet.setColors(colors);
 
