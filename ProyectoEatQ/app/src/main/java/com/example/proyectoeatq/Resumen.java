@@ -53,7 +53,7 @@ public class Resumen extends Fragment {
 
         btn_verRecetas.setOnClickListener(v -> navegar(new Recetas()));
 
-        cargarResumenSemanal(); // 👈 IMPORTANTE
+        cargarResumenSemanal();
 
         return view;
     }
@@ -131,9 +131,9 @@ public class Resumen extends Fragment {
         PieDataSet dataSet = new PieDataSet(entries, "");
 
         ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.parseColor("#4CAF50"));
-        colors.add(Color.parseColor("#F44336"));
-        colors.add(Color.parseColor("#FFC107"));
+        colors.add(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.verdeGrafico));
+        colors.add(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.rojoGrafico));
+        colors.add(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.amarilloGrafico));
 
         dataSet.setColors(colors);
         dataSet.setValueTextColor(Color.WHITE);

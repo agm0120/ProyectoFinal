@@ -53,6 +53,7 @@ dependencies {
     //Firebase dependencies. Dependencia del auth y hueco para otras posibles
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.android.gms:play-services-base:18.5.0")
 
     // SDK de Google AI para Android
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")

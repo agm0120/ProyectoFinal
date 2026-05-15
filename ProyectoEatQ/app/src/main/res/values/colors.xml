@@ -18,6 +18,9 @@
     <color name="fondoLC">#e1fade</color>
     <color name="azulUsuario">#b3e5fc</color>
     <color name="grisBoton">#bdbdbd</color>
+    <color name="verdeGrafico">#4CAF50</color>
+    <color name="rojoGrafico">#F44336</color>
+    <color name="amarilloGrafico">#FFC107</color>
     <color name="hidratosOff">#D8B066</color>
     <color name="proteinasOff">#6FAED9</color>
     <color name="vegetalesOff">#6CB063</color>

@@ -11,6 +11,9 @@
 
     <!-- Para poder acceder al auth y coger el IDU del usuario -->
     <queries>
+        <intent>
+            <action android:name="com.google.android.gms.auth.api.signin.SERVICE" />
+        </intent>
         <package android:name="com.google.android.gms" />
     </queries>
 
@@ -60,5 +63,6 @@
                 android:resource="@xml/file_paths" />
         </provider>
     </application>
+
 
 </manifest>

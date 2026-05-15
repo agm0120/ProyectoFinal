@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -18,6 +19,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import android.content.Intent;
 // --------------------------------------------------------------
 
@@ -48,6 +51,8 @@ public class ActivityMain extends AppCompatActivity {
         bPerfil = findViewById(R.id.btn_perfilUsuario);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
+
+        actualizarHeaderNavigation();
 
         // Al pulsar tu foto de perfil, se abre el menú por la derecha
         bPerfil.setOnClickListener(v -> {
@@ -203,6 +208,38 @@ public class ActivityMain extends AppCompatActivity {
         boton.setBackground(null);
         boton.setBackgroundColor(colorFondo);
         boton.setColorFilter(colorIcono);
+    }
+
+    // Metodo para mostrar el correo y nombre del usuario en el sidecar
+    public void actualizarHeaderNavigation() {
+        if (navigationView != null) {
+            View headerView = navigationView.getHeaderView(0);
+            TextView tvNombre = headerView.findViewById(R.id.tv_nombre_sidebar);
+            TextView tvEmail = headerView.findViewById(R.id.tv_email_sidebar);
+
+            FirebaseAuth mAuth = FirebaseAuth.getInstance();
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+            // Seguimos necesitando el UID de Auth solo para saber QUÉ documento buscar
+            if (mAuth.getCurrentUser() != null) {
+                String uid = mAuth.getCurrentUser().getUid();
+
+                db.collection("Usuario").document(uid).get()
+                        .addOnSuccessListener(documentSnapshot -> {
+                            if (documentSnapshot.exists()) {
+                                // Extraemos ambos campos directamente de Firestore
+                                String nombre = documentSnapshot.getString("nombreUsuario");
+                                String email = documentSnapshot.getString("correo");
+
+                                tvNombre.setText(nombre != null ? nombre : "Usuario");
+                                tvEmail.setText(email != null ? email : "Sin correo");
+
+                                android.util.Log.d("SIDEBAR", "Datos cargados desde Firestore");
+                            }
+                        })
+                        .addOnFailureListener(e -> android.util.Log.e("SIDEBAR", "Error: " + e.getMessage()));
+            }
+        }
     }
 
 }
