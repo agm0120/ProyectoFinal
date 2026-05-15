@@ -8,30 +8,52 @@
     app:cardCornerRadius="12dp"
     app:cardElevation="2dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_receta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="10dp"
-        android:background="#F9F5C6"> <ImageView
-        android:id="@+id/img_receta"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@android:drawable/ic_menu_gallery"
-        android:background="#E0E0E0"
-        android:scaleType="centerCrop"
-        android:layout_marginEnd="16dp"/>
+        android:padding="12dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/img_receta"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:background="#E0E0E0"
+            android:src="@android:drawable/ic_menu_gallery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
             android:id="@+id/tv_titulo_receta"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
             android:text="Nombre de la receta"
             android:textColor="#5D4037"
             android:textSize="16sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/img_receta"
+            app:layout_constraintEnd_toStartOf="@+id/tv_tipoReceta"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_tipoReceta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grisBoton"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:text="TIPO"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

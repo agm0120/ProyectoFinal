@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:backgroundTint="#D8B066"
+            android:backgroundTint="@color/hidratosOff"
             android:text="@string/hidratos"
             android:textColor="#FFFFFF"
             android:textSize="11sp"
