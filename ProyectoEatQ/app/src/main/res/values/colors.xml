@@ -21,6 +21,12 @@
     <color name="verdeGrafico">#4CAF50</color>
     <color name="rojoGrafico">#F44336</color>
     <color name="amarilloGrafico">#FFC107</color>
+    <color name="hidratosOff">#D8B066</color>
+    <color name="proteinasOff">#6FAED9</color>
+    <color name="vegetalesOff">#6CB063</color>
+    <color name="hidratosOn">#FF9800</color>
+    <color name="proteinasOn">#3095DA</color>
+    <color name="vegetalesOn">#29951B</color>
 
 
 
