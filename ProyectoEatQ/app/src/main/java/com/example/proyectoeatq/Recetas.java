@@ -47,6 +47,11 @@ public class Recetas extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         db = FirebaseFirestore.getInstance();
+
+        if (getArguments() != null) {
+            filtroActual = getArguments().getString("categoria_filtro", "Todos");
+        }
+
         initUI(view);
 
     }
@@ -56,8 +61,12 @@ public class Recetas extends Fragment {
         initRecyclerView();
         initListeners();
 
+        actualizarEstiloBotones();
+
+        cargarRecetasDesdeFirestore(filtroActual);
+
         // Carga inicial de datos al entrar (mostramos todas)
-        cargarRecetasDesdeFirestore("Todos");
+        // cargarRecetasDesdeFirestore("Todos");
     }
 
     private void initView(View view) {

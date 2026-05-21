@@ -32,6 +32,8 @@ public class Resumen extends Fragment {
     private FirebaseAuth auth;
     private FirebaseFirestore db;
 
+    private String filtroRecetas = "Todos";
+
     public Resumen() {}
 
     @Override
@@ -51,7 +53,17 @@ public class Resumen extends Fragment {
 
         btn_introducirPlato.setOnClickListener(v -> navegar(new SubirPlato()));
 
-        btn_verRecetas.setOnClickListener(v -> navegar(new Recetas()));
+        btn_verRecetas.setOnClickListener(v -> {
+            Recetas fragmentRecetas = new Recetas();
+
+            // Creamos la "mochila" (Bundle) y metemos el filtro
+            Bundle args = new Bundle();
+            args.putString("categoria_filtro", filtroRecetas);
+            fragmentRecetas.setArguments(args);
+
+            // Navegamos pasando el fragmento ya preparado con sus datos
+            navegar(fragmentRecetas);
+        });
 
         cargarResumenSemanal();
 
@@ -103,14 +115,36 @@ public class Resumen extends Fragment {
 
                     String mensaje;
 
-                    if (totalVeg < totalProt * 0.8 && totalVeg < totalCarb * 0.8) {
-                        mensaje = "Tu consumo de vegetales es bajo";
-                    } else if (totalProt < totalVeg * 0.8 && totalProt < totalCarb * 0.8) {
-                        mensaje = "Tu consumo de proteínas es bajo";
-                    } else if (totalCarb < totalVeg * 0.8 && totalCarb < totalProt * 0.8) {
-                        mensaje = "Tu consumo de carbohidratos es bajo";
+                    // 1. Calculamos el total de nutrientes
+                    float totalAlimentos = totalVeg + totalProt + totalCarb;
+
+                    // Evitamos dividir por cero si el resumen está vacío
+                    if (totalAlimentos == 0) {
+                        mensaje = "Aún no has registrado ningún plato";
                     } else {
-                        mensaje = "Tu dieta está bastante equilibrada";
+                        // 2. Calculamos el porcentaje real de cada grupo en el plato
+                        float pctVeg = totalVeg / totalAlimentos;
+                        float pctProt = totalProt / totalAlimentos;
+                        float pctCarb = totalCarb / totalAlimentos;
+
+                        // 3. Evaluamos según el Método del Plato (Ideales: Veg 0.50, Prot 0.25, Carb 0.25)
+                        // Usamos un margen de tolerancia para que no tenga que ser exacto al milímetro
+                        if (pctVeg < 0.40) {
+                            // Si los vegetales bajan del 40% (el ideal es 50%)
+                            mensaje = "Tu consumo de vegetales es bajo. Procura consumir más vegetales.";
+                            filtroRecetas="Vegetales";
+                        } else if (pctProt < 0.20) {
+                            // Si la proteína baja del 20% (el ideal es 25%)
+                            mensaje = "Tu consumo de proteínas es bajo. Procura consumir más proteinas.";
+                            filtroRecetas="Proteínas";
+                        } else if (pctCarb < 0.20) {
+                            // Si los carbohidratos bajan del 20% (el ideal es 25%)
+                            mensaje = "Tu consumo de carbohidratos es bajo. Procura consumir más carbohidratos.";
+                            filtroRecetas="Carbohidratos";
+                        } else {
+                            mensaje = "¡Excelente! Estas siguiendo las proporciones del Método del Plato.";
+                            filtroRecetas="Todos";
+                        }
                     }
 
                     configurarGrafico(totalVeg, totalProt, totalCarb);
