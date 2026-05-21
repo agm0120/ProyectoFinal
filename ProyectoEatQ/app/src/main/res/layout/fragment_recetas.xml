@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:backgroundTint="#6FAED9"
+            android:backgroundTint="#ff7e70"
             android:text="@string/proteinas"
             android:textColor="#FFFFFF"
             android:textSize="11sp"

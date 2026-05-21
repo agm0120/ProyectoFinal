@@ -73,7 +73,7 @@ public class ActivityMain extends AppCompatActivity {
                 cambiarFragment(new InformacionUsuario());
 
             } else if (id == R.id.nav_historial) { // Ojo al nombre en tu XML: nav_hitorial
-               // TODO: Crear el fragmento de historial y cambiarlo aquí
+                // TODO: Crear el fragmento de historial y cambiarlo aquí
                 cambiarFragment(new Historial());
 
             } else if (id == R.id.nav_contactos) {
@@ -180,8 +180,9 @@ public class ActivityMain extends AppCompatActivity {
     private void cambiarColorActivo(ImageButton botonActivo) {
         // 1. Color transparente para que se vea el verde original de tu XML en el fondo inactivo
         int colorFondoNormal = android.graphics.Color.TRANSPARENT;
-        // 2. Verde más claro para el fondo activo
-        int colorFondoActivo = android.graphics.Color.parseColor("#4CAF50");
+
+        // 2. Verde oscuro específico solicitado para el fondo activo
+        int colorFondoActivo = android.graphics.Color.parseColor("#036607"); // <================ COLOR VERDE DEL XML ONCHECK
         // 3. Negro (color de línea original/inactivo)
         int colorIconoInactivo = android.graphics.Color.BLACK;
         // 4. Blanco (efecto de borde/silueta blanco)

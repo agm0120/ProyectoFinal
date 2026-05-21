@@ -14,27 +14,6 @@
         android:padding="20dp">
 
         <LinearLayout
-            android:id="@+id/layout_cabecera_noticias"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="24dp">
-
-            <TextView
-                android:id="@+id/tv_titulo_seccion_noticias"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center"
-                android:text="@string/noticias"
-                android:textColor="#5D4037"
-                android:textSize="34sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/layout_noticia_principal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -179,6 +158,159 @@
                     app:strokeColor="#000000"
                     app:strokeWidth="1dp" />
             </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_item_noticia_nutricion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/fondo_redondeado"
+            android:backgroundTint="#FFD9D9"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/iv_imagen_noticia_nutricion"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="12dp"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_nutricion" /> <LinearLayout
+            android:id="@+id/layout_texto_noticia_nutricion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_titulo_noticia_nutricion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Nutrición Inteligente"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_ver_noticia_nutricion"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:backgroundTint="#D7D7D7"
+                android:text="@string/ver_noticia"
+                android:textColor="#000000"
+                android:textSize="10sp"
+                app:cornerRadius="20dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="1dp" />
+        </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_item_noticia_sueno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/fondo_redondeado"
+            android:backgroundTint="#FFD9D9"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/iv_imagen_noticia_sueno"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="12dp"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_sueno" /> <LinearLayout
+            android:id="@+id/layout_texto_noticia_sueno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_titulo_noticia_sueno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Higiene del Sueño"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_ver_noticia_sueno"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:backgroundTint="#D7D7D7"
+                android:text="@string/ver_noticia"
+                android:textColor="#000000"
+                android:textSize="10sp"
+                app:cornerRadius="20dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="1dp" />
+        </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_item_noticia_hidratacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/fondo_redondeado"
+            android:backgroundTint="#FFD9D9"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/iv_imagen_noticia_hidratacion"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="12dp"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_hidratacion" /> <LinearLayout
+            android:id="@+id/layout_texto_noticia_hidratacion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_titulo_noticia_hidratacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Importancia de Hidratarse"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_ver_noticia_hidratacion"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:backgroundTint="#D7D7D7"
+                android:text="@string/ver_noticia"
+                android:textColor="#000000"
+                android:textSize="10sp"
+                app:cornerRadius="20dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="1dp" />
+        </LinearLayout>
 
         </LinearLayout>
 
