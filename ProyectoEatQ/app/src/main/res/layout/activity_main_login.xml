@@ -8,18 +8,6 @@
     android:background="@color/Grisfondo"
     tools:context=".Resumen">
 
-    <ImageButton
-        android:id="@+id/btn_idioma"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@android:color/transparent"
-        android:scaleType="center"
-        android:src="@drawable/bespana"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/iv_logo_login"
         android:layout_width="wrap_content"
