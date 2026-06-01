@@ -29,6 +29,8 @@ public class ActivityMain extends AppCompatActivity {
     private FloatingActionButton bPlato;
     private ImageButton bCompra, bEjercicio, bRecetas, bNoticias;
 
+    private TextView cabecera;
+
     // --- AÑADIDO PARA EL MENÚ LATERAL: Variables ---
     private ImageButton bPerfil, btn_atrasMain;
     private DrawerLayout drawerLayout;
@@ -46,6 +48,8 @@ public class ActivityMain extends AppCompatActivity {
         bRecetas = findViewById(R.id.btn_recetas);
         bNoticias = findViewById(R.id.btn_noticias);
         btn_atrasMain = findViewById(R.id.btn_atrasMain);
+
+        cabecera = findViewById(R.id.tv_tituloCabecera);
 
         // --- AÑADIDO PARA EL MENÚ LATERAL: Inicializar vistas y clics ---
         bPerfil = findViewById(R.id.btn_perfilUsuario);
@@ -70,18 +74,18 @@ public class ActivityMain extends AppCompatActivity {
 
             if (id == R.id.nav_perfil) {
                 // Asumiendo que tienes un fragmento llamado PerfilUsuario
-                cambiarFragment(new InformacionUsuario());
+                cambiarFragment(new InformacionUsuario(), "Mi perfil");
 
             } else if (id == R.id.nav_historial) { // Ojo al nombre en tu XML: nav_hitorial
                 // TODO: Crear el fragmento de historial y cambiarlo aquí
-                cambiarFragment(new Historial());
+                cambiarFragment(new Historial(), "Historial");
 
             } else if (id == R.id.nav_contactos) {
-                cambiarFragment(new Contacto());
+                cambiarFragment(new Contacto(), "Contacto");
 
             } else if (id == R.id.nav_config) {
                 //TODO: Crear el fragmento de configuración y cambiarlo aquí
-                cambiarFragment(new Configuracion());
+                cambiarFragment(new Configuracion(), "Configuración");
 
             } else if (id == R.id.nav_logout) {
                 // 1. Cerramos sesión en Firebase
@@ -110,32 +114,32 @@ public class ActivityMain extends AppCompatActivity {
 
         // Fragment que se cargara por defecto
         if (savedInstanceState == null){
-            cambiarFragment(new Resumen());
+            cambiarFragment(new Resumen(), "EatQ");
             cambiarColorActivo(null);
         }
 
         bCompra.setOnClickListener(v -> {
-            cambiarFragment(new ListaCompra());
+            cambiarFragment(new ListaCompra(), "Lista Compra");
             cambiarColorActivo(bCompra);
         });
 
         bEjercicio.setOnClickListener(v -> {
-            cambiarFragment(new Ejercicios());
+            cambiarFragment(new Ejercicios(), "Ejercicios");
             cambiarColorActivo(bEjercicio);
         });
 
         bRecetas.setOnClickListener(v -> {
-            cambiarFragment(new Recetas());
+            cambiarFragment(new Recetas(), "Recetas");
             cambiarColorActivo(bRecetas);
         });
 
         bNoticias.setOnClickListener(v -> {
-            cambiarFragment(new News());
+            cambiarFragment(new News(), "Noticias");
             cambiarColorActivo(bNoticias);
         });
 
         bPlato.setOnClickListener(v -> {
-            cambiarFragment(new Resumen());
+            cambiarFragment(new Resumen(), "EatQ");
             cambiarColorActivo(null);
         });
 
@@ -147,11 +151,37 @@ public class ActivityMain extends AppCompatActivity {
             }else {
                 btn_atrasMain.setVisibility(View.GONE);
             }
+
+            Fragment fragmentoActual = getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
+            if (fragmentoActual != null && cabecera != null) {
+
+                if (fragmentoActual instanceof Resumen) {
+                    cabecera.setText("EatQ"); // O "Inicio" / "Resumen"
+                } else if (fragmentoActual instanceof ListaCompra) {
+                    cabecera.setText("Lista de la Compra");
+                } else if (fragmentoActual instanceof Ejercicios) {
+                    cabecera.setText("Ejercicios");
+                } else if (fragmentoActual instanceof Recetas) {
+                    cabecera.setText("Recetas");
+                } else if (fragmentoActual instanceof News) {
+                    cabecera.setText("Noticias");
+                } else if (fragmentoActual instanceof InformacionUsuario) {
+                    cabecera.setText("Mi Perfil");
+                } else if (fragmentoActual instanceof Historial) {
+                    cabecera.setText("Historial");
+                } else if (fragmentoActual instanceof Contacto) {
+                    cabecera.setText("Contacto");
+                } else if (fragmentoActual instanceof Configuracion) {
+                    cabecera.setText("Configuración");
+                } else if (fragmentoActual instanceof SubirPlato) {
+                    cabecera.setText("Plato");
+                }
+            }
         });
 
     }
 
-    public void cambiarFragment (Fragment fragmento){
+    public void cambiarFragment (Fragment fragmento, String titulo){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -163,6 +193,11 @@ public class ActivityMain extends AppCompatActivity {
 
         // Confirmar el cambio
         fragmentTransaction.commit();
+
+        // Cambiar cabecera de forma dinamica
+        if (cabecera != null && titulo != null) {
+            cabecera.setText(titulo);
+        }
 
     }
 

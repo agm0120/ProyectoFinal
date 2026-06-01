@@ -51,7 +51,7 @@ public class Resumen extends Fragment {
         auth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        btn_introducirPlato.setOnClickListener(v -> navegar(new SubirPlato()));
+        btn_introducirPlato.setOnClickListener(v -> navegar(new SubirPlato(), "Plato"));
 
         btn_verRecetas.setOnClickListener(v -> {
             Recetas fragmentRecetas = new Recetas();
@@ -62,7 +62,7 @@ public class Resumen extends Fragment {
             fragmentRecetas.setArguments(args);
 
             // Navegamos pasando el fragmento ya preparado con sus datos
-            navegar(fragmentRecetas);
+            navegar(fragmentRecetas, "Recetas");
         });
 
         cargarResumenSemanal();
@@ -190,9 +190,9 @@ public class Resumen extends Fragment {
         pieChart.invalidate();
     }
 
-    private void navegar(Fragment fragmento){
+    private void navegar(Fragment fragmento, String titulo){
         if(getActivity() instanceof ActivityMain){
-            ((ActivityMain) getActivity()).cambiarFragment(fragmento);
+            ((ActivityMain) getActivity()).cambiarFragment(fragmento, titulo);
         }
     }
 }
