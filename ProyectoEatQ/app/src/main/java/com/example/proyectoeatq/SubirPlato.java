@@ -51,6 +51,7 @@ public class SubirPlato extends Fragment {
     private GenerativeModelFutures model;
     private String textoIA;
     private TextView textoOrientativo;
+    private android.app.ProgressDialog progressDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -181,6 +182,12 @@ public class SubirPlato extends Fragment {
             return;
         }
 
+        // Mostrar Dialog de carga
+        progressDialog = new android.app.ProgressDialog(getContext());
+        progressDialog.setMessage("Analizando tu plato... Por favor, espera.");
+        progressDialog.setCancelable(false); // Evita que el usuario lo cierre tocando fuera
+        progressDialog.show();
+
         try {
             Bitmap bitmap;
             // Si la ruta empieza por "content://", viene de la galería
@@ -212,13 +219,23 @@ public class SubirPlato extends Fragment {
             Futures.addCallback(response, new FutureCallback<GenerateContentResponse>() {
                 @Override
                 public void onSuccess(GenerateContentResponse result) {
-                    textoIA = result.getText();
-                    getActivity().runOnUiThread(() -> abrirSiguienteFragment(textoIA));
+                    // CERRAR DIALOG EN CASO DE ÉXITO
+                    getActivity().runOnUiThread(() -> {
+                        if (progressDialog != null && progressDialog.isShowing()) {
+                            progressDialog.dismiss();
+                        }
+                        textoIA = result.getText();
+                        abrirSiguienteFragment(textoIA);
+                    });
                 }
 
                 @Override
                 public void onFailure(Throwable t) {
+                    // CERRAR DIALOG EN CASO DE ERROR
                     getActivity().runOnUiThread(() -> {
+                        if (progressDialog != null && progressDialog.isShowing()) {
+                            progressDialog.dismiss();
+                        }
                         Log.e("GEMINI_ERROR", t.getMessage());
                         Toast.makeText(getContext(), "Error: Error de conexión con la API", Toast.LENGTH_LONG).show();
                     });
@@ -227,6 +244,9 @@ public class SubirPlato extends Fragment {
 
         } catch (Exception e) {
             e.printStackTrace();
+            if (progressDialog != null && progressDialog.isShowing()) {
+                progressDialog.dismiss();
+            }
             Toast.makeText(getContext(), "Error al cargar la imagen", Toast.LENGTH_SHORT).show();
         }
     }

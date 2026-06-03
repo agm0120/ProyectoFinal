@@ -39,6 +39,7 @@ public class ResultadoPlato extends Fragment {
     private FirebaseAuth auth;
     private FirebaseFirestore db;
     private Button buttonGuardar;
+    private Button buttonRepetir;
 
     public ResultadoPlato() { }
 
@@ -58,6 +59,7 @@ public class ResultadoPlato extends Fragment {
         tvResultado = view.findViewById(R.id.textView5);
         pieChart = view.findViewById(R.id.pieChart_comida);
         buttonGuardar = view.findViewById(R.id.btn_guardarPlato);
+        buttonRepetir = view.findViewById(R.id.btn_repetirPlato);
 
         auth = FirebaseAuth.getInstance();
         db=FirebaseFirestore.getInstance();
@@ -69,6 +71,16 @@ public class ResultadoPlato extends Fragment {
         } else {
             tvResultado.setText("No se recibió información de la IA.");
         }
+
+        buttonRepetir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Elimina el fragmento actual y regresa al anterior en el BackStack
+                if (getParentFragmentManager().getBackStackEntryCount() > 0) {
+                    getParentFragmentManager().popBackStack();
+                }
+            }
+        });
 
         buttonGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
